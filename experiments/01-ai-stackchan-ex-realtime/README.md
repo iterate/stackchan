@@ -8,6 +8,10 @@
 
 ---
 
+## Honest quality note
+
+**ChatGPT website/app voice will feel much better.** This project uses OpenAI Realtime over **WebSocket + base64 PCM on an ESP32**, not **WebRTC**. Playback is half-duplex and the audio path has known issues (sample rate, blocking playout in the WS callback, log spam). See [docs/realtime-quality.md](./docs/realtime-quality.md) for alternatives (factory XiaoZhi, warble, proxy architecture).
+
 ## Architecture
 
 ```text
