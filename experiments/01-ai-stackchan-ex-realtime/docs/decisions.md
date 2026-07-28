@@ -45,6 +45,18 @@ Copy-to-SD samples in upstream still show Core2 PWM defaults; do not use those b
 - Key field: `apikey.aiservice` in `SC_SecConfig.yaml`
 - STT/TTS YAML entries are largely unused on the pure Realtime audio path
 - Touch forehead to start/stop listening
+- Confirmed working on first bring-up: WebSocket connect, `session.updated`, PCM audio deltas, transcript events
+
+## Language (English vs Japanese)
+
+Upstream hardcodes Japanese in:
+
+- `defaultRole` in `LLMBase.cpp` (“Please speak in Japanese.”)
+- Realtime/Gemini session templates
+
+That is why first boot said **こんにちは** (Japanese “hello”), which can look “Chinese-ish” on a small CJK font. It is **not** proof Realtime failed.
+
+We ship `patches/0002-english-default-role.patch` so defaults ask for natural English. Role can also be edited later via the device web UI at `http://<robot-ip>/` (personalize). Re-flashing SPIFFS wipes the stored system prompt so the new default is applied.
 
 ## MCP (deferred for first boot)
 

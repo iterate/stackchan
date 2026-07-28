@@ -27,10 +27,21 @@ Chronological notes from the first bring-up (public; no secrets).
 - First boot plan: **voice only** (empty `mcpServers`); MCP in a later pass.
 - Wi‑Fi SSID chosen for device: `mispwoso2` (password only in local gitignored files).
 
-### Still to do on device
+### Device bring-up
 
-- [ ] `apply-local-config.sh` with real local secrets
-- [ ] `flash.sh` when CoreS3 is plugged in
-- [ ] Confirm serial line `SD not found; config loaded from SPIFFS.`
-- [ ] Confirm Realtime conversation
-- [ ] Add MCP experiment step / second folder or extend this one
+- [x] Flash `m5stack-cores3-realtime` + SPIFFS over `/dev/cu.usbmodem1101`
+- [x] Serial: `SD not found; config loaded from SPIFFS.`
+- [x] Wi‑Fi connected; IP assigned on LAN
+- [x] **Realtime WebSocket confirmed:** `[WSc] Connected to url: /v1/realtime?model=gpt-realtime`, `session.updated`, streaming `response.output_audio.delta`
+- [x] First utterance was Japanese **こんにちは** — upstream default role is Japanese, not a failed Realtime path
+- [x] Reflashed with English default role (`patches/0002-english-default-role.patch`) + SPIFFS wipe so stored system prompt re-inits
+
+### Latency note
+
+On-device Realtime still has noticeable lag vs the ChatGPT phone app: ESP32 Wi‑Fi, PCM base64 over WebSocket, and `semantic_vad` waiting for end-of-speech. That is expected for this stack; it is still the Realtime audio API (not STT→LLM→TTS).
+
+### Still to do
+
+- [ ] Confirm English conversation after role patch
+- [ ] Wire MCP (later)
+
