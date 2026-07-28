@@ -1,0 +1,12 @@
+# EXAMPLE ONLY — copy to ../local/SC_SecConfig.yaml and fill real values.
+# Never commit real Wi‑Fi passwords or API keys.
+
+wifi:
+  ssid: "YOUR_WIFI_SSID"
+  password: "YOUR_WIFI_PASSWORD"
+
+apikey:
+  stt: ""
+  # OpenAI API key used for Realtime (and other OpenAI services if enabled)
+  aiservice: "sk-..."
+  tts: ""

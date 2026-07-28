@@ -1,0 +1,22 @@
+# Official M5Stack StackChan (CoreS3 + SCS0009 serial servos)
+servo:
+  pin:
+    # M5StackChan (SCS0009): x:RX y:TX (TX unused for half-duplex)
+    x: 7
+    y: 6
+  offset:
+    x: 0
+    y: 0
+  center:
+    x: 150
+    y: 90
+  lower_limit:
+    x: 0
+    y: 0
+  upper_limit:
+    x: 300
+    y: 90
+
+servo_type: "M5_SCS"
+takao_base: false
+secret_config_show: false

@@ -1,0 +1,27 @@
+## App config for Realtime API (SPIFFS flat layout)
+llm:
+  type: 0               # 0:ChatGPT / OpenAI Realtime when built with REALTIME_API
+  enableMemory: true
+  # Leave empty for voice-only. For MCP SSE servers later:
+  # mcpServers:
+  #   [
+  #     {
+  #       "name": "local-mcp",
+  #       "disabled": false,
+  #       "url": "192.168.1.10",
+  #       "port": 8000
+  #     }
+  #   ]
+  mcpServers: []
+
+tts:
+  type: 2
+  model: "tts-1"
+  voice: "alloy"
+
+stt:
+  type: 1
+
+wakeword:
+  type: 0
+  keyword: ""
