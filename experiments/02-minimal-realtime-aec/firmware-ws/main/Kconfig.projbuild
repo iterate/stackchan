@@ -1,0 +1,17 @@
+menu "StackChan Realtime"
+
+    choice STACKCHAN_REALTIME_PROVIDER
+        prompt "Realtime voice provider"
+        default STACKCHAN_REALTIME_PROVIDER_XAI
+        help
+            Select the Realtime protocol profile compiled into the firmware.
+            Both tracks remain in the source and host-side test harness.
+
+        config STACKCHAN_REALTIME_PROVIDER_XAI
+            bool "xAI Grok Voice (native 16 kHz binary PCM)"
+
+        config STACKCHAN_REALTIME_PROVIDER_OPENAI
+            bool "OpenAI Realtime (24 kHz base64 PCM compatibility)"
+    endchoice
+
+endmenu

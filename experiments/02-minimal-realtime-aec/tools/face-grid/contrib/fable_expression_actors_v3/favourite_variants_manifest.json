@@ -1,0 +1,119 @@
+{
+  "id": "fable-expression-actors-favourite-artist-pass",
+  "version": 1,
+  "status": "isolated-ready-for-global-registry-integration",
+  "frame": {
+    "width": 160,
+    "height": 120,
+    "format": "rgb565",
+    "exact_device_preview": "40x30-nearest-neighbour",
+    "context_bytes": 0
+  },
+  "contract": {
+    "input": "face_render_key_t schema v2 plus 16 kHz sample clock",
+    "render_properties": [
+      "integer-only",
+      "no heap",
+      "no retained state",
+      "pure and deterministic",
+      "shared native and WebAssembly C"
+    ],
+    "public_header": "src/fea_favourite_variants.h",
+    "registry": "src/fea_favourite_variants.c",
+    "shared_global_registry_modified": false
+  },
+  "sources": [
+    "src/fea_favourite_variants.c",
+    "src/fea_favourite_variants_common.c",
+    "src/fea_favourite_wisps.c",
+    "src/fea_favourite_karakuri.c",
+    "src/fea_favourite_stickers.c"
+  ],
+  "profiles": [
+    {
+      "enum": "FEA_FAVOURITE_LANTERN_BLOOM",
+      "slug": "fea-lantern-bloom",
+      "lineage": "will-o-wisp",
+      "thesis": "Symmetrical bell-flame spirit; petal corona, ember freckles and a body that blooms, droops and contracts."
+    },
+    {
+      "enum": "FEA_FAVOURITE_COMET_RASCAL",
+      "slug": "fea-comet-rascal",
+      "lineage": "will-o-wisp",
+      "thesis": "Swept asymmetric comet; pointed silhouette and ribbon tail turn emotion into a line of action."
+    },
+    {
+      "enum": "FEA_FAVOURITE_MOON_MOTH_ORACLE",
+      "slug": "fea-moon-moth-oracle",
+      "lineage": "will-o-wisp",
+      "thesis": "Winged lantern-moth; crescent wings, antenna crown and hanging glow-drop fold and flare with intent."
+    },
+    {
+      "enum": "FEA_FAVOURITE_GILDED_NOH",
+      "slug": "fea-gilded-noh",
+      "lineage": "karakuri-brass",
+      "thesis": "Layered theatrical mask; fan eyelids, forehead crest, cheek plates and a lacquer hinged jaw."
+    },
+    {
+      "enum": "FEA_FAVOURITE_BEETLE_AUTOMATON",
+      "slug": "fea-beetle-automaton",
+      "lineage": "karakuri-brass",
+      "thesis": "Domed beetle machine; antenna eyebrows, faceted lens eyes, shell articulation and mandible mouth."
+    },
+    {
+      "enum": "FEA_FAVOURITE_KINTSUGI_MARIONETTE",
+      "slug": "fea-kintsugi-marionette",
+      "lineage": "karakuri-brass",
+      "thesis": "Cracked porcelain-and-brass doll; floating cheek plates, pin joints, gold seams and ribbon jaw."
+    },
+    {
+      "enum": "FEA_FAVOURITE_POP_BURST",
+      "slug": "fea-pop-burst",
+      "lineage": "emote-sticker",
+      "thesis": "Die-cut comic starburst; elastic facial proportions and orbiting reaction glyphs."
+    },
+    {
+      "enum": "FEA_FAVOURITE_FELT_PATCH_PAL",
+      "slug": "fea-felt-patch-pal",
+      "lineage": "emote-sticker",
+      "thesis": "Scalloped embroidered patch; button-and-stitch eyes, applique cheeks, cloth folds and a loose thread."
+    },
+    {
+      "enum": "FEA_FAVOURITE_SPEECH_BUBBLE_SPRITE",
+      "slug": "fea-speech-bubble-sprite",
+      "lineage": "emote-sticker",
+      "thesis": "Living comic balloon; body, tail and punctuation lean into the line delivery."
+    }
+  ],
+  "quality": {
+    "runner": "tests/run_fea_favourite_variants.sh",
+    "test": "tests/test_fea_favourite_variants.c",
+    "dump": "tools/fea_favourite_variants_dump.c",
+    "preview_directory": "preview/favourite-artist-pass",
+    "gates": [
+      "36549 native assertions",
+      "AddressSanitizer and UndefinedBehaviorSanitizer",
+      "11 distinct and clearly separable emotions per profile",
+      "15-viseme atlas and canonical articulation assertions",
+      "180-frame temporal smoothness",
+      "blink kinematics and feature parenting",
+      "all 40 IR bytes live",
+      "random and structured adversarial fuzz",
+      "30 fps budget",
+      "O0/O2 byte identity",
+      "native/WebAssembly byte identity"
+    ]
+  },
+  "integration": {
+    "required": [
+      "assign stable global renderer enum values",
+      "add the five favourite sources to the host and WebAssembly source lists",
+      "forward global info, probe and render calls to the isolated public API"
+    ],
+    "not_required": [
+      "changing the original five FEA profiles",
+      "allocating renderer context",
+      "adding a host-only code path"
+    ]
+  }
+}

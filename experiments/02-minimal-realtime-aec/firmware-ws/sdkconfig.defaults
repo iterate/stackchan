@@ -1,0 +1,71 @@
+CONFIG_IDF_TARGET="esp32s3"
+
+# Grok Voice is the primary path: native 16 kHz raw binary PCM. OpenAI remains
+# selectable under "StackChan Realtime" in menuconfig.
+CONFIG_STACKCHAN_REALTIME_PROVIDER_XAI=y
+
+# CoreS3 flash and PSRAM
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_QUAD=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_MALLOC=y
+CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL=4096
+CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP=y
+CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY=y
+CONFIG_SPIRAM_FETCH_INSTRUCTIONS=y
+CONFIG_SPIRAM_RODATA=y
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+# Keep one second of bidirectional 16 kHz PCM out of the synchronous TLS
+# caller. The default 5,760-byte TCP windows hold less than two 100 ms audio
+# chunks and turn ordinary WAN jitter into multi-second task stalls.
+CONFIG_LWIP_TCP_SND_BUF_DEFAULT=32768
+CONFIG_LWIP_TCP_WND_DEFAULT=32768
+CONFIG_LWIP_TCP_RECVMBOX_SIZE=25
+
+# The full-duplex AEC implementation has a large PSRAM working set and is
+# sensitive to cache misses. A 64-byte cache line matches Espressif's
+# benchmark configuration. The audio task and tunable delay ring are
+# right-sized so the vendor-recommended 64 KB cache still leaves boot headroom.
+CONFIG_ESP32S3_DATA_CACHE_64KB=y
+CONFIG_ESP32S3_DATA_CACHE_LINE_64B=y
+
+# Audio DSP must be built for runtime performance. The IDF debug default
+# (-Og) made ESP-SR miss real-time deadlines even at 240 MHz.
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# Native USB serial is the build/flash/diagnostic channel.
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+
+# A larger single factory image leaves room for ESP-SR and TLS without OTA
+# complexity in this prototype.
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+
+# Realtime TLS uses the maintained root bundle.
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE=y
+CONFIG_MBEDTLS_EXTERNAL_MEM_ALLOC=y
+
+# Make task failures observable during audio bring-up.
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+CONFIG_FREERTOS_CHECK_STACKOVERFLOW_CANARY=y
+CONFIG_FREERTOS_WATCHPOINT_END_OF_STACK=y
+
+# CoreS3 BSP / codec compatibility.
+CONFIG_CODEC_I2C_BACKWARD_COMPATIBLE=n
+
+# Render the actual LVGL screen into the remote evidence bundle.
+CONFIG_LV_USE_SNAPSHOT=y
+
+# Do not reserve LVGL's default fixed 64 KiB pool in scarce internal SRAM.
+# The IDF allocator can place LVGL's larger allocations in PSRAM while keeping
+# DMA-capable display buffers in the explicit capability heaps selected by the
+# BSP/esp_lvgl_port.
+CONFIG_LV_USE_CLIB_MALLOC=y
+
+# Keep production logs useful without printing high-volume audio payloads.
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y

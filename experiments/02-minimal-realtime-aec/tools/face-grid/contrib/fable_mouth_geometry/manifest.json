@@ -1,0 +1,123 @@
+{
+  "contribution": "fable_mouth_geometry",
+  "kind": "renderer-pack",
+  "api": {
+    "header": "src/fmg.h",
+    "render": "fmg_render_frame(profile, keyframe, sample_clock, rgb565, capacity)",
+    "frame": { "width": 160, "height": 120, "format": "RGB565" },
+    "keyframe": "12-byte fmg_keyframe_t, byte-compatible with face_keyframe_t",
+    "clock": "16 kHz PCM sample counter drives all idle motion",
+    "purity": "pure function of (keyframe, clock); integer-only; no allocation",
+    "wasm_identity": "verified: emcc build passes the same golden CRC32 table as native (tools/build.sh wasm)",
+    "optional_stage": "fmg_coart_t caller-owned coarticulation filter (Cohen-Massaro-style dominance, articulator-weighted one-pole easing)"
+  },
+  "renderers": [
+    {
+      "slug": "fmg-preston-sprites",
+      "name": "Preston Blair sprites",
+      "category": "sprite",
+      "mouth_kind": "sprite",
+      "suggested_host_profile": "FACE_RENDER_PRESTON_SPRITES",
+      "description": "Eleven original 26x14 mouth cels following the classic Preston Blair ten-shape chart (Rhubarb A-F + G/H/X semantics), picked by a nearest-anchor viseme classifier, blitted 2x over a warm cartoon face with oval eyes, blush, and thick brows.",
+      "idle": ["blink+double-blink", "saccades", "brow gestures", "breathing bob", "sway"],
+      "host_us_per_frame": 4.1
+    },
+    {
+      "slug": "fmg-talkie-flap",
+      "name": "EGA talkie flap",
+      "category": "sprite",
+      "mouth_kind": "sprite",
+      "suggested_host_profile": "new profile",
+      "description": "CD-talkie era amplitude ladder: four chunky mouth cels plus round and pressed variants, strict EGA 16-color palette, 4px block face, pupils stepping in whole blocks.",
+      "idle": ["blink", "block-quantized saccades", "brow rows"],
+      "host_us_per_frame": 1.7
+    },
+    {
+      "slug": "fmg-manga-snap",
+      "name": "Manga snap",
+      "category": "sprite",
+      "mouth_kind": "sprite",
+      "suggested_host_profile": "new profile",
+      "description": "White line-art anime face: ten mouth cels chosen with quantized snap timing, shine-dotted irises, happy arch blinks, blush strokes, thinking sweat drop, shout emphasis lines.",
+      "idle": ["blink (sleepy line / happy arch)", "saccades", "brow arcs", "sweat-drop bounce"],
+      "host_us_per_frame": 2.9
+    },
+    {
+      "slug": "fmg-dot-matrix",
+      "name": "Flip-dot matrix",
+      "category": "sprite",
+      "mouth_kind": "sprite",
+      "suggested_host_profile": "new profile",
+      "description": "32x24 two-state flip-disc board: viseme glyph font mouth, lit-disc eyes with punched pupils, dim brow bars, one-dot mechanical sway shifts, breathing status dot. Amber on black.",
+      "idle": ["blink via disc rows", "dot-quantized saccades", "board shift", "status dot"],
+      "host_us_per_frame": 33.4
+    },
+    {
+      "slug": "fmg-polygon-jali",
+      "name": "JALI jaw-lip polygon",
+      "category": "polygon",
+      "mouth_kind": "polygon",
+      "suggested_host_profile": "FACE_RENDER_POLYGON_JALI",
+      "description": "Mouth rebuilt per frame from the two JALI axes (JA jaw gated by bilabial press, LI lip articulation) as four quadratic bezier envelopes per column; skull-pinned upper teeth, jaw-riding lower teeth, L/N tongue raise, philtrum, chin crease, nasolabial folds on wide smiles.",
+      "idle": ["blink with lid shadow", "saccades", "tapered brow motion", "breathing", "sway"],
+      "host_us_per_frame": 3.4
+    },
+    {
+      "slug": "fmg-bezier-ribbon",
+      "name": "Bezier ribbon lips",
+      "category": "polygon",
+      "mouth_kind": "polygon",
+      "suggested_host_profile": "FACE_RENDER_BEZIER_RIBBON",
+      "description": "Stage-show glossy lips as bezier ribbons with a cupid's bow (two mirrored quadratics), per-column thickness-gradient shading, specular sweep, teeth glint, corner dimples, deterministic sparkle; crescent eyes above.",
+      "idle": ["crescent blink", "gaze drift", "brow shimmer", "breathing"],
+      "host_us_per_frame": 7.2
+    },
+    {
+      "slug": "fmg-origami-mask",
+      "name": "Origami mask",
+      "category": "polygon",
+      "mouth_kind": "polygon",
+      "suggested_host_profile": "FACE_RENDER_ORIGAMI_MASK",
+      "description": "Low-poly papercraft mask: 27 flat-shaded facets with fold creases; jaw facets hinge and darken as they rotate from the light; hexagonal mouth hole with paper-teeth zigzag, pursed-fold diamond for rounding, crease-shut press; backlit angular eye slits.",
+      "idle": ["slit blink", "gaze shift", "brow creases", "breathing", "sway"],
+      "host_us_per_frame": 12.5
+    },
+    {
+      "slug": "fmg-teeth-tongue",
+      "name": "Teeth & tongue closeup",
+      "category": "polygon",
+      "mouth_kind": "polygon",
+      "suggested_host_profile": "FACE_RENDER_TEETH_TONGUE",
+      "description": "Extreme closeup where the mouth fills the frame: correct occlusion (upper teeth pinned, lower ride the jaw), gum lines, per-tooth rounding, grooved lifting tongue, throat depth gradient, swinging uvula on wide vowels; squinting eyes at the top edge.",
+      "idle": ["squint blink", "gaze", "brow bars", "breathing", "sway"],
+      "host_us_per_frame": 5.2
+    },
+    {
+      "slug": "fmg-led-vu-mouth",
+      "name": "LED VU mouth",
+      "category": "alternative",
+      "mouth_kind": "segments",
+      "suggested_host_profile": "FACE_RENDER_LED_VU_MOUTH",
+      "description": "KITT-style voicebox: three mirrored red segment columns (center taller) driven by openness with width-weighted flanks, rounding pulls columns together, bilabial press kills the bars, deterministic speaking shimmer, idle scanner-sweep homage; amber LED cluster eyes on a screwed bezel.",
+      "idle": ["LED-row blink", "cluster pupil moves", "scanner sweep", "breathing power LED"],
+      "host_us_per_frame": 4.6
+    },
+    {
+      "slug": "fmg-scope-trace",
+      "name": "Oscilloscope trace",
+      "category": "alternative",
+      "mouth_kind": "line",
+      "suggested_host_profile": "new profile",
+      "description": "Phosphor XY-scope face: Lissajous ring eyes that flatten when blinking, a synthesized mouth waveform (amplitude=open, spatial frequency rises with frication, hash noise for sibilants, dead-flat on press) that closes into a rotating ellipse for rounded vowels; three phase-offset persistence passes; sweeping heartbeat blip in silence.",
+      "idle": ["ring blink", "gaze dot", "brow traces", "heartbeat sweep", "beam breathing"],
+      "host_us_per_frame": 5.2
+    }
+  ],
+  "tests": {
+    "suite": "test/test_fmg.c (3456 checks: ABI, registry, arg validation, determinism, full-frame coverage, guard-band overflow, 13200-frame fuzz, idle-motion behavior, viseme classifier, coarticulation, golden CRC32)",
+    "golden": "test/golden_crc.inc (regenerate: tools/build.sh golden)",
+    "sprites": "tools/check_sprites.py validates all 37 ASCII cel arrays",
+    "wasm": "tools/build.sh wasm proves native/wasm byte identity"
+  },
+  "performance_note": "Host (Apple Silicon) worst case 33 us/frame (dot-matrix). With a conservative 100x ESP32-S3 derating that is ~3.3 ms/frame, comfortably inside the 33 ms 30 fps budget; all arithmetic is int32 with rare int64 intermediates."
+}

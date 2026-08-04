@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "fable-sprite-pipeline-v2",
+  "name": "FSPP: Fable sprite pipeline v2",
+  "kind": "asset-pipeline",
+  "status": "isolated-candidate-pack",
+  "license": "CC0-1.0",
+  "summary": "Deterministic stdlib-only assembly line: raw image-model sprite sheet (or authoring brief) -> keyed, segmented, pixel-snapped, palette-quantized, registered catalog -> FSPR v2 face_sprite_atlas_t C tables + browser manifest at multiple target resolutions, with validation gates and a production-player C smoke test.",
+  "entry_points": {
+    "cli": "spritepipe.py",
+    "make": ["all", "fixture", "test", "samples", "c-smoke", "c-smoke-mossling"]
+  },
+  "output": {
+    "container": "face_sprite_atlas_t (FSPR v2, firmware-ws/main/face_sprite_sheet.h)",
+    "ir": {
+      "keyframe_bytes": 12,
+      "render_key_bytes": 40,
+      "render_key_schema_version": 2,
+      "clock": "16 kHz PCM sample clock"
+    },
+    "viseme_sets": ["ovr15", "vrm5", "preston9", "microsoft22", "custom"],
+    "mouth_slots": 23,
+    "expression_banks": 11,
+    "per_target_files": ["<prefix>_atlas.c", "<prefix>_atlas.h", "manifest.json", "previews/*.png"]
+  },
+  "constraints": {
+    "python_dependencies": 0,
+    "deterministic": true,
+    "determinism_proof": "full pipeline computed twice per build; every artifact hash compared",
+    "integer_only_pipeline": true,
+    "registry_integrated": false,
+    "shared_files_touched": 0
+  },
+  "samples": [
+    {
+      "id": "bloomling",
+      "source": "synthetic image-model-style fixture (fixtures/make_fixture_sheet.py, seeded, CC0)",
+      "targets": {
+        "cores3-face": {"canvas": [48, 40], "scale": 2, "flash_bytes": 5891},
+        "pocket-stage": {"canvas": [40, 30], "scale": 1, "flash_bytes": 3585}
+      }
+    },
+    {
+      "id": "mossling",
+      "source": "tools/face-grid/assets/mossling/pocket-mossling-expression-viseme-concepts-v1.png (project-local generated concept art)",
+      "targets": {
+        "cores3-face": {"canvas": [80, 60], "scale": 2, "flash_bytes": 18393},
+        "pocket-stage": {"canvas": [40, 30], "scale": 1, "flash_bytes": 4946}
+      }
+    }
+  ],
+  "verification": {
+    "python_tests": 25,
+    "c_smoke": "cc -std=c11 -O2 -Wall -Wextra -Werror -Wshadow -pedantic; harness + generated atlas + production face_sprite_sheet.c; init + 88-frame sweep (11 banks x expressions/visemes/blinks/gaze) rendered twice, FNV-1a bit-identical",
+    "gates": [
+      "background_key", "segmentation", "grid_snap", "shared_scale",
+      "mouth_source", "packbits_roundtrip", "player_contract",
+      "registration", "clipping", "palette", "coverage", "budget",
+      "legibility", "determinism"
+    ]
+  },
+  "docs": ["README.md", "docs/DESIGN.md", "docs/RESEARCH.md", "INTEGRATION.md", "schema/"]
+}

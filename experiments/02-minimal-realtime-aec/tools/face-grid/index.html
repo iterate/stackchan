@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The active StackChan sprite atlases driven by the same live PCM and facial-action stream in C/WASM."
+    />
+    <title>StackChan · live sprite workbench</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <div class="title-lockup">
+          <p class="eyebrow">STACKCHAN / LIVE SPRITE WORKBENCH</p>
+          <h1>One performance.<br /><em>The active sprite set.</em></h1>
+        </div>
+        <div class="runtime-state">
+          <span class="pulse" aria-hidden="true"></span>
+          <div>
+            <strong id="runtime-status">Loading C/WASM…</strong>
+            <small id="runtime-detail">Renderer ABI is starting</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="review-room" aria-labelledby="review-room-title">
+        <div class="review-heading">
+          <div>
+            <p class="eyebrow">ACTIVE SPRITES · NATIVE SCALE</p>
+            <h2 id="review-room-title">
+              Only the sprite characters we are actively developing.
+            </h2>
+          </div>
+          <div class="review-pagination" aria-label="Renderer pages">
+            <button
+              id="review-favorites"
+              class="review-favorites-filter"
+              type="button"
+              aria-pressed="false"
+            >
+              <span aria-hidden="true">★</span>
+              Favourites
+              <b id="review-favorite-count">0</b>
+            </button>
+            <button id="review-previous" type="button" disabled>
+              ← Previous
+            </button>
+            <strong id="review-page">Page — / —</strong>
+            <button id="review-next" type="button" disabled>Next →</button>
+          </div>
+        </div>
+
+        <div class="review-controls" aria-label="Live review controls">
+          <label>
+            <span>LOOPING PCM STYLE</span>
+            <select id="source">
+              <option value="leo">Real Grok · Leo</option>
+              <option value="rex">Real Grok · Rex</option>
+              <option value="eve">Real Grok · Eve</option>
+              <option value="synthetic">Deterministic phoneme fixture</option>
+            </select>
+          </label>
+          <label>
+            <span>PCM → FACE ANALYSER</span>
+            <select id="review-analyser">
+              <option value="2">Acoustic viseme · responsive</option>
+              <option value="3">Acoustic viseme · smooth</option>
+              <option value="4">Goertzel formants · responsive</option>
+              <option value="5">Goertzel formants · smooth</option>
+              <option value="0">Envelope · lively</option>
+              <option value="1">Envelope · smooth</option>
+            </select>
+          </label>
+          <label>
+            <span>AI STAGE DIRECTION</span>
+            <select id="review-stage">
+              <option value="neutral">Neutral / attentive</option>
+              <option value="warm">Warm · small nod</option>
+              <option value="joy">Joyful · buoyant</option>
+              <option value="concern">Concerned · stay with user</option>
+              <option value="surprise">Surprised · alert</option>
+              <option value="thoughtful">Thoughtful · glance aside</option>
+              <option value="skeptical">Sceptical · asymmetric tilt</option>
+              <option value="determined">Determined · focus</option>
+              <option value="sleepy">Sleepy · low arousal</option>
+              <option value="excited">Excited · bounce</option>
+              <option value="embarrassed">Embarrassed · glance away</option>
+            </select>
+          </label>
+          <label>
+            <span>CONVERSATION ACTIVITY</span>
+            <select id="review-activity">
+              <option value="auto">Auto · follow PCM stream</option>
+              <option value="idle">Idle performance family</option>
+              <option value="listening">Listening performance family</option>
+              <option value="thinking">Thinking performance family</option>
+              <option value="speaking">Speaking performance family</option>
+            </select>
+          </label>
+          <div class="transport">
+            <button id="play" class="primary" disabled>Play loop</button>
+            <button id="restart" disabled>Restart</button>
+            <button id="microphone" disabled>Use microphone</button>
+            <label class="file-button">
+              Choose WAV
+              <input id="file" type="file" accept=".wav,audio/wav" />
+            </label>
+            <label class="loop-toggle">
+              <input id="loop" type="checkbox" checked />
+              <span>Loop clip</span>
+            </label>
+          </div>
+        </div>
+
+        <div
+          id="review-grid"
+          class="review-grid"
+          role="group"
+          aria-label="Current page of native 160 by 120 renderers"
+        ></div>
+
+        <div class="review-monitor">
+          <canvas
+            id="waveform"
+            width="1600"
+            height="48"
+            aria-label="Shared 16 kHz PCM waveform"
+          ></canvas>
+          <div class="performance-line">
+            <div class="clock">
+              <strong id="clock">00:00.000</strong>
+              <span>sample <b id="sample-clock">0</b></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="matrix-section">
+        <div class="matrix-toolbar">
+          <div>
+            <p class="eyebrow">THE ACTIVE SPRITE MATRIX</p>
+            <h2>Every analyser × every direction × every active sprite.</h2>
+          </div>
+          <div class="telemetry" role="group" aria-label="Matrix telemetry">
+            <span><b id="fps">—</b> scheduler fps</span>
+            <span><b id="render-ms">—</b> ms / sweep</span>
+            <span><b id="visible-count">—</b> views</span>
+          </div>
+        </div>
+        <div
+          class="dimension-counts"
+          role="group"
+          aria-label="Visible matrix dimensions"
+        >
+          <span><b>6</b> analysers</span>
+          <span><b>11</b> directions</span>
+          <span><b id="renderer-count">40</b> renderers</span>
+          <span class="dimension-total"
+            ><b id="combination-count">2,640</b> simultaneous views</span
+          >
+        </div>
+        <div class="matrix-key">
+          <p>
+            One live Cartesian matrix. Rows are PCM analysers; columns are AI
+            stage directions; every cell contains the active C sprite set.
+          </p>
+          <div class="density-control" role="group" aria-label="Matrix zoom">
+            <span>VIEW</span>
+            <button data-density="matrix" aria-pressed="false">
+              Whole matrix
+            </button>
+            <button class="active" data-density="overview" aria-pressed="true">
+              Zoomed overview
+            </button>
+            <button data-density="atlas" aria-pressed="false">Far atlas</button>
+          </div>
+        </div>
+        <div class="matrix-scroll" id="matrix-scroll">
+          <div
+            id="grid"
+            class="scenario-grid density-overview"
+            role="group"
+            aria-label="All PCM analysers by all AI stage directions"
+            aria-live="off"
+          ></div>
+        </div>
+        <p class="matrix-help">
+          Click any tiny face to inspect its native 160×120 C/WASM frame.
+          Hovering a cell identifies the renderer without stopping the matrix.
+        </p>
+        <details class="renderer-legend">
+          <summary>
+            Renderer index — positions repeated inside every matrix cell
+          </summary>
+          <ol id="renderer-legend"></ol>
+        </details>
+      </section>
+
+      <footer>
+        <p>
+          16 kHz PCM · 40-byte facial-action IR · sparse stage-cue timeline ·
+          RGB565 at 160×120 · identical C in ESP-IDF and WebAssembly
+        </p>
+        <p id="runtime-metrics">Waiting for renderer telemetry.</p>
+      </footer>
+    </main>
+
+    <dialog id="tile-inspector" aria-labelledby="inspector-title">
+      <div class="inspector-shell">
+        <header class="inspector-header">
+          <div>
+            <p class="eyebrow" id="inspector-context">LIVE C/WASM FRAME</p>
+            <h2 id="inspector-title">Renderer inspector</h2>
+          </div>
+          <form method="dialog">
+            <button
+              class="inspector-close"
+              aria-label="Close renderer inspector"
+            >
+              Close <kbd>Esc</kbd>
+            </button>
+          </form>
+        </header>
+        <div class="inspector-body">
+          <div class="inspector-screen">
+            <canvas
+              id="inspector-face"
+              width="160"
+              height="120"
+              aria-label="Selected renderer at native StackChan resolution"
+            ></canvas>
+            <span class="inspector-live"
+              ><i></i> Live C/WASM · 160×120 RGB565</span
+            >
+          </div>
+          <div class="inspector-copy">
+            <p id="inspector-scenario">Choose any matrix face.</p>
+            <dl class="inspector-facts">
+              <div>
+                <dt>Renderer</dt>
+                <dd id="inspector-renderer">—</dd>
+              </div>
+              <div>
+                <dt>Family</dt>
+                <dd id="inspector-family">—</dd>
+              </div>
+              <div>
+                <dt>Mouth</dt>
+                <dd id="inspector-mouth">—</dd>
+              </div>
+              <div>
+                <dt>Review tier</dt>
+                <dd id="inspector-tier">—</dd>
+              </div>
+              <div>
+                <dt>Stream</dt>
+                <dd id="inspector-stream">—</dd>
+              </div>
+            </dl>
+            <div class="inspector-nav">
+              <button type="button" id="inspector-previous">
+                ← Previous renderer
+              </button>
+              <span id="inspector-position">— / —</span>
+              <button type="button" id="inspector-next">Next renderer →</button>
+            </div>
+            <p class="inspector-tip">
+              Use ←/→ for adjacent renderers. The overview remains alive
+              underneath; this view adds only one native-frame copy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

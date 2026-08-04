@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "id": "authored-renderer-variants",
+  "name": "Authored Renderer Variants",
+  "status": "isolated-candidate-pack",
+  "license": "CC0-1.0",
+  "renderer_api": "src/face_authored_variants.h",
+  "frame": {
+    "width": 160,
+    "height": 120,
+    "pixel_format": "RGB565"
+  },
+  "input": {
+    "type": "face_render_key_t",
+    "schema_version": 2,
+    "bytes": 40,
+    "clock": "16 kHz PCM sample clock"
+  },
+  "constraints": {
+    "heap_bytes_per_context": 0,
+    "integer_only": true,
+    "deterministic": true,
+    "wasm_compatible": true,
+    "registry_integrated": false
+  },
+  "profiles": [
+    {
+      "slug": "bean-appeal-scout",
+      "name": "Bean · Appeal Scout",
+      "lineage": "toon-bean",
+      "idea": "animation-appeal proportions with an attached explorer headset and scarf"
+    },
+    {
+      "slug": "bean-clockwork-puppet",
+      "name": "Bean · Clockwork Puppet",
+      "lineage": "toon-bean",
+      "idea": "warm theatrical automaton with face-mounted pivots and a keyed wooden crown"
+    },
+    {
+      "slug": "bean-manga-spark",
+      "name": "Bean · Manga Spark",
+      "lineage": "toon-bean",
+      "idea": "graphic fringe, cheek accents, and high-energy silhouette acting"
+    },
+    {
+      "slug": "ink-newsroom-editor",
+      "name": "Ink · Newsroom Editor",
+      "lineage": "toon-ink",
+      "idea": "newspaper line art with an attached press hat, lapels, and halftone texture"
+    },
+    {
+      "slug": "ink-cabaret-mime",
+      "name": "Ink · Cabaret Mime",
+      "lineage": "toon-ink",
+      "idea": "cream-and-carmine stage mime with beret, bow tie, and expressive face paint"
+    },
+    {
+      "slug": "ink-blueprint-companion",
+      "name": "Ink · Blueprint Companion",
+      "lineage": "toon-ink",
+      "idea": "inverted cyan technical drawing with attached circuit ears and status rail"
+    },
+    {
+      "slug": "captain-command-deck",
+      "name": "Captain · Command Deck",
+      "lineage": "vga-star-captain",
+      "idea": "clean cobalt-and-gold command uniform with rank crest and epaulettes"
+    },
+    {
+      "slug": "captain-nebula-dome",
+      "name": "Captain · Nebula Dome",
+      "lineage": "vga-star-captain",
+      "idea": "violet deep-space pressure dome with parallax stars and luminous collar"
+    },
+    {
+      "slug": "captain-solar-rogue",
+      "name": "Captain · Solar Rogue",
+      "lineage": "vga-star-captain",
+      "idea": "warm solar-punk corsair with asymmetric comms fin and attached scarf"
+    }
+  ],
+  "fixtures": {
+    "emotions": 11,
+    "visemes": 15,
+    "temporal_frames": 24,
+    "exact_contact_resolution": "40x30"
+  }
+}
+

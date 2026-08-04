@@ -1,0 +1,42 @@
+{
+  "assembled_pixels": [
+    2144,
+    2568
+  ],
+  "assembled_sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/karakuri-brass/generated/source-sheet.png",
+  "assembler": "stackchan-avatar-pipeline-v1",
+  "avatar_config": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/karakuri-brass/avatar.json",
+  "avatar_config_sha256": "db26da7a085ac6da163a117f01fc19b1496df675f06747fce9ba339f9c46320c",
+  "sources": [
+    {
+      "background_tolerance": 96,
+      "grid": [
+        4,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/karakuri-brass/source/expressions-v1.png",
+      "pixels": [
+        1448,
+        1086
+      ],
+      "role": "expression",
+      "sha256": "f2a43dccbbe58cb3dde783f50ba3a0cf8376040cf0794394f3448c422abdc721"
+    },
+    {
+      "background_tolerance": 96,
+      "grid": [
+        5,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/karakuri-brass/source/mouths-v1.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "role": "mouth",
+      "sha256": "13ab63a8f547f7f90c6c583b697977ebef729c9057fec2276c5a80fbd1570b48"
+    }
+  ]
+}

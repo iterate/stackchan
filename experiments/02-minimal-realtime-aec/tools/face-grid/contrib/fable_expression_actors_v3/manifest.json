@@ -1,0 +1,128 @@
+{
+  "name": "fable_expression_actors_v3",
+  "kind": "renderer-pack",
+  "abi": {
+    "input": "face_render_key_t schema v2 (40 bytes) + 16 kHz sample clock",
+    "output": "160x120 RGB565, caller-owned buffer, every pixel written",
+    "context_bytes": 0,
+    "compat_headers": "compat/ (verbatim firmware copies, 2026-07-29)"
+  },
+  "profiles": [
+    {
+      "slug": "fea-mochi-cat",
+      "name": "Mochi Cat (plush mascot)",
+      "structure": "eared plush mascot, bead eyes, muzzle lip mouth",
+      "signature": "articulated ears + whisker droop + embarrassed head-turn",
+      "host_us_per_frame": 17.8
+    },
+    {
+      "slug": "fea-karakuri-brass",
+      "name": "Karakuri Brass (plate puppet)",
+      "structure": "segmented brass plates, shutter irises, integrated hinged jaw cavity",
+      "signature": "visor drop, shutter blinks + lower-leaf squints, cheek lamps, jaw hinge plate",
+      "host_us_per_frame": 22.8
+    },
+    {
+      "slug": "fea-emote-sticker",
+      "name": "Emote Sticker (badge face)",
+      "structure": "outlined badge, big teeth/tongue mouth, arc joy-eyes",
+      "signature": "emoji glyph accessories scaled by the acting curve",
+      "host_us_per_frame": 26.9
+    },
+    {
+      "slug": "fea-will-o-wisp",
+      "name": "Will-o-Wisp (night spirit)",
+      "structure": "row-profiled emissive silhouette morphing around FIXED face anchors",
+      "signature": "silhouette emotion + asymmetric brow/lid speech peaks; >=2.5px features at 40x30",
+      "host_us_per_frame": 10.0
+    },
+    {
+      "slug": "fea-mono-scope",
+      "name": "Mono Scope (cyclops robot)",
+      "structure": "eye-only cyclops: lens + shutter lids + brow bar, no mouth panel",
+      "signature": "eye-light carries speech (jaw/width/round/press/teeth/tongue mapped onto it); smile-cut parented to mouth corners; wide pupil saccades",
+      "host_us_per_frame": 32.8
+    }
+  ],
+  "ir_coverage": {
+    "bytes_consumed": 40,
+    "proof": "test_all_forty_bytes_live: every IR byte changes pixels on every profile",
+    "stage_expression": true,
+    "expression_weight_curve": "anticipation dip -7%, overshoot +8%, exact settle",
+    "viseme_sets": [
+      "OVR15",
+      "VRM5",
+      "PRESTON9",
+      "MICROSOFT22"
+    ],
+    "schema_gating": "v<2 degrades to 12-byte prefix"
+  },
+  "quality": {
+    "harness": "mirror of firmware-ws/tests/face_render_quality.c",
+    "distinct_expressions": "11/11 all profiles",
+    "clear_nonneutral": "10/10 all profiles",
+    "weak_pairs": "0/55 all profiles",
+    "mean_pair_roi_delta": [
+      0.0687,
+      0.0876,
+      0.0719,
+      0.0775,
+      0.0758
+    ],
+    "temporal_jumps": 0,
+    "temporal_max_delta": 0.0522,
+    "frozen_pairs": 0
+  },
+  "verification": {
+    "checks": 20142,
+    "failures": 0,
+    "asan_ubsan": "clean, -fno-sanitize-recover=all",
+    "strict_O0_vs_O2": "byte-identical",
+    "wasm": "hash tables identical to native (emcc -O2, node)",
+    "xtensa": "esp32s3 gcc 14.2.0 clean, no float helper symbols",
+    "golden_hashes": 85,
+    "fuzz_keys": 1500
+  },
+  "footprint": {
+    "xtensa_O2_text_bytes": 26615,
+    "data_bytes": 0,
+    "bss_bytes": 0,
+    "esp32_estimate_ms_at_100x_derate": [
+      1.78,
+      2.28,
+      2.69,
+      1.0,
+      3.28
+    ],
+    "fps_budget_30fps_ms": 33.3
+  },
+  "previews": [
+    "preview/expression-actors-v4__11-emotions__native.png",
+    "preview/expression-actors-v4__11-emotions__40x30-nn.png",
+    "preview/expression-actors-v4__11-emotions__40x30-nn__x4.png",
+    "preview/expression-actors-v4__15-visemes__native.png",
+    "preview/expression-actors-v4__15-visemes__40x30-nn__x4.png",
+    "preview/expression-actors-v4__temporal__mochi-cat__16f__native.png",
+    "preview/expression-actors-v4__temporal__mochi-cat__16f__40x30-nn__x4.png",
+    "preview/expression-actors-v4__temporal__karakuri-brass__16f__native.png",
+    "preview/expression-actors-v4__temporal__karakuri-brass__16f__40x30-nn__x4.png",
+    "preview/expression-actors-v4__temporal__emote-sticker__16f__native.png",
+    "preview/expression-actors-v4__temporal__emote-sticker__16f__40x30-nn__x4.png",
+    "preview/expression-actors-v4__temporal__will-o-wisp__16f__native.png",
+    "preview/expression-actors-v4__temporal__will-o-wisp__16f__40x30-nn__x4.png",
+    "preview/expression-actors-v4__temporal__mono-scope__16f__native.png",
+    "preview/expression-actors-v4__temporal__mono-scope__16f__40x30-nn__x4.png"
+  ],
+  "integration": "INTEGRATION.md",
+  "license_note": "all code original to this contribution; behavior constants from published research and permissive first-party docs; no GPL or leaked-source code",
+  "revision": "v4",
+  "v4_notes": {
+    "mono_scope": "eye-only; mouth panel removed; all mouth IR bytes remapped onto the eye-light and proven live",
+    "wisp": "fixed face anchors, face-band glow minimum, asymmetric speech acting",
+    "karakuri": "integrated jaw cavity + hinge plate, lower-leaf squints, wider gaze travel",
+    "mochi": "no facial noise, thick closed lids, embarrassed head-turn, no breath chin bob",
+    "emote_sticker": "unchanged except deeper shared settle",
+    "rasterizer": "fixed Q8-fraction bug in stroke AA and glow falloff (thin strokes were invisible)",
+    "safety": "mouth lower-bezier hard caps folded into probe extents"
+  }
+}

@@ -1,93 +1,139 @@
-# 02 — Minimal full-duplex OpenAI Realtime + AEC (StackChan)
+# 02 — Continuous Realtime voice, AEC, and a PCM-driven face
 
-**Goal:** Smallest *good* client: **mic stays open always**, **speaker reference → AEC**, stream cleaned audio to OpenAI Realtime, play response, **barge-in** works.
+**Current status:** the native ESP-IDF firmware builds, and the exact face DSP
+now runs device-free against a deterministic Grok-compatible voice server.
+Physical speaker/AEC validation still requires the CoreS3.
 
-**Status:** Research complete; build target is adapting Espressif’s official demo + CoreS3 board config — not rewriting AI_StackChan_Ex.
+This is not a continuation of the old half-duplex port. The microphone remains
+open, AEC receives the actual speaker reference, and the selected Realtime
+provider is a build-time track:
 
----
+- xAI Grok Voice: native 16 kHz binary PCM (default);
+- OpenAI Realtime: 24 kHz compatibility path with ASRC.
 
-## What you actually want (clarified)
+## PCM-driven face
+
+The face follows PCM at the last useful point before sound leaves the device:
 
 ```text
-  mic ──► AEC ──► cleaned PCM ──► OpenAI Realtime ──► agent audio ──► speaker
-           ▲                                              │
-           └──────── speaker reference (echo cancel) ─────┘
+Realtime packets → jitter buffers → leveler → codec write → speaker
+                                             │
+                                             └→ 10 ms face analysis → LVGL
 ```
 
-- **No** permanent mic mute while speaking  
-- **Yes** continuous uplink  
-- **Yes** AEC so the model doesn’t hear itself (enables barge-in)
+It deliberately does not follow WebSocket arrival time. Buffered network audio
+can be hundreds of milliseconds ahead of the speaker and would make lip sync
+wrong.
 
----
+The shared C driver interface now has three allocation-free implementations:
 
-## GitHub trawl: what already exists
+- a 60-byte mean-absolute-envelope and zero-crossing baseline;
+- a 112-byte fixed-point Goertzel driver for coarse A/E/I/O/U and sibilant
+  shapes without an FFT or PCM history buffer;
+- a 6.3 KiB MFCC/prototype acoustic-viseme driver for the higher-quality host
+  or larger-device track.
 
-| Project | OpenAI Realtime? | Continuous mic? | AEC? | Notes |
-|---------|------------------|-----------------|------|--------|
-| **[espressif/esp-webrtc-solution → openai_demo](https://github.com/espressif/esp-webrtc-solution/tree/main/solutions/openai_demo)** | **Yes (WebRTC GA)** | **Yes** | **Yes** (`esp_capture_new_audio_aec_src`) | **Best existing client.** Opus, AEC, Korvo-2 default; board configs via `codec_board`. |
-| [openai/openai-realtime-embedded](https://github.com/openai/openai-realtime-embedded) | Links only | — | — | Points at Espressif WebRTC demo (not a full Arduino client). |
-| [akdeb/ElatoAI](https://github.com/akdeb/ElatoAI) | Yes (via Deno edge, WS+Opus) | Partial (listen/speak modes) | **No** | Arduino-friendly; **no AEC**; not pure client-side to OpenAI. |
-| [ronron-gh/AI_StackChan_Ex](https://github.com/ronron-gh/AI_StackChan_Ex) | Yes (WS+base64 PCM) | Half-duplex mute | **No** | Experiment 01 — poor audio path. |
-| [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) | No (XiaoZhi protocol) | Yes + barge-in work | Software AEC (custom/ESP-SR) | Great voice UX, **not** OpenAI Realtime. |
-| [rjsachse/ESP32-SpeexDSP](https://github.com/rjsachse/ESP32-SpeexDSP) | No | — | Speex AEC | Library only; glue still needed. |
+All three emit the same packed 12-byte semantic keyframe and have responsive
+and smoother configurations. Strong syllables can affect the eyes and brow as
+well as the mouth. Arbitrary packet boundaries cannot affect output.
 
-**Conclusion:** Nobody has a polished “StackChan + OpenAI Realtime + AEC” product firmware.  
-The **closest, already-correct architecture** is **Espressif `openai_demo`** (WebRTC + AEC). StackChan’s CoreS3 even uses the same **ES7210** dual-mic codec that demo is designed around (TDM + reference channel pattern).
+## Run everything locally
 
-WebSocket+base64-PCM DIY on Arduino will stay worse than this WebRTC path. ChatGPT.com also uses WebRTC.
+The complete regression suite needs no device, API key, or audible output:
 
----
+```sh
+uv run tools/test_face_rig.py
+```
 
-## Hardware reality (StackChan / CoreS3)
+It compiles the production C on the Mac, runs native unit tests and synthetic
+CPU benchmarks for all three face drivers, exercises two different Grok
+packetisations, and injects a timed network stall. Audio is always muted.
 
-| Piece | Role |
-|--------|------|
-| ES7210 | Dual mic ADC — **supports AEC reference pattern** (same family as Korvo) |
-| AW88298 | Speaker amp (not ES8311 — need board profile mapping) |
-| ESP32-S3 | Runs AEC in **software** (no separate AEC chip) |
+To watch the live, speaker-clocked face:
 
-There is **no** dedicated AEC silicon. AEC = ESP capture AEC / ESP-SR AFE / Speex.
+```sh
+uv run tools/face_simulator.py --mode realtime --open
+```
 
----
+To compare all six algorithm/configuration combinations in WebAssembly:
 
-## Implementation plan (this experiment)
+```sh
+cd tools/face-grid
+npm run build
+npm run serve
+```
 
-1. Vendor / submodule [esp-webrtc-solution](https://github.com/espressif/esp-webrtc-solution) `openai_demo`.
-2. Add **`M5Stack_CoreS3`** (and later StackChan servo hooks) to `codec_board/board_cfg.txt` with CoreS3 I2C/I2S pins.
-3. Map **AW88298** as playback (or use existing codec path if BSP already covers CoreS3).
-4. Secrets: Wi‑Fi + `OPENAI_API_KEY` from env / local (never commit).
-5. Optional later: face avatar, servos — **not** in the minimal voice loop.
+Then open <http://127.0.0.1:4173>. It accepts deterministic or captured Grok
+PCM, a local 16 kHz PCM16 WAV, or a live microphone stream.
 
-### Pins (CoreS3, from M5 docs)
+To create a deterministic replay report as fast as the host can run:
 
-| Function | GPIO |
-|----------|------|
-| I2C SDA / SCL | 12 / 11 |
-| I2S BCK / WS / MCLK | 34 / 33 / 0 |
-| ES7210 DIN | 14 |
-| AW88298 DOUT | 13 |
+```sh
+uv run tools/face_simulator.py \
+  --mode virtual \
+  --artifacts local/face-rig/manual
+```
 
----
+The artifact directory contains the received WAV, JSONL face/queue/underrun
+trace, summary metrics, peak SVG, and a self-contained animated HTML report.
 
-## Why not “smallest WebSocket only”?
+The fake Grok endpoint is independently runnable:
 
-| | DIY WS+PCM (AI_StackChan_Ex style) | Espressif WebRTC openai_demo |
-|--|-------------------------------------|------------------------------|
-| Codec | PCM base64 in JSON | Opus over WebRTC |
-| AEC | DIY Speex/ESP-SR glue | **Built-in** `audio_aec_src` |
-| Barge-in | Easy to get wrong | Natural with continuous AEC’d capture |
-| Match ChatGPT feel | Poor | Closest on ESP32 |
+```sh
+uv run tools/fake_grok_server.py --port 8765
+```
 
-“Smallest good” ≠ fewest lines of bad PCM code.  
-**Smallest good = lean on the maintained AEC+Realtime client and only add CoreS3/StackChan board support.**
+`tools/realtime_probe.py --provider xai --url
+'ws://127.0.0.1:8765/v1/realtime?model={model}' --no-auth` can then test the
+same protocol seam used for real-provider probing.
 
----
+## Render real Grok PCM videos
 
-## Docs
+The real-provider video rig captures raw 16 kHz binary PCM and its WebSocket
+frame boundaries, runs the samples through the production face C, and renders
+MP4s with synchronized audio and a waveform/packet overlay:
 
-- [docs/github-survey.md](./docs/github-survey.md) — longer notes  
-- [docs/architecture.md](./docs/architecture.md) — target data path  
+```sh
+uv run tools/make_grok_face_videos.py
+```
 
-## Next step
+The default run captures Leo, Rex, and Eve from
+`wss://api.x.ai/v1/realtime`, loading the API key through the same
+environment/Doppler path as `realtime_probe.py`. Use `--voices leo` for one
+clip or `--reuse-captures --output-dir <existing-run>` to rerender without
+another API call. Generated WAVs, packet manifests, face traces, render props,
+MP4s, and a validation manifest remain under the gitignored
+`local/grok-face-videos/` directory.
 
-When ready to flash: check ESP-IDF install, add CoreS3 board section, build `openai_demo` for that board, smoke-test duplex barge-in on StackChan.
+## Firmware
+
+```sh
+source ~/esp/esp-idf/export.sh
+cd firmware-ws
+idf.py build
+```
+
+Choose the Grok or OpenAI track with `idf.py menuconfig` under
+**StackChan Realtime**. Local credentials stay in the gitignored `local/`
+directory.
+
+## What local testing proves
+
+The host and WebAssembly rigs run the byte-identical face-analysis C used by
+firmware. They prove protocol handling, playout-clock behaviour,
+packet-boundary invariance, mouth timing, release, idle motion, rendering
+geometry, deterministic artifacts, and underrun detection.
+
+It cannot prove the CoreS3 codec/DMA timing, real LCD pixels, acoustic echo
+path, or AEC quality. Those are covered by the device evidence and synchronized
+three-channel AEC harness when hardware is present.
+
+## Documentation
+
+- [PCM face design and research](docs/pcm-face-rig.md)
+- [Real-time WebAssembly face grid](docs/wasm-face-grid.md)
+- [Sprite avatar production pipeline](docs/sprite-avatar-pipeline.md)
+- [Current audio architecture](docs/architecture.md)
+- [AEC validation](docs/aec-validation.md)
+- [Device observability](docs/device-observability.md)
+- [Earlier GitHub survey](docs/github-survey.md)

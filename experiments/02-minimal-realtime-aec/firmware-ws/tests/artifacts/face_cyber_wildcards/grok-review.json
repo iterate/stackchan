@@ -1,0 +1,201 @@
+{
+  "images": [
+    "experiments/02-minimal-realtime-aec/firmware-ws/tests/artifacts/face_cyber_wildcards/00-cyber-chladni-voiceplate-expressions.png",
+    "experiments/02-minimal-realtime-aec/firmware-ws/tests/artifacts/face_cyber_wildcards/01-cyber-teletext-performer-expressions.png",
+    "experiments/02-minimal-realtime-aec/firmware-ws/tests/artifacts/face_cyber_wildcards/02-cyber-ferrofluid-familiar-expressions.png",
+    "experiments/02-minimal-realtime-aec/firmware-ws/tests/artifacts/face_cyber_wildcards/all-visemes.png",
+    "experiments/02-minimal-realtime-aec/firmware-ws/tests/artifacts/face_cyber_wildcards/chronological-motion-16.png"
+  ],
+  "model": "grok-4.5",
+  "response_id": "2321ee14-93bc-9698-b69f-da6e9fa4483e",
+  "review": {
+    "00_chladni_expressions": {
+      "clipping": [
+        "excited: upper iris rings clip frame top by 1px \u2014 inset Y+1",
+        "surprise: O-mouth particle cloud clips bottom bezel \u2014 raise mouth centroid Y-2"
+      ],
+      "disappearing_1px": [
+        "sleepy lids = 1px arcs: promote to 2px or dual-arc",
+        "concern/thoughtful mouth = single pixel row: min thickness 2px",
+        "all brow ticks: min 2\u00d73px caps"
+      ],
+      "emotion_readability": [
+        "warm vs joy: mouth curvature delta <2px \u2014 joy needs +3px smile bow and +2px eye scale",
+        "thoughtful vs skeptical: sole cue is 1px brow; thicken raised brow to 2px and drop opposite brow 3px",
+        "concern: blue mouth too level \u2014 force \u0394y=4px corner droop",
+        "determined: brow angle identical to neutral \u2014 add \u22126px medial brow drop",
+        "embarrassed: pink stroke near bg luminance \u2014 raise value +30% or +1px stroke"
+      ],
+      "mouth_face_integration": [
+        "mouths float unconnected; add 2\u20133 particle bridges from mouth ends toward cheek nodes",
+        "SIL-width mouths must share same baseline y=78"
+      ],
+      "stable_anchors": [
+        "eye outer canthi drift \u00b12px across columns 1\u201311; lock both eye centers to (x=36,y=48)/(x=92,y=48) in 160x120",
+        "inter-eye distance collapses on sleepy/embarrassed; enforce 56px center-to-center"
+      ]
+    },
+    "01_teletext_expressions": {
+      "clipping": [
+        "joy/surprise: top mosaic row abuts bezel \u2014 reserve 2px gutter",
+        "red determined: right edge tiles clip rounded mask \u2014 shrink grid 1 tile inward"
+      ],
+      "disappearing_1px": [
+        "N/A at tile scale, but 1-tile mouths vanish when re-scaled; min mouth = 2\u00d71 tiles",
+        "pupil dots (1 tile) lost on blue/red frames \u2014 use 2-tile pupils"
+      ],
+      "emotion_readability": [
+        "warm vs joy vs excited: mouth is 1-tile flat smile on all three \u2014 joy=+2 tile open, excited=+3 tile open + eye white +1 row",
+        "thoughtful vs sleepy: both read as narrowed eyes; thoughtful needs asymmetric 1-tile brow step",
+        "skeptical: no brow cue in mosaic \u2014 raise L brow block 1 tile",
+        "embarrassed: indistinguishable from neutral except hue \u2014 add half-lid + lateral eye shift 1 tile"
+      ],
+      "mouth_face_integration": [
+        "mouth blocks disconnected from cheek contour; keep 0-tile gap (adjacent) to face fill",
+        "ensure mouth color \u2260 face fill by \u22652 palette steps"
+      ],
+      "stable_anchors": [
+        "eye-bar row jumps between y=tile3 and y=tile4 across columns; lock eyes to mosaic rows 3\u20134",
+        "face bounding oval origin shifts \u00b11 tile; pin ellipse center to grid (10,8)"
+      ]
+    },
+    "02_ferrofluid_expressions": {
+      "clipping": [
+        "joy/excited starburst pupils clip iris top \u2014 scale bursts to 80% iris radius",
+        "surprise mouth diamond spikes clip bottom HUD dots \u2014 shorten lower spike 2px"
+      ],
+      "disappearing_1px": [
+        "ferrofluid micro-spikes on embarrassed/concern = 1px; min spike width 2px",
+        "bottom decorator dots: several frames drop to 1px \u2014 standardize 2\u00d72"
+      ],
+      "emotion_readability": [
+        "warm vs joy: mouth spike count same; joy = +2 lateral spikes + deeper curve",
+        "concern vs thoughtful: both mild droop \u2014 concern corners \u22124px, thoughtful skew mouth 8px right",
+        "skeptical: brow missing \u2014 add single 4px bar over one eye",
+        "determined: mouth too close to neutral chevron \u2014 flatten to hard trapezoid, reduce spike amp 50%",
+        "sleepy: lids OK but pupils full-bright \u2014 dim pupils 40%"
+      ],
+      "mouth_face_integration": [
+        "mouth blob must share ink continuity with chin V; 2px gap on surprise/PP \u2014 merge or bridge",
+        "keep mouth mass centroid within \u00b14px of neutral"
+      ],
+      "stable_anchors": [
+        "side tabs OK; eye centers drift on sleepy/embarrassed \u2014 lock to y=44",
+        "chin V-anchor and bottom dot row must stay fixed; frames 9\u201311 shift dots \u00b13px \u2014 hard-pin"
+      ]
+    },
+    "03_all_visemes": {
+      "chladni_row": {
+        "clipping": [
+          "AA lower lobe clips bezel \u2014 scale mouth 0.9"
+        ],
+        "differentiation": [
+          "E vs I: both wide flat slits \u2014 I = tighter vertical aperture (2px) + wider horizontal +2px",
+          "PP vs SIL vs FF: all read as thin line \u2014 PP=sealed flat 2px, FF=1px center gap + overbite shelf, SIL=particles only no stroke",
+          "TH vs DD vs NN: identical ovals \u2014 TH=tongue bar 2px mid, DD=open top-square, NN=closed with side vents",
+          "SS vs CH: SS=narrow horizontal grit, CH=forward round bulge +2px",
+          "U vs O: O diameter must be \u22651.6\u00d7 U",
+          "KK vs AA: KK shorter height, more triangular; AA tallest ellipse"
+        ],
+        "disappearing_1px": [
+          "PP/SS/FF/SIL particle mouths drop below 1px density \u2014 enforce \u22656 lit particles on mouth locus",
+          "RR ring incomplete \u2014 close loop"
+        ],
+        "mouth_face_integration": [
+          "AA/O black voids lack particle halo; add 1px yellow annulus to seat mouth in face",
+          "lock mouth baseline y across all 15"
+        ]
+      },
+      "ferrofluid_row": {
+        "differentiation": [
+          "PP=flat fused bar 0 spikes; SIL=neutral resting spikes; SS=fine high-freq spikes low amp",
+          "TH=central upward tongue spike; DD=broad flat open trough; FF=upper shelf + lower retreat",
+          "E=wide shallow arc; I=narrow vertical oval; U=small round; O=medium round; AA=large round",
+          "KK=angular trapezoid open; NN=closed with lateral pores; RR=right-skew mass; CH=forward round purse"
+        ],
+        "disappearing_1px": [
+          "PP/SS edge spikes 1px \u2014 min width 2px, min amp 3px when present"
+        ],
+        "mouth_face_integration": [
+          "AA/O/U mouths detach from chin V \u2014 keep 0\u20131px gap max",
+          "side tabs must remain constant (visemes are mouth-only)"
+        ],
+        "stable_anchors": [
+          "eye pair + side tabs frozen across all 15; only mouth ink morphs"
+        ]
+      },
+      "teletext_row": {
+        "clipping": [
+          "AA/O open mouths push chin tiles into bezel \u2014 clamp mouth box bottom \u2264 row 11"
+        ],
+        "differentiation": [
+          "E/I/SS/NN collapse to same 1-row white bar \u2014 encode: E=2-row wide, I=1-row + tooth notches, SS=1-row grit dither, NN=1-row + side stops",
+          "PP vs SIL: PP=solid face-colored seal (no lip tile), SIL=idle smile tiles retained",
+          "TH=add mid tongue tile; FF=upper lip overhang 1 tile; DD=open 2\u00d72 center",
+          "U vs O vs AA: enforce tile apertures 1\u00d71 / 2\u00d72 / 3\u00d73",
+          "CH vs RR: CH=pucker 2\u00d72 round, RR=asymmetric lateral push 1 tile",
+          "KK=vertical rect 2\u00d73 open"
+        ],
+        "stable_anchors": [
+          "eye bars must not re-layout between visemes \u2014 freeze eye tiles, animate mouth band rows 6\u20139 only"
+        ]
+      }
+    },
+    "04_chronological_motion_16": {
+      "abrupt_temporal_jumps": [
+        "chladni f2\u2192f3: mouth from flat to large black void in 1 frame \u2014 insert mid aperture 50%",
+        "chladni f3\u2192f4: void collapses + eye scale pop \u2014 max per-frame mouth area change \u226430%",
+        "chladni f11\u2192f12: mouth line reappears with different particle seed (twinkle jump) \u2014 hold seed, crossfade density",
+        "teletext f1\u2192f2: full face tile reseed (features teleport) \u2014 morph only mouth band; lock eye tiles",
+        "teletext f3\u2192f4: open smile to wide open with eye tile rewrite \u2014 split into 2 frames",
+        "teletext f10\u2192f11: mouth from open O to grit with chin tile snap \u2014 intermediate half-open",
+        "ferrofluid f2\u2192f3: mouth mass from thin to wide diamond (+>2\u00d7 area) \u2014 limit area \u0394\u226435%/frame",
+        "ferrofluid f12\u2192f13: pupil fill bright\u2192dark and side tabs orange fire simultaneously \u2014 stagger tab change by 1 frame",
+        "ferrofluid f14\u2192f15: mouth spikes invert direction abruptly \u2014 half-amp bridge frame"
+      ],
+      "disappearing_1px": [
+        "chladni f6/f8/f15 mouth stroke = 1px broken \u2014 min 2px or \u22656 particles",
+        "ferrofluid f8\u2013f9 micro-spikes drop out \u2014 keep \u22653 spikes visible mid-phoneme"
+      ],
+      "mouth_face_integration": [
+        "chladni: particle field density resets each frame causing face shimmer \u2014 hold body field, animate mouth ROI only",
+        "teletext: cheek fill colors flip when mouth opens (f4,f11) \u2014 freeze face fill palette across motion",
+        "ferrofluid: mouth ink must remain joined to chin V every frame (breaks on f3,f5,f11)"
+      ],
+      "stable_anchors": [
+        "chladni: eye centers wobble \u00b12px frame-to-frame \u2014 hard lock",
+        "teletext: face oval origin jitters 1 tile on f5/f9/f13 \u2014 pin grid origin",
+        "ferrofluid: chin V and bottom dots drift on f7\u2013f10 \u2014 pin; side tabs height inconsistent on f13\u2013f16 \u2014 lock tab rects"
+      ],
+      "viseme_motion_clarity": [
+        "teletext motion row mouths lack unique silhouettes for PP/TH/FF \u2014 apply same tile rules as 03",
+        "chladni motion overuses generic slit; reserve large void only for AA/O"
+      ]
+    },
+    "global_priority_fixes": [
+      "Lock eye centers and inter-eye distance per style across all expression and motion sheets",
+      "Min feature thickness 2px (chladni/ferro) or 2 tiles (teletext) for brows, lids, PP/SIL/FF mouths",
+      "Viseme set: enforce aperture height ladder SIL=0 < PP=0+seal < FF=1 < SS=1 < I=2 < E=2w < TH=2+tongue < DD=3 < NN=2+vents < U=3 < CH=3pucker < KK=4 < O=4 < RR=4skew < AA=5",
+      "Motion: cap mouth area change \u226430% per frame; freeze non-mouth anchors; bridge 1-frame phoneme pops",
+      "No mouth centroid drift >4px from style neutral baseline except AA/O/surprise"
+    ]
+  },
+  "usage": {
+    "context_details": {
+      "input_tokens": 2981,
+      "output_tokens": 3935
+    },
+    "cost_in_usd_ticks": 293544000,
+    "input_tokens": 2981,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "num_server_side_tools_used": 0,
+    "num_sources_used": 0,
+    "output_tokens": 3935,
+    "output_tokens_details": {
+      "reasoning_tokens": 1213
+    },
+    "total_tokens": 6916
+  }
+}

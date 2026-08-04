@@ -1,0 +1,7 @@
+Native cells are exactly 160x120 RGB565; contact sheets use 2x2 or 4x4 RGB565 box filtering for exact 80x60 and 40x30 cells.
+Expression columns: neutral, warm, joy, concern, surprise, thoughtful, skeptical, determined, sleepy, excited, embarrassed
+Viseme columns: AA, E, I, O, U, PP, SS, TH, DD, FF, KK, NN, RR, CH, SIL
+Speech columns are chronological at 533 samples/frame: idle, anticipation, 12 active/coarticulated frames, 2 settle frames.
+0 legacy=33 cyber-chladni-voiceplate -- Chladni Voiceplate
+1 legacy=38 cyber-teletext-performer -- Teletext Studio Performer
+2 legacy=39 cyber-ferrofluid-familiar -- Ferrofluid Magnetic Familiar

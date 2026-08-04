@@ -9,7 +9,7 @@ Each experiment lives in its own folder under [`experiments/`](./experiments/). 
 | # | Folder | Status | Summary |
 |---|--------|--------|---------|
 | 01 | [`experiments/01-ai-stackchan-ex-realtime`](./experiments/01-ai-stackchan-ex-realtime) | Done (poor UX) | [AI_StackChan_Ex](https://github.com/ronron-gh/AI_StackChan_Ex) WS+PCM — half-duplex, no AEC; lessons only |
-| 02 | [`experiments/02-minimal-realtime-aec`](./experiments/02-minimal-realtime-aec) | Research → build | **Continuous mic + AEC + OpenAI Realtime** via Espressif WebRTC `openai_demo` + CoreS3 board support |
+| 02 | [`experiments/02-minimal-realtime-aec`](./experiments/02-minimal-realtime-aec) | Firmware + host rig | **Continuous mic + AEC + configurable Grok/OpenAI Realtime**, device observability, and a playout-synchronous PCM face |
 
 ## Hardware baseline
 

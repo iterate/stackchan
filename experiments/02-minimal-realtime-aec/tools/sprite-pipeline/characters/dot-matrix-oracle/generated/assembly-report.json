@@ -1,0 +1,42 @@
+{
+  "assembled_pixels": [
+    2144,
+    2568
+  ],
+  "assembled_sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/dot-matrix-oracle/generated/source-sheet.png",
+  "assembler": "stackchan-avatar-pipeline-v1",
+  "avatar_config": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/dot-matrix-oracle/avatar.json",
+  "avatar_config_sha256": "ee1424bfbef8d5f443db7d8ce1c0bdab36e1a1c4eaf2fa836992359996a142b6",
+  "sources": [
+    {
+      "background_tolerance": 96,
+      "grid": [
+        4,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/dot-matrix-oracle/source/expressions-v1.png",
+      "pixels": [
+        1448,
+        1086
+      ],
+      "role": "expression",
+      "sha256": "84da4d27acb0019a47f3e7036a1742a504a8312a6727efc25f58a5b5df6381c6"
+    },
+    {
+      "background_tolerance": 96,
+      "grid": [
+        5,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/dot-matrix-oracle/source/mouths-v1.png",
+      "pixels": [
+        1536,
+        1024
+      ],
+      "role": "mouth",
+      "sha256": "f41aaa40df28586ae58288117b8f4ebeb9c6c6593bd6fdefd888e1e1e2ab75be"
+    }
+  ]
+}

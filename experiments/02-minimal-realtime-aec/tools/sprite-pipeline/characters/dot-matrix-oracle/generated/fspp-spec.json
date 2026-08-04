@@ -1,0 +1,338 @@
+{
+  "display_name": "Dot Matrix Oracle",
+  "expressions": "canonical11",
+  "flags": [
+    "breathe"
+  ],
+  "id": "dot-matrix-oracle",
+  "layout": {
+    "boxes": {
+      "aa": [
+        24,
+        2144,
+        400,
+        400
+      ],
+      "ch": [
+        448,
+        1720,
+        400,
+        400
+      ],
+      "concern": [
+        1296,
+        24,
+        400,
+        400
+      ],
+      "dd": [
+        1720,
+        1296,
+        400,
+        400
+      ],
+      "determined": [
+        1296,
+        448,
+        400,
+        400
+      ],
+      "e": [
+        448,
+        2144,
+        400,
+        400
+      ],
+      "embarrassed": [
+        872,
+        872,
+        400,
+        400
+      ],
+      "excited": [
+        448,
+        872,
+        400,
+        400
+      ],
+      "ff": [
+        872,
+        1296,
+        400,
+        400
+      ],
+      "ih": [
+        872,
+        2144,
+        400,
+        400
+      ],
+      "joy": [
+        872,
+        24,
+        400,
+        400
+      ],
+      "kk": [
+        24,
+        1720,
+        400,
+        400
+      ],
+      "neutral": [
+        24,
+        24,
+        400,
+        400
+      ],
+      "nn": [
+        1296,
+        1720,
+        400,
+        400
+      ],
+      "oh": [
+        1296,
+        2144,
+        400,
+        400
+      ],
+      "ou": [
+        1720,
+        2144,
+        400,
+        400
+      ],
+      "pp": [
+        448,
+        1296,
+        400,
+        400
+      ],
+      "rr": [
+        1720,
+        1720,
+        400,
+        400
+      ],
+      "sil": [
+        24,
+        1296,
+        400,
+        400
+      ],
+      "skeptical": [
+        872,
+        448,
+        400,
+        400
+      ],
+      "sleepy": [
+        24,
+        872,
+        400,
+        400
+      ],
+      "ss": [
+        872,
+        1720,
+        400,
+        400
+      ],
+      "surprise": [
+        24,
+        448,
+        400,
+        400
+      ],
+      "th": [
+        1296,
+        1296,
+        400,
+        400
+      ],
+      "thoughtful": [
+        448,
+        448,
+        400,
+        400
+      ],
+      "warm": [
+        448,
+        24,
+        400,
+        400
+      ]
+    },
+    "mode": "boxes",
+    "rows": [
+      {
+        "names": [
+          "neutral",
+          "warm",
+          "joy",
+          "concern"
+        ],
+        "role": "expression"
+      },
+      {
+        "names": [
+          "surprise",
+          "thoughtful",
+          "skeptical",
+          "determined"
+        ],
+        "role": "expression"
+      },
+      {
+        "names": [
+          "sleepy",
+          "excited",
+          "embarrassed"
+        ],
+        "role": "expression"
+      },
+      {
+        "names": [
+          "sil",
+          "pp",
+          "ff",
+          "th",
+          "dd"
+        ],
+        "role": "mouth"
+      },
+      {
+        "names": [
+          "kk",
+          "ch",
+          "ss",
+          "nn",
+          "rr"
+        ],
+        "role": "mouth"
+      },
+      {
+        "names": [
+          "aa",
+          "e",
+          "ih",
+          "oh",
+          "ou"
+        ],
+        "role": "mouth"
+      }
+    ]
+  },
+  "license": "project-generated",
+  "notes": "AI-assisted original segmented-display robot features, authored for the StackChan black display. Sources assembled deterministically by avatar_pipeline.py.",
+  "palette": {
+    "despeckle": false,
+    "locked": [
+      "#06113c",
+      "#075ed6",
+      "#1fa5ff",
+      "#c9fbff"
+    ],
+    "max_colors": 4,
+    "variants": [
+      {
+        "background": "#000000",
+        "colors": [
+          "#06113c",
+          "#075ed6",
+          "#1fa5ff",
+          "#c9fbff"
+        ],
+        "display_name": "Electric blue on black",
+        "id": "original"
+      }
+    ]
+  },
+  "rig": {
+    "baseline_y": 60,
+    "canvas": [
+      80,
+      60
+    ],
+    "composition": {
+      "mode": "features_only",
+      "regions": [
+        [
+          5,
+          0,
+          31,
+          30
+        ],
+        [
+          44,
+          0,
+          31,
+          30
+        ]
+      ],
+      "transparent_colors": [
+        "#ff00ff"
+      ],
+      "transparent_tolerance": 16
+    },
+    "eyes": {
+      "blink": "none",
+      "left": [
+        5,
+        7,
+        31,
+        29
+      ],
+      "right": [
+        44,
+        7,
+        31,
+        29
+      ]
+    },
+    "max_body": [
+      80,
+      58
+    ],
+    "mouth": {
+      "box": [
+        25,
+        51,
+        30,
+        8
+      ],
+      "erase": false,
+      "source": "isolated"
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "background": "#ff00ff",
+    "background_tolerance": 4,
+    "kind": "sheet",
+    "pixel_grid": "none",
+    "sheet": "source-sheet.png"
+  },
+  "targets": [
+    {
+      "canvas": [
+        80,
+        60
+      ],
+      "catalog_name": "Dot Matrix Oracle",
+      "catalog_slug": "dot-matrix-oracle",
+      "device_themes": [
+        "original"
+      ],
+      "frame": [
+        160,
+        120
+      ],
+      "framing": "face_fill",
+      "id": "cores3-fine",
+      "max_flash_bytes": 48000,
+      "scale": 2
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "worker": "fable_wildcards",
+  "abi": {
+    "width": 160,
+    "height": 120,
+    "pixel_format": "RGB565",
+    "keyframe": "face_keyframe_t (12 bytes, mirrored as wc_keyframe_t)",
+    "clock": "uint32 sample counter at 16000 Hz",
+    "entry_point": "wc_render_frame(profile, keyframe, sample_clock, rgb565, pixel_capacity)",
+    "allocation": "none; caller-owned framebuffer; <3 KiB stack scratch",
+    "float": "none anywhere",
+    "persistent_state_bytes": 0,
+    "proposed_family": "FACE_RENDER_FAMILY_WILDCARD (= 5)"
+  },
+  "shared_motion_rig": {
+    "source": "src/wc_common.c wc_rig_derive()",
+    "behaviors": [
+      "blink episodes on a hashed 2.5-4.3 s schedule, 35 ms close / 100 ms open, occasional double blinks, right eye trailing 19 ms",
+      "saccade holds on a hashed 1.25 s grid with 56 ms flicks, smoothstep ease plus ~6% overshoot",
+      "anticipation: lids widen and brows lift ~75 ms before large gaze jumps",
+      "follow-through: head position tracks gaze with an 87 ms lag at 1/3 amplitude plus a damped 5 Hz wobble after large flicks",
+      "breathing sine at 0.25 Hz, halved while speaking; band-limited flicker channel",
+      "keyframe semantics always win: analyzer eye/look/brow values combine with, and bound, the idle motion"
+    ]
+  },
+  "renderers": [
+    {
+      "enum": "WC_PROFILE_SCOPE_BEAM",
+      "slug": "wc-scope-beam",
+      "name": "Oscillofluor Beam",
+      "language": "XY vector CRT in the oscilloscope-music tradition",
+      "algorithm": "one continuous parametric beam path retraced at ~83 Hz; the mouth segment is a synthesized voice waveform (three harmonics mixed from mouth_round/width/teeth, amplitude from mouth_open, raised-cosine envelope pinning the lip corners); stateless persistence redraws the last 120 ms of beam history from the sample clock with a two-layer P7 phosphor model (blue-white flash decaying into green afterglow), bilinear splats accumulated in the caller framebuffer itself (hi byte flash / lo byte glow) then colorized in one pass",
+      "mouth_kind": "waveform-beam",
+      "estimated_ops_per_pixel": 22,
+      "host_ms_per_frame_m4max": 0.062
+    },
+    {
+      "enum": "WC_PROFILE_FLIPDOT_CASCADE",
+      "slug": "wc-flipdot-cascade",
+      "name": "Flip-Dot Cascade",
+      "language": "electromechanical flip-disc transit sign",
+      "algorithm": "40x30 disc panel refreshed every 100 ms; target image compared at the current and previous refresh tick (both derived statelessly from the clock), differing discs animate a 30 ms flip with row-scan latency (2.5 ms/row) plus per-dot mechanical scatter; mid-flip discs render as foreshortened ellipses via |cos| width with an edge-on slit and glint; per-dot wear tint, clack flash, idle border marquee",
+      "mouth_kind": "dot-matrix bar/superellipse with teeth combs",
+      "estimated_ops_per_pixel": 18,
+      "host_ms_per_frame_m4max": 0.020
+    },
+    {
+      "enum": "WC_PROFILE_CHLADNI_SAND",
+      "slug": "wc-chladni-sand",
+      "name": "Chladni Voiceplate",
+      "language": "cymatics: sand on a driven square plate",
+      "algorithm": "separable standing-wave field cos(n pi u)cos(m pi v) - cos(m pi u)cos(n pi v) with per-axis cosine tables; the mouth bytes select the resonance pair ((1,3) rest, (3,5) open, (5,7) wide, (2,6) round, (7,9) sibilant) and blend by mouth_open; sand settles where |F| < threshold with hash-grain thinning and stray grains; eye clamps pull the field into lid-squashed concentric rings with sand-pile pupils; the mouth rim is a nodal attractor while its interior antinode blows clear; loud frames tighten lines and re-roll the grain hash at 31 Hz so the sand dances",
+      "mouth_kind": "nodal-line outline",
+      "estimated_ops_per_pixel": 34,
+      "host_ms_per_frame_m4max": 0.108
+    },
+    {
+      "enum": "WC_PROFILE_HALFTONE_PRESS",
+      "slug": "wc-halftone-press",
+      "name": "Halftone Press",
+      "language": "vintage two-plate comic letterpress",
+      "algorithm": "analytic face luminance field printed through an AM halftone: black plate on an exact 45-degree screen (u=x+y, v=x-y), red spot-color plate at ~15 degrees via incremental integer DDA, deliberately misregistered by a slowly drifting offset; brush-weight ink outlines thicken toward the chin; highlights knock dots out; lowered brows or shouted frames grow manga emphasis lines outside the panel using a division-free diamond-angle estimate",
+      "mouth_kind": "outlined ellipse with teeth band and red tongue plate",
+      "estimated_ops_per_pixel": 40,
+      "host_ms_per_frame_m4max": 0.082
+    },
+    {
+      "enum": "WC_PROFILE_WAYANG_LAMP",
+      "slug": "wc-wayang-lamp",
+      "name": "Wayang Lamp",
+      "language": "shadow-puppet theatre on a cotton screen",
+      "algorithm": "warm oil-lamp light field from a per-frame radial LUT with deterministic flame flicker; perforated leather silhouette with punched almond eyes (floating pupils), brow slits, nostrils and permanent hash-seeded filigree; the jaw is a hinged flap whose drop follows mouth_open, so speech literally pours lamp light through the mouth gap (with hanging teeth combs on sibilants); rod-puppet sway shear plus breathing bob from the shared rig",
+      "mouth_kind": "hinged-jaw light gap",
+      "estimated_ops_per_pixel": 30,
+      "host_ms_per_frame_m4max": 0.069
+    },
+    {
+      "enum": "WC_PROFILE_FERRO_POOL",
+      "slug": "wc-ferro-pool",
+      "name": "Ferro Pool",
+      "language": "ferrofluid creature in a lit dish",
+      "algorithm": "pool rim as radius-of-angle in Q4 (sub-pixel isqrt + integer atan2 only in the rim band): slow meniscus harmonics idle it, voice raises a Rosensweig spike crown (|sin|^4 lobes, count from mouth_width, height from energy, rounded vowels gather a central Taylor cone); interior grows the hexagonal Rosensweig lattice as three plane waves at 120 degrees whose contrast rides the voice; droplet eyes with gaze-tracking catchlight pupils sink into the pool on blink",
+      "mouth_kind": "spike crown",
+      "estimated_ops_per_pixel": 36,
+      "host_ms_per_frame_m4max": 0.166
+    },
+    {
+      "enum": "WC_PROFILE_TELETEXT_SEXTANT",
+      "slug": "wc-teletext-sextant",
+      "name": "Teletext Sextant",
+      "language": "broadcast teletext page (G1 block mosaics)",
+      "algorithm": "authentic 40-column layout: header row with page number, service name and a live clock ticking from the sample counter; face painted into an 80x57 sixel image with the 8-color teletext palette, then each 2x3 cell forced through the real G1 constraint (one foreground color per cell, black background, six on/off blocks) so minority colors vanish as genuine attribute clash; head motion quantized to whole sixels; flash-attribute beacon at 0.75 Hz while speaking; test-card color bars in the bottom row",
+      "mouth_kind": "mosaic ellipse",
+      "estimated_ops_per_pixel": 14,
+      "host_ms_per_frame_m4max": 0.029
+    }
+  ],
+  "esp32s3_budget_note": "Worst profile measures 0.166 ms/frame single-threaded on an M4 Max. Assuming a conservative 80x per-cycle disadvantage for a 240 MHz in-order LX7, the worst case extrapolates to ~13 ms/frame, inside the 33 ms budget for 30 fps; the median profile extrapolates to ~6 ms. All hot loops are int32 add/mul/shift with divisions confined to rim bands, per-frame setup, or small LUT builds, and total stack scratch stays under 3 KiB. This is an estimate, not a device measurement.",
+  "testing": {
+    "native": "make test: ABI contract, purity/determinism with interleaved renders, guard-band overflow canaries, every-pixel-written check via dual prefill, 120-case keyframe fuzz, frozen golden CRCs",
+    "wasm": "make wasm-check: emscripten build runs the same suite; the frozen native CRCs must match, proving byte-identical browser output",
+    "bench": "make bench: per-profile host timings"
+  }
+}

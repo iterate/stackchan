@@ -1,0 +1,1 @@
+face_sprite_redux_actors_test: PASS (3 original sprite rigs, 11 emotions, >=10 visemes, all 40 IR bytes, anticipation/settle, 1536 fuzz frames)

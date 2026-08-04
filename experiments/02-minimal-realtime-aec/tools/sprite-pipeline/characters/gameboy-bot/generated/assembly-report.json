@@ -1,0 +1,42 @@
+{
+  "assembled_pixels": [
+    2144,
+    2568
+  ],
+  "assembled_sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/gameboy-bot/generated/source-sheet.png",
+  "assembler": "stackchan-avatar-pipeline-v1",
+  "avatar_config": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/gameboy-bot/avatar.json",
+  "avatar_config_sha256": "099a7d77230eae34c0503bf6c3c44ae0178baff6fbc6b7bb5747a9a55df7866a",
+  "sources": [
+    {
+      "background_tolerance": 96,
+      "grid": [
+        4,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/gameboy-bot/source/expressions-light-v1.png",
+      "pixels": [
+        1448,
+        1086
+      ],
+      "role": "expression",
+      "sha256": "7a71f4ce069c6e68916ff778d5c6805dfe123277f08714cea2bee54d47ca5fee"
+    },
+    {
+      "background_tolerance": 96,
+      "grid": [
+        5,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/gameboy-bot/source/mouths-v1.png",
+      "pixels": [
+        1619,
+        971
+      ],
+      "role": "mouth",
+      "sha256": "1f9cdb828133ab2266c9471cb41a909f18d866f4369f7a3a7387be100c0a6631"
+    }
+  ]
+}

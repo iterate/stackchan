@@ -1,0 +1,4 @@
+sprite-redux-talkie-moon-mechanic frames=1200 cpu_ms=23.172 cpu_fps=51786.64
+sprite-redux-jrpg-storm-familiar frames=1200 cpu_ms=17.542 cpu_fps=68407.25
+sprite-redux-handheld-forest-pet frames=1200 cpu_ms=13.674 cpu_fps=87757.79
+slowest_cpu_fps=51786.64 target_fps=30 checksum=bf15b62a

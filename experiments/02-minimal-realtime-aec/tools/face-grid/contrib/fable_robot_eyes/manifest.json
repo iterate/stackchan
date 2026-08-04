@@ -1,0 +1,196 @@
+{
+  "contribution": "fable_robot_eyes",
+  "kind": "renderer-pack",
+  "abi": {
+    "keyframe_bytes": 12,
+    "keyframe_layout": "face_keyframe_t (layout-identical, static-asserted)",
+    "frame": { "width": 160, "height": 120, "format": "rgb565" },
+    "sample_clock_hz": 16000,
+    "entry_points": {
+      "render": "fre_render_frame",
+      "behavior_only": "fre_behavior_solve",
+      "info": "fre_profile_info",
+      "count": "fre_profile_count",
+      "slug": "fre_profile_slug"
+    },
+    "info_struct_bytes": 16,
+    "stateless": true,
+    "allocation_free": true,
+    "float_free": true
+  },
+  "sources": [
+    "fable_robot_eyes.h",
+    "fre_internal.h",
+    "fre_draw.c",
+    "fre_behavior.c",
+    "fre_profiles.c"
+  ],
+  "profiles": [
+    {
+      "slug": "fre_vector_rounded",
+      "name": "Fable Vector Rounded",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_VECTOR_ROUNDED",
+      "mouth": "none",
+      "behavior_notes": "Baseline literature tuning; squash-stretch blinks; cartoon saccade overshoot; full idle-act repertoire.",
+      "est_ops_per_pixel": 11,
+      "host_us_per_frame": 27
+    },
+    {
+      "slug": "fre_cozmo_cubic",
+      "name": "Fable Cozmo Cubic",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_COZMO_CUBIC",
+      "mouth": "none",
+      "behavior_notes": "Boxier corners, slightly sparser blinks, stronger overshoot.",
+      "est_ops_per_pixel": 10,
+      "host_us_per_frame": 17
+    },
+    {
+      "slug": "fre_roboeyes_alert",
+      "name": "Fable RoboEyes Alert",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_ROBOEYES_ALERT",
+      "mouth": "none",
+      "behavior_notes": "Fast blinks, wide wander, shiver (h-flicker) act in the repertoire.",
+      "est_ops_per_pixel": 8,
+      "host_us_per_frame": 11
+    },
+    {
+      "slug": "fre_roboeyes_soft",
+      "name": "Fable RoboEyes Soft",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_ROBOEYES_SOFT",
+      "mouth": "none",
+      "behavior_notes": "Tired mood lids, slow sparse blinks with lazy reopen, occasional feline slow-blink.",
+      "est_ops_per_pixel": 8,
+      "host_us_per_frame": 10
+    },
+    {
+      "slug": "fre_m5_avatar_classic",
+      "name": "Fable M5 Avatar Classic",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_M5_AVATAR_CLASSIC",
+      "mouth": "line",
+      "behavior_notes": "Small disc eyes with closed-lid line, breathing bob, keyframe-driven mouth.",
+      "est_ops_per_pixel": 6,
+      "host_us_per_frame": 10
+    },
+    {
+      "slug": "fre_m5_avatar_manga",
+      "name": "Fable M5 Avatar Manga",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_M5_AVATAR_MANGA",
+      "mouth": "line",
+      "behavior_notes": "Dark irises with glints, expressive brows, wink act enabled.",
+      "est_ops_per_pixel": 9,
+      "host_us_per_frame": 40
+    },
+    {
+      "slug": "fre_eve_minimal",
+      "name": "Fable EVE Minimal",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_EVE_MINIMAL",
+      "mouth": "none",
+      "behavior_notes": "Tilted glowing teardrop eyes; expression carried by shape, tilt acts, slow blinks.",
+      "est_ops_per_pixel": 13,
+      "host_us_per_frame": 36
+    },
+    {
+      "slug": "fre_jibo_orb",
+      "name": "Fable Jibo Orb",
+      "family": "robot",
+      "suggested_firmware_profile": "FACE_RENDER_JIBO_ORB",
+      "mouth": "none",
+      "behavior_notes": "Single cyclops orb; wide gaze travel, squash blink, calm act palette.",
+      "est_ops_per_pixel": 9,
+      "host_us_per_frame": 26
+    },
+    {
+      "slug": "fre_saccade_lab",
+      "name": "Fable Saccade Lab",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_SACCADE_LAB",
+      "mouth": "none",
+      "behavior_notes": "Full oculomotor fidelity: main-sequence darts with physiological undershoot + corrective saccade, microsaccades and drift, gaze-evoked blinks, iris parallax.",
+      "est_ops_per_pixel": 16,
+      "host_us_per_frame": 42
+    },
+    {
+      "slug": "fre_brow_dialogue",
+      "name": "Fable Brow Dialogue",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_BROW_DIALOGUE",
+      "mouth": "none",
+      "behavior_notes": "1.7x brow gain: arousal posture, speech-emphasis beats, thinking asymmetry, brow-flash and wink acts.",
+      "est_ops_per_pixel": 10,
+      "host_us_per_frame": 21
+    },
+    {
+      "slug": "fre_lid_anticipation",
+      "name": "Fable Lid Anticipation",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_LID_ANTICIPATION",
+      "mouth": "none",
+      "behavior_notes": "110 ms lid lookahead: lids visibly lead every planned gaze move; slow reopen shows the asymmetric blink envelope.",
+      "est_ops_per_pixel": 10,
+      "host_us_per_frame": 25
+    },
+    {
+      "slug": "fre_iris_parallax",
+      "name": "Fable Iris Parallax",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_IRIS_PARALLAX",
+      "mouth": "none",
+      "behavior_notes": "Iris travels farther than the eye body; specular highlight pinned to the light; strong microsaccades.",
+      "est_ops_per_pixel": 17,
+      "host_us_per_frame": 45
+    },
+    {
+      "slug": "fre_sleep_wake",
+      "name": "Fable Sleep Wake",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_SLEEP_WAKE",
+      "mouth": "none",
+      "behavior_notes": "45 s doze cycle while idle: droop with startle recoveries, sleep with deep breathing and micro-twitches, fluttering wake; any conversation activity stays alert.",
+      "est_ops_per_pixel": 10,
+      "host_us_per_frame": 27
+    },
+    {
+      "slug": "fre_curious_tilt",
+      "name": "Fable Curious Tilt",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_CURIOUS_TILT",
+      "mouth": "none",
+      "behavior_notes": "Whole-face tilt acts (attention head-tilt) with widened eyes; gaze-side eye growth.",
+      "est_ops_per_pixel": 11,
+      "host_us_per_frame": 26
+    },
+    {
+      "slug": "fre_dot_matrix_eyes",
+      "name": "Fable Dot Matrix Eyes",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_DOT_MATRIX_EYES",
+      "mouth": "none",
+      "behavior_notes": "LED-panel presentation: eye field sampled into 4 px cells with a dim resting grid.",
+      "est_ops_per_pixel": 7,
+      "host_us_per_frame": 207
+    },
+    {
+      "slug": "fre_cat_optics",
+      "name": "Fable Cat Optics",
+      "family": "eyes",
+      "suggested_firmware_profile": "FACE_RENDER_CAT_OPTICS",
+      "mouth": "none",
+      "behavior_notes": "Vertical slit pupils that dilate with arousal, affiliative slow blinks, sparse feline blink rate, undershoot saccades.",
+      "est_ops_per_pixel": 15,
+      "host_us_per_frame": 42
+    }
+  ],
+  "verification": {
+    "test_suite": "tests/test_fable_robot_eyes.c (make test)",
+    "cross_opt_determinism": "make strict (-O0 vs -O2 frame hashes)",
+    "wasm_byte_identity": "emcc -O2 build of the core diffed hash-for-hash against the native build (verified with emscripten 6.0.4)",
+    "golden_hashes": "frozen in test_golden_hashes"
+  }
+}

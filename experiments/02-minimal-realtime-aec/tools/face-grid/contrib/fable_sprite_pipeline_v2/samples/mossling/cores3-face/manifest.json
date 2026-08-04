@@ -1,0 +1,1642 @@
+{
+  "background_565": 63453,
+  "banks": [
+    {
+      "base_cell": 6,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "neutral",
+      "target": {
+        "arousal": 72,
+        "brow_inner": 0,
+        "eye_squint": 0,
+        "mouth_corner": 0,
+        "valence": 0
+      }
+    },
+    {
+      "base_cell": 11,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "warm",
+      "target": {
+        "arousal": 112,
+        "brow_inner": 10,
+        "eye_squint": 20,
+        "mouth_corner": 36,
+        "valence": 52
+      }
+    },
+    {
+      "base_cell": 5,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "joy",
+      "target": {
+        "arousal": 184,
+        "brow_inner": 22,
+        "eye_squint": 68,
+        "mouth_corner": 78,
+        "valence": 94
+      }
+    },
+    {
+      "base_cell": 1,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "concern",
+      "target": {
+        "arousal": 126,
+        "brow_inner": 58,
+        "eye_squint": 14,
+        "mouth_corner": -24,
+        "valence": -52
+      }
+    },
+    {
+      "base_cell": 9,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "surprise",
+      "target": {
+        "arousal": 232,
+        "brow_inner": 78,
+        "eye_squint": 0,
+        "mouth_corner": 8,
+        "valence": 18
+      }
+    },
+    {
+      "base_cell": 10,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "thoughtful",
+      "target": {
+        "arousal": 92,
+        "brow_inner": 18,
+        "eye_squint": 22,
+        "mouth_corner": -6,
+        "valence": 4
+      }
+    },
+    {
+      "base_cell": 7,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "skeptical",
+      "target": {
+        "arousal": 104,
+        "brow_inner": -14,
+        "eye_squint": 42,
+        "mouth_corner": -12,
+        "valence": -18
+      }
+    },
+    {
+      "base_cell": 2,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "determined",
+      "target": {
+        "arousal": 166,
+        "brow_inner": -34,
+        "eye_squint": 54,
+        "mouth_corner": -8,
+        "valence": 12
+      }
+    },
+    {
+      "base_cell": 8,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "sleepy",
+      "target": {
+        "arousal": 34,
+        "brow_inner": -26,
+        "eye_squint": 118,
+        "mouth_corner": 4,
+        "valence": 8
+      }
+    },
+    {
+      "base_cell": 4,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "excited",
+      "target": {
+        "arousal": 250,
+        "brow_inner": 52,
+        "eye_squint": 14,
+        "mouth_corner": 62,
+        "valence": 86
+      }
+    },
+    {
+      "base_cell": 3,
+      "eye_left": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 25,
+        "y": 22
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 41,
+        "y": 22
+      },
+      "mouth": {
+        "array": 0,
+        "x": 25,
+        "y": 36
+      },
+      "overlay_cell": 0,
+      "slug": "embarrassed",
+      "target": {
+        "arousal": 176,
+        "brow_inner": 24,
+        "eye_squint": 116,
+        "mouth_corner": 24,
+        "valence": 28
+      }
+    }
+  ],
+  "blob_base64": "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",
+  "blob_sha256": "f04f5077855e27d79d507829651407d884f47a875f02a0610a27cdf7a948edf9",
+  "c_symbol": "face_sprite_fspp_mossling_cores3_face_atlas",
+  "cells": [
+    {
+      "blob_length": 1,
+      "blob_offset": 0,
+      "encoding": "raw",
+      "height": 1,
+      "index": 0,
+      "names": [
+        "transparent"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "width": 1
+    },
+    {
+      "blob_length": 1152,
+      "blob_offset": 1,
+      "encoding": "packbits",
+      "height": 52,
+      "index": 1,
+      "names": [
+        "base_concern"
+      ],
+      "offset_x": 15,
+      "offset_y": 4,
+      "raw_sha256": "ffd73f5fbc48dc0cff35f0439149a21437bf80fb822fdb46d4ec12d8bb424a95",
+      "width": 50
+    },
+    {
+      "blob_length": 1232,
+      "blob_offset": 1153,
+      "encoding": "packbits",
+      "height": 53,
+      "index": 2,
+      "names": [
+        "base_determined"
+      ],
+      "offset_x": 12,
+      "offset_y": 3,
+      "raw_sha256": "d0dd2afd9aa3a5730429a23ffcac7f9f530ea383c97a3800543770e9c2dfb4f8",
+      "width": 57
+    },
+    {
+      "blob_length": 1297,
+      "blob_offset": 2385,
+      "encoding": "packbits",
+      "height": 53,
+      "index": 3,
+      "names": [
+        "base_embarrassed"
+      ],
+      "offset_x": 16,
+      "offset_y": 3,
+      "raw_sha256": "4e7e3954bf33bdb4ad8dbca12d536605e71bb9c004612b55239478f0298aada2",
+      "width": 49
+    },
+    {
+      "blob_length": 1704,
+      "blob_offset": 3682,
+      "encoding": "packbits",
+      "height": 56,
+      "index": 4,
+      "names": [
+        "base_excited"
+      ],
+      "offset_x": 13,
+      "offset_y": 0,
+      "raw_sha256": "4f5de7344ac604bfc0dd744ae6d7dcefebc5c2b17f06a4de494222b0037f3282",
+      "width": 54
+    },
+    {
+      "blob_length": 1305,
+      "blob_offset": 5386,
+      "encoding": "packbits",
+      "height": 55,
+      "index": 5,
+      "names": [
+        "base_joy"
+      ],
+      "offset_x": 14,
+      "offset_y": 1,
+      "raw_sha256": "5c9273d775e2a94bda9f36df3cb8fd12646d156a88d145bc42b45515f0277b7b",
+      "width": 52
+    },
+    {
+      "blob_length": 1116,
+      "blob_offset": 6691,
+      "encoding": "packbits",
+      "height": 53,
+      "index": 6,
+      "names": [
+        "base_neutral"
+      ],
+      "offset_x": 13,
+      "offset_y": 3,
+      "raw_sha256": "7bbb79ed29411771cc69450669a9800413094b2ae1ea891578f1e3035c04a73a",
+      "width": 55
+    },
+    {
+      "blob_length": 1138,
+      "blob_offset": 7807,
+      "encoding": "packbits",
+      "height": 52,
+      "index": 7,
+      "names": [
+        "base_skeptical"
+      ],
+      "offset_x": 14,
+      "offset_y": 4,
+      "raw_sha256": "0ae679952cdb616730f06cfd061563b983f74206ff931a7b4a156a03e8e6256e",
+      "width": 53
+    },
+    {
+      "blob_length": 1148,
+      "blob_offset": 8945,
+      "encoding": "packbits",
+      "height": 53,
+      "index": 8,
+      "names": [
+        "base_sleepy"
+      ],
+      "offset_x": 17,
+      "offset_y": 3,
+      "raw_sha256": "571e67c4915f1dbc8ec87a92f4dd7976d8e4e3db239534f2a70c553bd80c367c",
+      "width": 46
+    },
+    {
+      "blob_length": 1378,
+      "blob_offset": 10093,
+      "encoding": "packbits",
+      "height": 52,
+      "index": 9,
+      "names": [
+        "base_surprise"
+      ],
+      "offset_x": 17,
+      "offset_y": 4,
+      "raw_sha256": "3a25afeb3e0af7cf01d0ea6e07723902bf770406e3d969567e1ccac8f5318551",
+      "width": 47
+    },
+    {
+      "blob_length": 1185,
+      "blob_offset": 11471,
+      "encoding": "packbits",
+      "height": 51,
+      "index": 10,
+      "names": [
+        "base_thoughtful"
+      ],
+      "offset_x": 15,
+      "offset_y": 5,
+      "raw_sha256": "f109f30a8b16ff4c275fba5f30f1e90ad838753c1b7deaa82dd31e9d49c45bf0",
+      "width": 51
+    },
+    {
+      "blob_length": 1238,
+      "blob_offset": 12656,
+      "encoding": "packbits",
+      "height": 53,
+      "index": 11,
+      "names": [
+        "base_warm"
+      ],
+      "offset_x": 15,
+      "offset_y": 3,
+      "raw_sha256": "de9ca5dbbfb63bb23898b4a66a8736ffdd3376b427052184408a4d6728fa1cdc",
+      "width": 51
+    },
+    {
+      "blob_length": 338,
+      "blob_offset": 13894,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 12,
+      "names": [
+        "mouth_sil"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "483b7c780a1e6a08908d2a79870008c9310b9c6bdcd44e8861665608ba146948",
+      "width": 30
+    },
+    {
+      "blob_length": 356,
+      "blob_offset": 14232,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 13,
+      "names": [
+        "mouth_nn"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "1590994624f5a84921ff27cda334478d762aeee81866eb5c2413d0557d1c7764",
+      "width": 30
+    },
+    {
+      "blob_length": 357,
+      "blob_offset": 14588,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 14,
+      "names": [
+        "mouth_aa"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "a9d1d35c1a798698dc68440c616addd95fe84fcc6c8e557bf5a7a7d921763728",
+      "width": 30
+    },
+    {
+      "blob_length": 361,
+      "blob_offset": 14945,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 15,
+      "names": [
+        "mouth_ih"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "5ee8bb133d7e63c4f1ef4d2bc6ac213cfcd00802d8121e7fcafa566ae5b31584",
+      "width": 30
+    },
+    {
+      "blob_length": 371,
+      "blob_offset": 15306,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 16,
+      "names": [
+        "mouth_oh"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "f5f7386bdbb5604a550e0689cf7550b96784feac86bcbe0c4c96c58a4cdec8b7",
+      "width": 30
+    },
+    {
+      "blob_length": 376,
+      "blob_offset": 15677,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 17,
+      "names": [
+        "mouth_ou"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "0ebb7f5161b4802ddb27bb50fc9c7ba046105bef17ea092a50a597c355c4d266",
+      "width": 30
+    },
+    {
+      "blob_length": 393,
+      "blob_offset": 16053,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 18,
+      "names": [
+        "mouth_grin"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "e61e93f48d77eb1dfa92fe4445f793fed06cfb1d79e8c6d9fae227e12c24de0e",
+      "width": 30
+    },
+    {
+      "blob_length": 383,
+      "blob_offset": 16446,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 19,
+      "names": [
+        "mouth_tongue"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "519f08084325a195671181248ce4873214ab571ea2c5a31e051e5da9f236d15f",
+      "width": 30
+    },
+    {
+      "blob_length": 387,
+      "blob_offset": 16829,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 20,
+      "names": [
+        "mouth_gasp"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "460a09e3d317af20969446f4b6fe365e8e72dbfa9163ad06febd958ecd6727fe",
+      "width": 30
+    },
+    {
+      "blob_length": 349,
+      "blob_offset": 17216,
+      "encoding": "packbits",
+      "height": 16,
+      "index": 21,
+      "names": [
+        "mouth_lateral"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "fa51a432dff93754b52efdbf4e9581eb2c1540c8d4736c4804adbac60ef13e64",
+      "width": 30
+    },
+    {
+      "blob_length": 18,
+      "blob_offset": 17565,
+      "encoding": "packbits",
+      "height": 7,
+      "index": 22,
+      "names": [
+        "lid_half_left",
+        "lid_half_right"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "18d7d7548e00a8e53611e36fd31b044f0b5f9450375f77f88cc6cedbcfcc2da1",
+      "width": 14
+    },
+    {
+      "blob_length": 44,
+      "blob_offset": 17583,
+      "encoding": "packbits",
+      "height": 13,
+      "index": 23,
+      "names": [
+        "lid_closed_left",
+        "lid_closed_right"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "399efbcf2846665b079554986d67e346585c32a2711ec89cf0807c64e891641e",
+      "width": 14
+    }
+  ],
+  "display_name": "Pocket Mossling (FSPP)",
+  "fallback_slots": [
+    0,
+    8,
+    17,
+    12,
+    10,
+    13,
+    14,
+    0,
+    18
+  ],
+  "flags": [
+    "auto_blink",
+    "breathe"
+  ],
+  "format": {
+    "container": "face_sprite_atlas_t",
+    "encodings": [
+      "raw",
+      "packbits"
+    ],
+    "magic": "FSPR",
+    "pixel_format": "indexed8+RGB565-palette",
+    "transparent_index": 0,
+    "version": 2
+  },
+  "generator": {
+    "name": "fable_sprite_pipeline_v2",
+    "version": "0.1.0"
+  },
+  "id": "mossling",
+  "ir": {
+    "keyframe_bytes": 12,
+    "render_key_bytes": 40,
+    "render_key_schema_version": 2,
+    "sample_clock_hz": 16000,
+    "viseme_sets": {
+      "custom": 255,
+      "microsoft22": 3,
+      "ovr15": 0,
+      "preston9": 2,
+      "vrm5": 1
+    }
+  },
+  "license": "project-local-generated-art",
+  "mouth_arrays": [
+    [
+      12,
+      13,
+      12,
+      19,
+      15,
+      15,
+      16,
+      18,
+      13,
+      16,
+      14,
+      14,
+      15,
+      16,
+      17,
+      14,
+      15,
+      18,
+      19,
+      17,
+      20,
+      21,
+      15
+    ]
+  ],
+  "mouth_slots": [
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "sil",
+      "role": "rest",
+      "slot": 0
+    },
+    {
+      "authored": false,
+      "borrowed_from": "nn",
+      "name": "pp",
+      "role": "press",
+      "slot": 1
+    },
+    {
+      "authored": false,
+      "borrowed_from": "sil",
+      "name": "ff",
+      "role": "lip_bite",
+      "slot": 2
+    },
+    {
+      "authored": false,
+      "borrowed_from": "tongue",
+      "name": "th",
+      "role": "tongue",
+      "slot": 3
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "dd",
+      "role": "half",
+      "slot": 4
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "kk",
+      "role": "half",
+      "slot": 5
+    },
+    {
+      "authored": false,
+      "borrowed_from": "oh",
+      "name": "ch",
+      "role": "round",
+      "slot": 6
+    },
+    {
+      "authored": false,
+      "borrowed_from": "grin",
+      "name": "ss",
+      "role": "teeth",
+      "slot": 7
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "nn",
+      "role": "press",
+      "slot": 8
+    },
+    {
+      "authored": false,
+      "borrowed_from": "oh",
+      "name": "rr",
+      "role": "round",
+      "slot": 9
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "aa",
+      "role": "wide",
+      "slot": 10
+    },
+    {
+      "authored": false,
+      "borrowed_from": "aa",
+      "name": "e",
+      "role": "wide",
+      "slot": 11
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "ih",
+      "role": "half",
+      "slot": 12
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "oh",
+      "role": "round",
+      "slot": 13
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "ou",
+      "role": "pucker",
+      "slot": 14
+    },
+    {
+      "authored": false,
+      "borrowed_from": "aa",
+      "name": "smile",
+      "role": "wide",
+      "slot": 15
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "frown",
+      "role": "half",
+      "slot": 16
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "grin",
+      "role": "teeth",
+      "slot": 17
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "tongue",
+      "role": "tongue",
+      "slot": 18
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ou",
+      "name": "pucker",
+      "role": "pucker",
+      "slot": 19
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "gasp",
+      "role": "round",
+      "slot": 20
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "lateral",
+      "role": "half",
+      "slot": 21
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "smirk",
+      "role": "half",
+      "slot": 22
+    }
+  ],
+  "notes": [
+    "target cores3-face: rig scaled by 80/80 with offset (0, 0)"
+  ],
+  "palette": {
+    "merged_after_565": [],
+    "rgb565": [
+      0,
+      6628,
+      19302,
+      21385,
+      25670,
+      27721,
+      29864,
+      31945,
+      36170,
+      40364,
+      42446,
+      50864,
+      52945,
+      52946,
+      55027,
+      63450
+    ],
+    "rgb888": [
+      "#000000",
+      "#1a3d25",
+      "#496e31",
+      "#557349",
+      "#648936",
+      "#6f884e",
+      "#729640",
+      "#79984c",
+      "#8daa51",
+      "#9db760",
+      "#a1b873",
+      "#c5d584",
+      "#cbd98d",
+      "#ccda90",
+      "#d0de98",
+      "#f2f8d2"
+    ],
+    "transparent_index": 0
+  },
+  "provenance": {
+    "background_rgb": [
+      247,
+      251,
+      232
+    ],
+    "erased_baked_mouths": [
+      "concern",
+      "determined",
+      "embarrassed",
+      "excited",
+      "joy",
+      "neutral",
+      "skeptical",
+      "sleepy",
+      "surprise",
+      "thoughtful",
+      "warm"
+    ],
+    "generator": {
+      "name": "fable_sprite_pipeline_v2",
+      "version": "0.1.0"
+    },
+    "mouth_source_mode": "face_crop",
+    "pixel_grid_pitch": 4,
+    "sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/face-grid/assets/mossling/pocket-mossling-expression-viseme-concepts-v1.png",
+    "sheet_pixels_sha256": "30ba18821e5665afc7d27363406d8c04193d27c0665d2cf839abbe0030643c7a",
+    "sheet_sha256": "9695b62faaee2d51d264b3fe17d86ca676c6389903906a2a2421ef8d78b97021",
+    "spec_sha256": "f6cd4ed71c212cbbf7132840804d3c843978bce76db3b3861445d82e3c11a89f"
+  },
+  "schema_version": 1,
+  "stats": {
+    "bank_count": 11,
+    "blob_bytes": 17627,
+    "cell_count": 24,
+    "flash_bytes": 18393,
+    "palette_count": 16
+  },
+  "target": {
+    "canvas": [
+      80,
+      60
+    ],
+    "display_pixels": [
+      160,
+      120
+    ],
+    "framing": "face_fill",
+    "id": "cores3-face",
+    "margin": 0,
+    "max_flash_bytes": 65536,
+    "scale": 2
+  },
+  "validation": {
+    "gates": [
+      {
+        "cells": 24,
+        "name": "packbits_roundtrip",
+        "status": "pass"
+      },
+      {
+        "name": "player_contract",
+        "status": "pass"
+      },
+      {
+        "anchors_outside_base": [],
+        "base_bottoms": [
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56,
+          56
+        ],
+        "base_widths": [
+          55,
+          51,
+          52,
+          50,
+          47,
+          51,
+          53,
+          57,
+          46,
+          54,
+          49
+        ],
+        "bottom_spread_px": 0,
+        "name": "registration",
+        "status": "pass",
+        "width_deviation_pct": 11
+      },
+      {
+        "name": "clipping",
+        "status": "pass"
+      },
+      {
+        "max_colors": 15,
+        "merged_after_565": [],
+        "name": "palette",
+        "status": "pass",
+        "visible_colors": 15
+      },
+      {
+        "authored_expressions": [
+          "concern",
+          "determined",
+          "embarrassed",
+          "excited",
+          "joy",
+          "neutral",
+          "skeptical",
+          "sleepy",
+          "surprise",
+          "thoughtful",
+          "warm"
+        ],
+        "blink_stages": 3,
+        "borrowed_mouth_slots": [
+          {
+            "from": "nn",
+            "slot": "pp"
+          },
+          {
+            "from": "sil",
+            "slot": "ff"
+          },
+          {
+            "from": "tongue",
+            "slot": "th"
+          },
+          {
+            "from": "ih",
+            "slot": "dd"
+          },
+          {
+            "from": "ih",
+            "slot": "kk"
+          },
+          {
+            "from": "oh",
+            "slot": "ch"
+          },
+          {
+            "from": "grin",
+            "slot": "ss"
+          },
+          {
+            "from": "oh",
+            "slot": "rr"
+          },
+          {
+            "from": "aa",
+            "slot": "e"
+          },
+          {
+            "from": "aa",
+            "slot": "smile"
+          },
+          {
+            "from": "ih",
+            "slot": "frown"
+          },
+          {
+            "from": "ou",
+            "slot": "pucker"
+          },
+          {
+            "from": "ih",
+            "slot": "smirk"
+          }
+        ],
+        "canonical_targets": {
+          "concern": {
+            "bank": "concern",
+            "distance": 0
+          },
+          "determined": {
+            "bank": "determined",
+            "distance": 0
+          },
+          "embarrassed": {
+            "bank": "embarrassed",
+            "distance": 0
+          },
+          "excited": {
+            "bank": "excited",
+            "distance": 0
+          },
+          "joy": {
+            "bank": "joy",
+            "distance": 0
+          },
+          "neutral": {
+            "bank": "neutral",
+            "distance": 0
+          },
+          "skeptical": {
+            "bank": "skeptical",
+            "distance": 0
+          },
+          "sleepy": {
+            "bank": "sleepy",
+            "distance": 0
+          },
+          "surprise": {
+            "bank": "surprise",
+            "distance": 0
+          },
+          "thoughtful": {
+            "bank": "thoughtful",
+            "distance": 0
+          },
+          "warm": {
+            "bank": "warm",
+            "distance": 0
+          }
+        },
+        "missing_expressions": [],
+        "name": "coverage",
+        "status": "pass",
+        "viseme_sets": {
+          "0": {
+            "expected": 15,
+            "mapped": 15
+          },
+          "1": {
+            "expected": 5,
+            "mapped": 5
+          },
+          "2": {
+            "expected": 9,
+            "mapped": 9
+          },
+          "3": {
+            "expected": 22,
+            "mapped": 22
+          }
+        },
+        "worst_canonical_distance": 0
+      },
+      {
+        "flash_bytes": 18393,
+        "max_flash_bytes": 65536,
+        "name": "budget",
+        "status": "pass"
+      },
+      {
+        "lid_px": [
+          14,
+          13
+        ],
+        "name": "legibility",
+        "status": "pass",
+        "tallest_mouth_px": 16
+      }
+    ],
+    "status": "pass"
+  },
+  "viseme_map": [
+    {
+      "role": "wide",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 10,
+      "viseme": 0
+    },
+    {
+      "role": "wide",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 11,
+      "viseme": 1
+    },
+    {
+      "role": "half",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 12,
+      "viseme": 2
+    },
+    {
+      "role": "round",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 13,
+      "viseme": 3
+    },
+    {
+      "role": "pucker",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 14,
+      "viseme": 4
+    },
+    {
+      "role": "press",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 1,
+      "viseme": 5
+    },
+    {
+      "role": "teeth",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 7,
+      "viseme": 6
+    },
+    {
+      "role": "tongue",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 3,
+      "viseme": 7
+    },
+    {
+      "role": "half",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 4,
+      "viseme": 8
+    },
+    {
+      "role": "lip_bite",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 2,
+      "viseme": 9
+    },
+    {
+      "role": "half",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 5,
+      "viseme": 10
+    },
+    {
+      "role": "press",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 8,
+      "viseme": 11
+    },
+    {
+      "role": "round",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 9,
+      "viseme": 12
+    },
+    {
+      "role": "round",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 6,
+      "viseme": 13
+    },
+    {
+      "role": "rest",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 0,
+      "viseme": 14
+    },
+    {
+      "role": "wide",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 10,
+      "viseme": 0
+    },
+    {
+      "role": "half",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 12,
+      "viseme": 1
+    },
+    {
+      "role": "pucker",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 14,
+      "viseme": 2
+    },
+    {
+      "role": "wide",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 11,
+      "viseme": 3
+    },
+    {
+      "role": "round",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 13,
+      "viseme": 4
+    },
+    {
+      "role": "rest",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 0,
+      "viseme": 0
+    },
+    {
+      "role": "press",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 1,
+      "viseme": 1
+    },
+    {
+      "role": "teeth",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 7,
+      "viseme": 2
+    },
+    {
+      "role": "half",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 12,
+      "viseme": 3
+    },
+    {
+      "role": "wide",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 10,
+      "viseme": 4
+    },
+    {
+      "role": "round",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 13,
+      "viseme": 5
+    },
+    {
+      "role": "pucker",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 14,
+      "viseme": 6
+    },
+    {
+      "role": "lip_bite",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 2,
+      "viseme": 7
+    },
+    {
+      "role": "tongue",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 18,
+      "viseme": 8
+    },
+    {
+      "role": "rest",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 0,
+      "viseme": 0
+    },
+    {
+      "role": "press",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 1,
+      "viseme": 1
+    },
+    {
+      "role": "lip_bite",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 2,
+      "viseme": 2
+    },
+    {
+      "role": "tongue",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 3,
+      "viseme": 3
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 4,
+      "viseme": 4
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 5,
+      "viseme": 5
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 6,
+      "viseme": 6
+    },
+    {
+      "role": "teeth",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 7,
+      "viseme": 7
+    },
+    {
+      "role": "press",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 8,
+      "viseme": 8
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 9,
+      "viseme": 9
+    },
+    {
+      "role": "wide",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 10,
+      "viseme": 10
+    },
+    {
+      "role": "wide",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 11,
+      "viseme": 11
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 12,
+      "viseme": 12
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 13,
+      "viseme": 13
+    },
+    {
+      "role": "pucker",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 14,
+      "viseme": 14
+    },
+    {
+      "role": "wide",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 15,
+      "viseme": 15
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 16,
+      "viseme": 16
+    },
+    {
+      "role": "teeth",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 17,
+      "viseme": 17
+    },
+    {
+      "role": "tongue",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 18,
+      "viseme": 18
+    },
+    {
+      "role": "pucker",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 19,
+      "viseme": 19
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 20,
+      "viseme": 20
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 21,
+      "viseme": 21
+    },
+    {
+      "role": "half",
+      "set": "custom",
+      "set_id": 255,
+      "slot": 22,
+      "viseme": 42
+    }
+  ]
+}

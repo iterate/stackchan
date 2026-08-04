@@ -1,0 +1,21 @@
+{
+  "name": "stackchan-grok-face-video",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "render": "remotion render",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.500",
+    "@remotion/media": "4.0.500",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.500"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.0"
+  }
+}

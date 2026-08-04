@@ -1,0 +1,42 @@
+{
+  "assembled_pixels": [
+    2144,
+    2568
+  ],
+  "assembled_sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/starbyte/generated/source-sheet.png",
+  "assembler": "stackchan-avatar-pipeline-v1",
+  "avatar_config": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/starbyte/avatar.json",
+  "avatar_config_sha256": "64604e24b22761467a02c9a27ff7127591a42c81a799832cb41d626d4b3310ad",
+  "sources": [
+    {
+      "background_tolerance": 96,
+      "grid": [
+        4,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/starbyte/source/expressions-v1.png",
+      "pixels": [
+        1448,
+        1086
+      ],
+      "role": "expression",
+      "sha256": "8fd72eef0acf6a6569035fe117595c6082653b837ba3d1e91194a49c241adfd4"
+    },
+    {
+      "background_tolerance": 96,
+      "grid": [
+        5,
+        3
+      ],
+      "inset": 4,
+      "path": "/Users/jonastemplestein/src/github.com/iterate/stackchan/experiments/02-minimal-realtime-aec/tools/sprite-pipeline/characters/starbyte/source/mouths-v1.png",
+      "pixels": [
+        1619,
+        971
+      ],
+      "role": "mouth",
+      "sha256": "a127a8d1dbc8c0b16623ea706c596116420927b3b1260d5c2a65c03cb7c999b7"
+    }
+  ]
+}

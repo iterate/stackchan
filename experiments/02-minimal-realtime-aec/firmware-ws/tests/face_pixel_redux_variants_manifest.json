@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "renderer": "face_pixel_redux_variant_render",
+  "source_kind": "allocation-free procedural C primitives",
+  "native_size": [160, 120],
+  "logical_size": [80, 60],
+  "exact_contact_size": [40, 30],
+  "variants": [
+    {
+      "id": 0,
+      "enum": "FACE_PIXEL_VARIANT_EGA_SUNBLADE_RANGER",
+      "slug": "pixel-variant-ega-sunblade-ranger",
+      "name": "EGA Sunblade Ranger",
+      "base": "EGA Quest",
+      "thesis": "heroic three-quarter ranger with feather and cape acting"
+    },
+    {
+      "id": 1,
+      "enum": "FACE_PIXEL_VARIANT_EGA_TAVERN_BARD",
+      "slug": "pixel-variant-ega-tavern-bard",
+      "name": "EGA Tavern Bard",
+      "base": "EGA Quest",
+      "thesis": "round singer silhouette with plume, lute strap and held-vowel mouth"
+    },
+    {
+      "id": 2,
+      "enum": "FACE_PIXEL_VARIANT_EGA_MOONKEEP_ROGUE",
+      "slug": "pixel-variant-ega-moonkeep-rogue",
+      "name": "EGA Moonkeep Rogue",
+      "base": "EGA Quest",
+      "thesis": "hooded asymmetric rogue with angular speech and scarf follow-through"
+    },
+    {
+      "id": 3,
+      "enum": "FACE_PIXEL_VARIANT_VGA_ASTRAL_ARCHIVIST",
+      "slug": "pixel-variant-vga-astral-archivist",
+      "name": "VGA Astral Archivist",
+      "base": "VGA Elder",
+      "thesis": "spectacled star-chart scholar with forked beard"
+    },
+    {
+      "id": 4,
+      "enum": "FACE_PIXEL_VARIANT_VGA_STORM_SEER",
+      "slug": "pixel-variant-vga-storm-seer",
+      "name": "VGA Storm Seer",
+      "base": "VGA Elder",
+      "thesis": "split-lit windswept seer with lightning-shaped secondary action"
+    },
+    {
+      "id": 5,
+      "enum": "FACE_PIXEL_VARIANT_VGA_HEARTH_SAGE",
+      "slug": "pixel-variant-vga-hearth-sage",
+      "name": "VGA Hearth Sage",
+      "base": "VGA Elder",
+      "thesis": "warm close elder with shawl, moustache and soft broad acting"
+    },
+    {
+      "id": 6,
+      "enum": "FACE_PIXEL_VARIANT_TALKIE_DOCKYARD_PILOT",
+      "slug": "pixel-variant-talkie-dockyard-pilot",
+      "name": "Talkie Dockyard Pilot",
+      "base": "Talkie Closeup",
+      "thesis": "cropped pilot portrait with headset, scar and shoulder patch"
+    },
+    {
+      "id": 7,
+      "enum": "FACE_PIXEL_VARIANT_TALKIE_NEON_ENGINEER",
+      "slug": "pixel-variant-talkie-neon-engineer",
+      "name": "Talkie Neon Engineer",
+      "base": "Talkie Closeup",
+      "thesis": "welding-visor mechanic with neon tool harness"
+    },
+    {
+      "id": 8,
+      "enum": "FACE_PIXEL_VARIANT_TALKIE_INTERCOM_CAPTAIN",
+      "slug": "pixel-variant-talkie-intercom-captain",
+      "name": "Talkie Intercom Captain",
+      "base": "Talkie Closeup",
+      "thesis": "peaked-cap command portrait with side mic and strong brow acting"
+    },
+    {
+      "id": 9,
+      "enum": "FACE_PIXEL_VARIANT_ARCADE_CRT_CONCIERGE",
+      "slug": "pixel-variant-arcade-crt-concierge",
+      "name": "Arcade CRT Concierge",
+      "base": "Pixel Automaton",
+      "thesis": "curved CRT head with flip-dot eyes and hinged display mouth"
+    },
+    {
+      "id": 10,
+      "enum": "FACE_PIXEL_VARIANT_ARCADE_SENTINEL",
+      "slug": "pixel-variant-arcade-sentinel",
+      "name": "Arcade Sentinel",
+      "base": "Pixel Automaton",
+      "thesis": "armoured shutter-eyed guard with grille articulation"
+    },
+    {
+      "id": 11,
+      "enum": "FACE_PIXEL_VARIANT_ARCADE_PINBALL_BELLHOP",
+      "slug": "pixel-variant-arcade-pinball-bellhop",
+      "name": "Arcade Pinball Bellhop",
+      "base": "Pixel Automaton",
+      "thesis": "round dome robot with bell antenna and comedy squash"
+    },
+    {
+      "id": 12,
+      "enum": "FACE_PIXEL_VARIANT_POCKET_ACORN_SCOUT",
+      "slug": "pixel-variant-pocket-acorn-scout",
+      "name": "Pocket Acorn Scout",
+      "base": "Pocket Mossling",
+      "palette": "strict-dmg-4",
+      "thesis": "acorn cap, leaf ears, animated sprout, satchel and tail"
+    },
+    {
+      "id": 13,
+      "enum": "FACE_PIXEL_VARIANT_POCKET_BOG_SPRITE",
+      "slug": "pixel-variant-pocket-bog-sprite",
+      "name": "Pocket Bog Sprite",
+      "base": "Pocket Mossling",
+      "palette": "strict-dmg-4",
+      "thesis": "lily hood, aquatic frills, buoyant bob and reed follow-through"
+    },
+    {
+      "id": 14,
+      "enum": "FACE_PIXEL_VARIANT_POCKET_MOONCAP_FAMILIAR",
+      "slug": "pixel-variant-pocket-mooncap-familiar",
+      "name": "Pocket Mooncap Familiar",
+      "base": "Pocket Mossling",
+      "palette": "strict-dmg-4",
+      "thesis": "mushroom cap, slit pupils, luminous mouth and cloak"
+    },
+    {
+      "id": 15,
+      "enum": "FACE_PIXEL_VARIANT_DMG_TIN_WARDEN",
+      "slug": "pixel-variant-dmg-tin-warden",
+      "name": "DMG Tin Warden",
+      "base": "Pocket Mossling IR",
+      "palette": "strict-dmg-4",
+      "thesis": "rigid riveted armour, visor shutters, leaf crest and hinged jaw"
+    },
+    {
+      "id": 16,
+      "enum": "FACE_PIXEL_VARIANT_DMG_LANTERN_MOTH",
+      "slug": "pixel-variant-dmg-lantern-moth",
+      "name": "DMG Lantern Moth",
+      "base": "Pocket Mossling IR",
+      "palette": "strict-dmg-4",
+      "thesis": "wing mantle, compound eyes, proboscis mouth and antenna-led acting"
+    },
+    {
+      "id": 17,
+      "enum": "FACE_PIXEL_VARIANT_DMG_SLIME_COURIER",
+      "slug": "pixel-variant-dmg-slime-courier",
+      "name": "DMG Slime Courier",
+      "base": "Pocket Mossling IR",
+      "palette": "strict-dmg-4",
+      "thesis": "gelatin squash and wobble countered by a rigid satchel"
+    }
+  ],
+  "review_matrices": [
+    "expressions-11",
+    "visemes-15",
+    "speech-blink-24f",
+    "idle-turn-blink-32f"
+  ]
+}

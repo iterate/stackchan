@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StackChan PCM face rig</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: #030a10;
+      color: #d8e9f7;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 20%, #123048 0, #071521 36%, #030a10 75%);
+    }
+    main {
+      width: min(900px, calc(100vw - 32px));
+      display: grid;
+      gap: 18px;
+      padding: 28px 0;
+    }
+    header, .readout {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    h1 {
+      margin: 0;
+      font: 650 18px/1.2 system-ui, sans-serif;
+      letter-spacing: .02em;
+    }
+    #status { color: #60d394; font-size: 12px; }
+    .stage {
+      display: grid;
+      place-items: center;
+      min-height: 520px;
+      border: 1px solid #16354a;
+      border-radius: 22px;
+      background: rgba(2, 10, 16, .72);
+      box-shadow: 0 24px 80px #0009, inset 0 1px #ffffff0b;
+    }
+    #face {
+      width: min(720px, calc(100vw - 70px));
+      image-rendering: auto;
+      border-radius: 18px;
+      box-shadow: 0 16px 45px #000a;
+    }
+    .readout {
+      color: #8da9bd;
+      font-size: 12px;
+    }
+    .readout strong { color: #d8e9f7; font-weight: 500; }
+    #timeline {
+      width: 100%;
+      height: 90px;
+      border: 1px solid #16354a;
+      border-radius: 12px;
+      background: #071521;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    button {
+      border: 1px solid #28516b;
+      border-radius: 8px;
+      padding: 7px 12px;
+      color: #d8e9f7;
+      background: #0d2434;
+      font: inherit;
+      cursor: pointer;
+    }
+    input[type=range] { flex: 1; accent-color: #ff7b72; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>StackChan · playout-clock face</h1>
+    <span id="status">initialising</span>
+  </header>
+  <section class="stage">
+    <canvas id="face" width="320" height="240"></canvas>
+  </section>
+  <div class="readout">
+    <span>clock <strong id="clock">0 ms</strong></span>
+    <span>mouth <strong id="mouth">0</strong></span>
+    <span>PCM level <strong id="level">0</strong></span>
+    <span>queue <strong id="queue">0 samples</strong></span>
+    <span>playout <strong id="playout">ready</strong></span>
+  </div>
+  <canvas id="timeline" width="900" height="90"></canvas>
+  <div class="controls" id="replay-controls" hidden>
+    <button id="play">Pause</button>
+    <input id="scrub" type="range" min="0" max="0" value="0">
+  </div>
+</main>
+<script>
+const EMBEDDED_TRACE = /*__STACKCHAN_TRACE__*/ null;
+const face = document.querySelector("#face");
+const ctx = face.getContext("2d");
+const timeline = document.querySelector("#timeline");
+const timelineCtx = timeline.getContext("2d");
+const statusNode = document.querySelector("#status");
+const clockNode = document.querySelector("#clock");
+const mouthNode = document.querySelector("#mouth");
+const levelNode = document.querySelector("#level");
+const queueNode = document.querySelector("#queue");
+const playoutNode = document.querySelector("#playout");
+let trace = EMBEDDED_TRACE || [];
+let current = null;
+
+function roundedRect(context, x, y, width, height, radius, colour) {
+  context.beginPath();
+  context.roundRect(x, y, width, height, Math.min(radius, width / 2, height / 2));
+  context.fillStyle = colour;
+  context.fill();
+}
+
+function drawPose(frame) {
+  if (!frame) return;
+  current = frame;
+  const g = frame.geometry;
+  const s = frame.state;
+  ctx.fillStyle = "#071521";
+  ctx.fillRect(0, 0, face.width, face.height);
+
+  roundedRect(ctx, g.left_eye_x, g.left_eye_y, g.eye_width, g.eye_height,
+              g.eye_height / 2, "#f4f8ff");
+  roundedRect(ctx, g.right_eye_x, g.right_eye_y, g.eye_width, g.eye_height,
+              g.eye_height / 2, "#f4f8ff");
+  if (g.pupil_size > 0) {
+    const pupilY = g.left_eye_y + (g.eye_height - g.pupil_size) / 2 +
+                   g.pupil_offset_y;
+    const leftPupilX = g.left_eye_x + (g.eye_width - g.pupil_size) / 2 +
+                       g.pupil_offset_x;
+    const rightPupilX = g.right_eye_x + (g.eye_width - g.pupil_size) / 2 +
+                        g.pupil_offset_x;
+    roundedRect(ctx, leftPupilX, pupilY, g.pupil_size, g.pupil_size,
+                g.pupil_size / 2, "#071521");
+    roundedRect(ctx, rightPupilX, pupilY, g.pupil_size, g.pupil_size,
+                g.pupil_size / 2, "#071521");
+  }
+  roundedRect(ctx, g.mouth_x, g.mouth_y, g.mouth_width, g.mouth_height,
+              g.mouth_height / 2, "#ff7b72");
+
+  ctx.fillStyle = "#60d394";
+  ctx.textAlign = "center";
+  ctx.font = "11px ui-monospace, monospace";
+  ctx.fillText(s.speaking ? "SPEAKING" : "LISTENING", 160, 20);
+
+  clockNode.textContent = `${frame.clock_ms} ms`;
+  mouthNode.textContent = `${s.mouth_open} / 255`;
+  levelNode.textContent = `${s.level}`;
+  queueNode.textContent = `${frame.queued_samples || 0} samples`;
+  playoutNode.textContent = frame.underrun ? "UNDERRUN" : "ready";
+  playoutNode.style.color = frame.underrun ? "#ff7b72" : "";
+}
+
+function drawTimeline(frames) {
+  const width = timeline.width;
+  const height = timeline.height;
+  timelineCtx.fillStyle = "#071521";
+  timelineCtx.fillRect(0, 0, width, height);
+  if (!frames.length) return;
+  timelineCtx.fillStyle = "#ff7b7233";
+  frames.forEach((frame, index) => {
+    if (!frame.underrun) return;
+    const x = index * width / frames.length;
+    timelineCtx.fillRect(x, 0, Math.max(1, width / frames.length), height);
+  });
+  timelineCtx.strokeStyle = "#17384e";
+  timelineCtx.lineWidth = 1;
+  for (let y = 1; y < 4; y++) {
+    timelineCtx.beginPath();
+    timelineCtx.moveTo(0, y * height / 4);
+    timelineCtx.lineTo(width, y * height / 4);
+    timelineCtx.stroke();
+  }
+  timelineCtx.strokeStyle = "#ff7b72";
+  timelineCtx.lineWidth = 2;
+  timelineCtx.beginPath();
+  frames.forEach((frame, index) => {
+    const x = index * (width - 1) / Math.max(1, frames.length - 1);
+    const y = height - 4 - frame.state.mouth_open * (height - 8) / 255;
+    if (index === 0) timelineCtx.moveTo(x, y);
+    else timelineCtx.lineTo(x, y);
+  });
+  timelineCtx.stroke();
+}
+
+function startReplay() {
+  statusNode.textContent = "deterministic trace replay";
+  const controls = document.querySelector("#replay-controls");
+  const button = document.querySelector("#play");
+  const scrub = document.querySelector("#scrub");
+  controls.hidden = false;
+  scrub.max = Math.max(0, trace.length - 1);
+  drawTimeline(trace);
+  let index = 0;
+  let playing = true;
+  let last = performance.now();
+
+  button.addEventListener("click", () => {
+    playing = !playing;
+    button.textContent = playing ? "Pause" : "Play";
+    last = performance.now();
+  });
+  scrub.addEventListener("input", () => {
+    index = Number(scrub.value);
+    drawPose(trace[index]);
+  });
+  function tick(now) {
+    if (playing && trace.length && now - last >= 10) {
+      const steps = Math.max(1, Math.floor((now - last) / 10));
+      index = (index + steps) % trace.length;
+      scrub.value = index;
+      drawPose(trace[index]);
+      last += steps * 10;
+    }
+    requestAnimationFrame(tick);
+  }
+  drawPose(trace[0]);
+  requestAnimationFrame(tick);
+}
+
+function startLive() {
+  const params = new URLSearchParams(location.search);
+  const port = params.get("ws_port") || "8766";
+  const socket = new WebSocket(`ws://127.0.0.1:${port}`);
+  statusNode.textContent = "connecting to local playout";
+  socket.addEventListener("open", () => {
+    statusNode.textContent = "live · audio muted";
+  });
+  socket.addEventListener("message", event => {
+    const frame = JSON.parse(event.data);
+    trace.push(frame);
+    drawPose(frame);
+    if (trace.length % 10 === 0) drawTimeline(trace);
+  });
+  socket.addEventListener("close", () => {
+    statusNode.textContent = "trace complete · audio remained muted";
+    drawTimeline(trace);
+  });
+}
+
+if (EMBEDDED_TRACE) startReplay();
+else startLive();
+</script>
+</body>
+</html>

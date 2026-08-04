@@ -1,0 +1,9 @@
+Optimized standalone renderer object:
+   22512 bytes
+
+Platform size breakdown:
+__TEXT	__DATA	__OBJC	others	dec	hex
+17358	96	0	704	18158	46ee
+
+Undefined symbols (no heap allocator references permitted):
+_memset_pattern16

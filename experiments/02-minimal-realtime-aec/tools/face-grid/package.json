@@ -1,0 +1,9 @@
+{
+  "name": "stackchan-wasm-face-grid",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "./build-wasm.sh",
+    "serve": "node serve.mjs"
+  }
+}
