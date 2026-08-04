@@ -1,0 +1,1644 @@
+{
+  "background_565": 63420,
+  "banks": [
+    {
+      "base_cell": 6,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "neutral",
+      "target": {
+        "arousal": 72,
+        "brow_inner": 0,
+        "eye_squint": 0,
+        "mouth_corner": 0,
+        "valence": 0
+      }
+    },
+    {
+      "base_cell": 11,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "warm",
+      "target": {
+        "arousal": 112,
+        "brow_inner": 10,
+        "eye_squint": 20,
+        "mouth_corner": 36,
+        "valence": 52
+      }
+    },
+    {
+      "base_cell": 5,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "joy",
+      "target": {
+        "arousal": 184,
+        "brow_inner": 22,
+        "eye_squint": 68,
+        "mouth_corner": 78,
+        "valence": 94
+      }
+    },
+    {
+      "base_cell": 1,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "concern",
+      "target": {
+        "arousal": 126,
+        "brow_inner": 58,
+        "eye_squint": 14,
+        "mouth_corner": -24,
+        "valence": -52
+      }
+    },
+    {
+      "base_cell": 9,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "surprise",
+      "target": {
+        "arousal": 232,
+        "brow_inner": 78,
+        "eye_squint": 0,
+        "mouth_corner": 8,
+        "valence": 18
+      }
+    },
+    {
+      "base_cell": 10,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "thoughtful",
+      "target": {
+        "arousal": 92,
+        "brow_inner": 18,
+        "eye_squint": 22,
+        "mouth_corner": -6,
+        "valence": 4
+      }
+    },
+    {
+      "base_cell": 7,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "skeptical",
+      "target": {
+        "arousal": 104,
+        "brow_inner": -14,
+        "eye_squint": 42,
+        "mouth_corner": -12,
+        "valence": -18
+      }
+    },
+    {
+      "base_cell": 2,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "determined",
+      "target": {
+        "arousal": 166,
+        "brow_inner": -34,
+        "eye_squint": 54,
+        "mouth_corner": -8,
+        "valence": 12
+      }
+    },
+    {
+      "base_cell": 8,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "sleepy",
+      "target": {
+        "arousal": 34,
+        "brow_inner": -26,
+        "eye_squint": 118,
+        "mouth_corner": 4,
+        "valence": 8
+      }
+    },
+    {
+      "base_cell": 4,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "excited",
+      "target": {
+        "arousal": 250,
+        "brow_inner": 52,
+        "eye_squint": 14,
+        "mouth_corner": 62,
+        "valence": 86
+      }
+    },
+    {
+      "base_cell": 3,
+      "eye_left": {
+        "cells": [
+          0,
+          20,
+          21
+        ],
+        "x": 11,
+        "y": 9
+      },
+      "eye_right": {
+        "cells": [
+          0,
+          22,
+          23
+        ],
+        "x": 20,
+        "y": 9
+      },
+      "mouth": {
+        "array": 0,
+        "x": 12,
+        "y": 16
+      },
+      "overlay_cell": 0,
+      "slug": "embarrassed",
+      "target": {
+        "arousal": 176,
+        "brow_inner": 24,
+        "eye_squint": 116,
+        "mouth_corner": 24,
+        "valence": 28
+      }
+    }
+  ],
+  "blob_base64": "APMAAQQE8QACBAAA/QTzAPwEAwAABATyAP0EwAD5AfUAAgEBBPgGAAT3AAEEBPUG+gABBgb9AQAI/QkDCAgBAf4G/QAHAQYIAQUBAQP9CQEDA/4BAQgJ/QACAQkJ/QEABv0JAQYG/gEBCQn+AAMBBgkJ/QH6CQEBAf4JAwYAAAHzCQAG/AkBAAH+Cf4LAAr4C/sJAAH+Cf4LAAr4C/sJAwABCQnzC/0JBAAAAQkJ8wv9Cf4AAwEJCwr1C/4J/QADAQkLCvUL/gn7APQLAgkJBPoA9AsCCQkE9wAABvkLAAT0AAAG+QsABPYAAgEGBvkAAQYG/AD2AP0E9wD9BAAA/AT3AP0EAQEA/QT1AAIEBAHuAAAB7gABAQHzAAUBAQkJBgj+CQEBAfkAAAH5Bv0B/QACBAgG/gH7CQoBCgEBBggAAAQIBv4B+wkHAQoBAQYIAAT+Cf4B+wn9Af4JAAT+Cf4B+wn9Af4JAAb5CQAK9wkABvsJ+wsBCgr8CQAG/Qn3C/wJAgYJCfQL/QkCBgkJ9Av9CQQBBgkLCvYLBgoJCQQABgn0C/4JAwEAAAb0CwIJCQb+AAAB9AsBCQT7AAILCgr4CwAB+QD3C/gABQEEBAAAAf0AAgEGAfoAAgEEBPoAAgEGAf4A8wAABPMA/gQBAAD8BPYA/AQBAQD+BPQA/QQAAe0AAQEB7AAAAfAA/QEACf0B9gABAQT3BgEBAfsAAwYGBAT4BgIBBAT7AAEIBv4BAAb7CQAD/gEBBgb+AAIECQP9AfsJAAP+AQcGBgAAAQYJCf4BAAT7Cf0BAwkJAAH8CQAG+AkAA/0JAQAB/AkABvgJAAP9CQcABQcICQsLCvgLDAoJCQsLBAUHCAkLCwr4CwYKCQkLCwQB/gkBCwr2C/0JAQAB/gkBCwr2C/0JBgAAAQYJCwr2C/0J/QACCQsK9gsDCQkBAf0AAgQLCvYLAQkJ+gACCwsK9wsBCQn4AAAF+AsACfUA/QEAC/4B9QABBAb4AAIGAQH+APUAAAT+AP4E7gD9BAEAAP0E8AD7BAAB/gT4AAELC/cAAwQAAQHmAAAB7QD9Af4AAgEAAP4B8QACAQEG/gkABv4JAAH8AP4L+QAAAfUGAAH9AAAL+gD+BgAB/AYACf4GAAT+BvYABQYGAQcDAfsJBQEFAQMGBvcAAQkJ/AH8CQUBBwEBCQn3AAEJCf0B+wkFAwEBBAkJ+QABAQH4CQAK+QkAAfoAAQEB+AkACvkJAAH6AAIGBgn1CwAK/QkABvoAAgYGCfULAAr9CQAG+gACAQEJ8wv+CQAB+AAACfMLAgoJCfcAAAnzC/4J9wAAAfMLAQkE9AD1CwEJCfMA9QsAAe8AAAH+BAAL/gTpAAAI7QD+AfkAAQQE+gD0AAAE7gAABPYA/QQBAAD9BPcA/QQBAAD9BPMAAQEB7wABAQHxAP4BAAb+AfQA/gEABv4B9wAABPYGAQQG/QD+BgEBAfoJBAgBCAgG/gACBgQE+AkHBgkGBAYEAAHvCQEBBu8JAAHuCQEHB/wJ/goCCwoK+wkCCgcH8wsGCQkHBwUICfQL/gkDCgEJCfQL/QkCAQkJ9Av9CQIAAAb0CwYKCQkEAAAG9AsDCgkJBP0A9gsCCgkE+wD2CwIKCQT4AP4EAAv9BPUA/gQAC/0E+AACAQQE+QABBgH+APMAAATzAP0EAAD8BPUA/AQAAP0E8QAAAewAAAHsAAAB8AAAAf4JAQYI/gkAAfcAAAH2BgEBAfsABQYGAQUBBvsJBQELAQEGBv0ABQYGAQUBBvsJBQELAQEGBv4AAgYJCf4BAAb7Cf0BAQkJ/gACBgkJ/gEABvsJ/QEECQkAAAH6CfsK+wkCAQEG/AkACvoLAQoK/QkCBgAB/QkACvcL/QkEAQABCQn0C/0JBAEAAQkJ9Av9CQQBAAAJCfQL/Qn+AAEECfQL/Qn9AAAE9AsDCQkEBPwA9AsBCQn5APULAQEB9wD3C/cAAgEGAf4AAAH9AP4B+QACAQYB+QD+Af4A+gD9BAAA/QTzAP0EAAD9BPIAAwQAAQHuAAMEAAEB8QACAQAA/gEABv0B9QACAQAA/gEABv0B9gAAAf4GAAT8BgMEBAYE+AAAAf4GAAT8BgMEBAYE+gABBgbzCQEGBvwAAQYG8wkBBgb9AAMBCQkG/gEABPwJDQMDAQQJCQYBAAABCQkG/gEABPwJCgMDAQQJCQYBAAEG7gkCAQAE+wkACvkL/AkCBgEE/AkACvgL/AkFBAABBgkJ9Av9CQUBAAEGCQn0C/0JAAH+AAIJCQr1CwMKCQkE/QABCQn0C/4JAAH8AAAG9AsCCQkE+wAABPQLAQkE+AACCwsK+Av1APcL9QACBgYB/gAAAf0AAAb2AAIGBgH5AAAG+wD6AP4EAQAA/QTzAP4EAQAA/QTvAAAB+QD+AfYAAAH5AP4B+QD+AQIGAQHwAP4BAgYBAfQAAQEE9gYABPgAAQEE9gYABPoAAAHxCQAE/AAAAfEJAAT9AAAB7wkABP4A7Qn+APkJBAoKCwoK+gn+AP4J9Av9CQIBAAH+CQILCwr3C/0JAgQAAP4JAQsK9gv9Cf4A/gkBCwr2C/0J/gACAQkJ9Av+CQAE/gAEAQkJCwr2C/4JAAH8AAIECwr2CwEJBvkA9AsACfcAAQEK+AsACfQAAQQJ/AsBBQXvAAAI9gDzAAAE8gAABP4A/QT1AP0EAQAA/AT2APwEAwAABATyAAIEAAHyAP0B+wD8AfcAAAH+AAEEAP4B9QABAQb+CQAG/gkBAQH5AAMGBgQB+QYDBAEGBvwA/gYCAQEE+wkEBgEBBAT8AAUECQQFAQH7CQEEBf4BBgQEAAABCQn8AfwJ/AEECQkAAAT+Cf4B+gn9AQMJCQAA/AkAAfgJAAH9CQEBAf4J/gsACvoLAQoL/QkBBAH+Cf4LAAr6CwEKC/0JAQQA/gkBCwr2C/0JAQEA/gkBCwr2C/0JBQEAAQkJCvMLBwkJAAABCQkK8wsBCQn9AAIECwr2CwEJCfsAAgQLCvYLAQkJ+QABAQr9CwAI/QsCCQEB+QABAQr9CwAI/QsCCQEB+QABBgT5AAMBBgEB/gD1AAEEBPYA/QQBAAD8BPgA/AQAAf0E8wABAQHvAAEBAfEA/gEABv4B9AD6BvcAAgYICPsG/ggBBgn9AAAG/Qn+BgIJBgb8CQAG/gAABv0E+wn8BAQJBAABCf0B+wn8AQUJCQABCQn+AfsJAAb+AQMGCQkB+AkAC/gJAAH4CQAL+AkCAQkJ9Av9CQIBCQn0C/0JAgEJCfML/gkCAAEJ8wv+CQIAAAnzCwUJCQYAAAbzCwIJCQH+APQLAQkE+wACCwoK+AsAAfcAAwQECwv+BPIAAQEL9AACAQQE+gACAQYE/gDzAAEEBPIA/gQAAP0E8wD8BAMAAAQE7wAAAesAAAHuAPkB8wABAQb6CfUAAAT0BvoA/gECCQkB/AkFAQEJCQEJ+wD+AQIJCQH8CQUBAQkJAQn9AAAB7gn+AAAB7gn+AAAB7gkCAQAB/gf9CfkL/gkGBwcGAQAFCv0J+AsKCgkJCgoEAAABCQnzC/4JBQEAAAEJCfML/gkFAQAAAQkJ8wv+Cf0AAQYJ8wv+CfwAAATzCwEJCfoA9AsBCQn4AAILCwr4CwEEBPYA+Av1AAIBBgb5AAEGBvcAAgEEBPkAAQYE/AD7AvwAAAL4AAAC+wD7Av0A+wIBAAD8AgAH/QIBAAD7B/0A+wf8AAYCAgcCAgAA8wIDCwsFAgUAAAICAAD5AgEBAf0CCQEBAgIAAAICAAAAAAICAAAAAgIAAgILCwIAAAICAO0C+wv3AgAA9QL9BwECAv0HAQIA/QcAAgIAAAL7AAAC/QD7AQAC+wEAAvQB/gACAQIC/QAAAv0AAQAA/gkBAAD2CQEAAP4JAQAA8AkABPwJAQAE/gkABAEAAP4LAQAA9gsBAAD+CwEAAPALAAX8CwEABf4LAAU=",
+  "blob_sha256": "e4218129a74b4f2a7f0da5a12a575ae65d4ad68c8e1dc667a0e73890481d3aa5",
+  "c_symbol": "face_sprite_fspp_bloomling_pocket_stage_atlas",
+  "cells": [
+    {
+      "blob_length": 1,
+      "blob_offset": 0,
+      "encoding": "raw",
+      "height": 1,
+      "index": 0,
+      "names": [
+        "transparent",
+        "mouth_sil",
+        "mouth_lateral"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "width": 1
+    },
+    {
+      "blob_length": 244,
+      "blob_offset": 1,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 1,
+      "names": [
+        "base_concern"
+      ],
+      "offset_x": 9,
+      "offset_y": 3,
+      "raw_sha256": "48e1a32863ee5ac94161d6d0ba0e405eee3bf8e72a90dc319506aae13c9881ff",
+      "width": 23
+    },
+    {
+      "blob_length": 241,
+      "blob_offset": 245,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 2,
+      "names": [
+        "base_determined"
+      ],
+      "offset_x": 10,
+      "offset_y": 2,
+      "raw_sha256": "a4280562657a4b45f2cbb9bf39c18c76abe7095c499d24996f8acd4150ee7c20",
+      "width": 20
+    },
+    {
+      "blob_length": 277,
+      "blob_offset": 486,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 3,
+      "names": [
+        "base_embarrassed"
+      ],
+      "offset_x": 9,
+      "offset_y": 3,
+      "raw_sha256": "0c6b02926279ebb8d346256e1956ac252aba73e08a21718005442e435d56d074",
+      "width": 22
+    },
+    {
+      "blob_length": 280,
+      "blob_offset": 763,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 4,
+      "names": [
+        "base_excited"
+      ],
+      "offset_x": 6,
+      "offset_y": 3,
+      "raw_sha256": "78ecddb35b2e17f1581151daeb4b00f5eb2ac5337508d46162b5ba0815a7b1ac",
+      "width": 28
+    },
+    {
+      "blob_length": 218,
+      "blob_offset": 1043,
+      "encoding": "packbits",
+      "height": 26,
+      "index": 5,
+      "names": [
+        "base_joy"
+      ],
+      "offset_x": 10,
+      "offset_y": 2,
+      "raw_sha256": "a2a2416615e49c46e68deee12e534aa452f9875008fe10525f8fb2fc23084225",
+      "width": 20
+    },
+    {
+      "blob_length": 254,
+      "blob_offset": 1261,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 6,
+      "names": [
+        "base_neutral"
+      ],
+      "offset_x": 9,
+      "offset_y": 2,
+      "raw_sha256": "c47fd0c705b90d5a2e12173ca4a423210215a277f96716aa0c2c7e4157914667",
+      "width": 22
+    },
+    {
+      "blob_length": 281,
+      "blob_offset": 1515,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 7,
+      "names": [
+        "base_skeptical"
+      ],
+      "offset_x": 9,
+      "offset_y": 2,
+      "raw_sha256": "41ac5131d5e8702893ebea897cadef755659b8eb93dfc9033f86be9aa1b74aa7",
+      "width": 23
+    },
+    {
+      "blob_length": 222,
+      "blob_offset": 1796,
+      "encoding": "packbits",
+      "height": 24,
+      "index": 8,
+      "names": [
+        "base_sleepy"
+      ],
+      "offset_x": 9,
+      "offset_y": 4,
+      "raw_sha256": "6121f467f2e7e9951a934d44652ed78d5441c3671732edbe7bda9f94f615fde6",
+      "width": 23
+    },
+    {
+      "blob_length": 303,
+      "blob_offset": 2018,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 9,
+      "names": [
+        "base_surprise"
+      ],
+      "offset_x": 9,
+      "offset_y": 3,
+      "raw_sha256": "fa59257d61c6be9c618637fd81acafff5bb443fe10f45beecfae1c919fdf9ad2",
+      "width": 22
+    },
+    {
+      "blob_length": 225,
+      "blob_offset": 2321,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 10,
+      "names": [
+        "base_thoughtful"
+      ],
+      "offset_x": 10,
+      "offset_y": 3,
+      "raw_sha256": "6f80b37a1ba0b760ed36e60f9212f9065d0edd6022e38ece100547caa37f2992",
+      "width": 20
+    },
+    {
+      "blob_length": 225,
+      "blob_offset": 2546,
+      "encoding": "packbits",
+      "height": 25,
+      "index": 11,
+      "names": [
+        "base_warm"
+      ],
+      "offset_x": 9,
+      "offset_y": 2,
+      "raw_sha256": "574ad5cd4ec107cfff662af06735e3faf7179294d7693189622854d9f90acffc",
+      "width": 23
+    },
+    {
+      "blob_length": 2,
+      "blob_offset": 2771,
+      "encoding": "packbits",
+      "height": 1,
+      "index": 12,
+      "names": [
+        "mouth_pp"
+      ],
+      "offset_x": 4,
+      "offset_y": 4,
+      "raw_sha256": "2ebd9a4e488b471cd70a25aeccb2db50aabda73c92ce8ee0e215cd89320f6b9a",
+      "width": 6
+    },
+    {
+      "blob_length": 44,
+      "blob_offset": 2773,
+      "encoding": "packbits",
+      "height": 8,
+      "index": 13,
+      "names": [
+        "mouth_aa"
+      ],
+      "offset_x": 2,
+      "offset_y": 0,
+      "raw_sha256": "cb9ecbfa5343cdafdea13d0d5a58108b47c045f29f8c97acc87dbc2bafdc96a5",
+      "width": 10
+    },
+    {
+      "blob_length": 7,
+      "blob_offset": 2817,
+      "encoding": "packbits",
+      "height": 3,
+      "index": 14,
+      "names": [
+        "mouth_ih"
+      ],
+      "offset_x": 4,
+      "offset_y": 3,
+      "raw_sha256": "265459a130117848e2c86697ea505250244b671679b792aed29efb70db5559ac",
+      "width": 6
+    },
+    {
+      "blob_length": 25,
+      "blob_offset": 2824,
+      "encoding": "packbits",
+      "height": 5,
+      "index": 15,
+      "names": [
+        "mouth_oh"
+      ],
+      "offset_x": 4,
+      "offset_y": 2,
+      "raw_sha256": "ab700676287e3efd8d13eead349f4c60b30252694feb688178606e3eb00e6338",
+      "width": 6
+    },
+    {
+      "blob_length": 20,
+      "blob_offset": 2849,
+      "encoding": "raw",
+      "height": 4,
+      "index": 16,
+      "names": [
+        "mouth_ou"
+      ],
+      "offset_x": 4,
+      "offset_y": 2,
+      "raw_sha256": "9ba4a0686c2255a8202b79b6b93941363ef87cd8d640b32350eee6cd300925ca",
+      "width": 5
+    },
+    {
+      "blob_length": 6,
+      "blob_offset": 2869,
+      "encoding": "packbits",
+      "height": 4,
+      "index": 17,
+      "names": [
+        "mouth_grin"
+      ],
+      "offset_x": 2,
+      "offset_y": 2,
+      "raw_sha256": "34ca2286cce0309f5a01f9726aba1b9b3656d0aab57cd078ab3470c739317f10",
+      "width": 9
+    },
+    {
+      "blob_length": 18,
+      "blob_offset": 2875,
+      "encoding": "packbits",
+      "height": 5,
+      "index": 18,
+      "names": [
+        "mouth_tongue"
+      ],
+      "offset_x": 4,
+      "offset_y": 2,
+      "raw_sha256": "2004e8509b582f08ca1dedb94f5faabf4f3b17c6c28b1b04802350ad15647b56",
+      "width": 6
+    },
+    {
+      "blob_length": 32,
+      "blob_offset": 2893,
+      "encoding": "packbits",
+      "height": 8,
+      "index": 19,
+      "names": [
+        "mouth_gasp"
+      ],
+      "offset_x": 4,
+      "offset_y": 0,
+      "raw_sha256": "1520fd9105e71405ee698d65444c7f6f81642beaa824d1ceae2f0edd6db8c3de",
+      "width": 7
+    },
+    {
+      "blob_length": 10,
+      "blob_offset": 2925,
+      "encoding": "packbits",
+      "height": 3,
+      "index": 20,
+      "names": [
+        "lid_half_left"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "c64281668a279f2ed67f6f2944f7a6ef004926662b50ce687f39834219e7a580",
+      "width": 6
+    },
+    {
+      "blob_length": 21,
+      "blob_offset": 2935,
+      "encoding": "packbits",
+      "height": 6,
+      "index": 21,
+      "names": [
+        "lid_closed_left"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "5d1e7ced76fb9e700d0d018c354760abe8823ef0f911b848d4a22bf8606a8cc4",
+      "width": 6
+    },
+    {
+      "blob_length": 10,
+      "blob_offset": 2956,
+      "encoding": "packbits",
+      "height": 3,
+      "index": 22,
+      "names": [
+        "lid_half_right"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "035451cde1623686f53597a37a49b2df830d0f97e68c2f7f6eac399201089895",
+      "width": 6
+    },
+    {
+      "blob_length": 21,
+      "blob_offset": 2966,
+      "encoding": "packbits",
+      "height": 6,
+      "index": 23,
+      "names": [
+        "lid_closed_right"
+      ],
+      "offset_x": 0,
+      "offset_y": 0,
+      "raw_sha256": "082d97488a6aad3ddee2aee10dc0a606bd7da46ad68769e58a9186ee1669d064",
+      "width": 6
+    }
+  ],
+  "display_name": "Bloomling",
+  "fallback_slots": [
+    0,
+    1,
+    17,
+    12,
+    10,
+    13,
+    14,
+    0,
+    18
+  ],
+  "flags": [
+    "auto_blink",
+    "breathe"
+  ],
+  "format": {
+    "container": "face_sprite_atlas_t",
+    "encodings": [
+      "raw",
+      "packbits"
+    ],
+    "magic": "FSPR",
+    "pixel_format": "indexed8+RGB565-palette",
+    "transparent_index": 0,
+    "version": 2
+  },
+  "generator": {
+    "name": "fable_sprite_pipeline_v2",
+    "version": "0.1.0"
+  },
+  "id": "bloomling",
+  "ir": {
+    "keyframe_bytes": 12,
+    "render_key_bytes": 40,
+    "render_key_schema_version": 2,
+    "sample_clock_hz": 16000,
+    "viseme_sets": {
+      "custom": 255,
+      "microsoft22": 3,
+      "ovr15": 0,
+      "preston9": 2,
+      "vrm5": 1
+    }
+  },
+  "license": "CC0-1.0",
+  "mouth_arrays": [
+    [
+      0,
+      12,
+      0,
+      18,
+      14,
+      14,
+      15,
+      17,
+      12,
+      15,
+      13,
+      13,
+      14,
+      15,
+      16,
+      13,
+      14,
+      17,
+      18,
+      16,
+      19,
+      0,
+      14
+    ]
+  ],
+  "mouth_slots": [
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "sil",
+      "role": "rest",
+      "slot": 0
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "pp",
+      "role": "press",
+      "slot": 1
+    },
+    {
+      "authored": false,
+      "borrowed_from": "sil",
+      "name": "ff",
+      "role": "lip_bite",
+      "slot": 2
+    },
+    {
+      "authored": false,
+      "borrowed_from": "tongue",
+      "name": "th",
+      "role": "tongue",
+      "slot": 3
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "dd",
+      "role": "half",
+      "slot": 4
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "kk",
+      "role": "half",
+      "slot": 5
+    },
+    {
+      "authored": false,
+      "borrowed_from": "oh",
+      "name": "ch",
+      "role": "round",
+      "slot": 6
+    },
+    {
+      "authored": false,
+      "borrowed_from": "grin",
+      "name": "ss",
+      "role": "teeth",
+      "slot": 7
+    },
+    {
+      "authored": false,
+      "borrowed_from": "pp",
+      "name": "nn",
+      "role": "press",
+      "slot": 8
+    },
+    {
+      "authored": false,
+      "borrowed_from": "oh",
+      "name": "rr",
+      "role": "round",
+      "slot": 9
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "aa",
+      "role": "wide",
+      "slot": 10
+    },
+    {
+      "authored": false,
+      "borrowed_from": "aa",
+      "name": "e",
+      "role": "wide",
+      "slot": 11
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "ih",
+      "role": "half",
+      "slot": 12
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "oh",
+      "role": "round",
+      "slot": 13
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "ou",
+      "role": "pucker",
+      "slot": 14
+    },
+    {
+      "authored": false,
+      "borrowed_from": "aa",
+      "name": "smile",
+      "role": "wide",
+      "slot": 15
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "frown",
+      "role": "half",
+      "slot": 16
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "grin",
+      "role": "teeth",
+      "slot": 17
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "tongue",
+      "role": "tongue",
+      "slot": 18
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ou",
+      "name": "pucker",
+      "role": "pucker",
+      "slot": 19
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "gasp",
+      "role": "round",
+      "slot": 20
+    },
+    {
+      "authored": true,
+      "borrowed_from": null,
+      "name": "lateral",
+      "role": "half",
+      "slot": 21
+    },
+    {
+      "authored": false,
+      "borrowed_from": "ih",
+      "name": "smirk",
+      "role": "half",
+      "slot": 22
+    }
+  ],
+  "notes": [
+    "target pocket-stage: rig scaled by 26/40 with offset (4, 2)"
+  ],
+  "palette": {
+    "merged_after_565": [
+      [
+        8,
+        9
+      ]
+    ],
+    "rgb565": [
+      0,
+      10725,
+      23046,
+      23207,
+      17321,
+      27562,
+      23723,
+      50061,
+      32141,
+      32237,
+      40561,
+      42674
+    ],
+    "rgb888": [
+      "#000000",
+      "#2a3d2d",
+      "#5b4334",
+      "#58573f",
+      "#447749",
+      "#6b7753",
+      "#5d965a",
+      "#c3726e",
+      "#7ab368",
+      "#7bbd69",
+      "#9ccf88",
+      "#a7d695"
+    ],
+    "transparent_index": 0
+  },
+  "provenance": {
+    "background_rgb": [
+      245,
+      246,
+      230
+    ],
+    "erased_baked_mouths": [
+      "concern",
+      "determined",
+      "embarrassed",
+      "excited",
+      "joy",
+      "neutral",
+      "skeptical",
+      "sleepy",
+      "surprise",
+      "thoughtful",
+      "warm"
+    ],
+    "generator": {
+      "name": "fable_sprite_pipeline_v2",
+      "version": "0.1.0"
+    },
+    "mouth_source_mode": "isolated",
+    "pixel_grid_pitch": 4,
+    "sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/.claude/worktrees/fable-sprite-pipeline-v2/experiments/02-minimal-realtime-aec/tools/face-grid/contrib/fable_sprite_pipeline_v2/fixtures/bloomling_sheet.png",
+    "sheet_pixels_sha256": "4dfa632da932cf1b456075541ae7e3bffd6a6feb59a17e6b2ad2b73a62caa87b",
+    "sheet_sha256": "4ac0236460035c4a6524b333451dd38d5722eb970477a785a9315da617d41d3f",
+    "spec_sha256": "c1a3745683951fd0867a99b2eff412be12cbfa15bcbd250ab046ca1dd0bc5bb8"
+  },
+  "schema_version": 1,
+  "stats": {
+    "bank_count": 11,
+    "blob_bytes": 2987,
+    "cell_count": 24,
+    "flash_bytes": 3745,
+    "palette_count": 12
+  },
+  "target": {
+    "canvas": [
+      40,
+      30
+    ],
+    "display_pixels": [
+      40,
+      30
+    ],
+    "framing": "stage",
+    "id": "pocket-stage",
+    "margin": 2,
+    "max_flash_bytes": 24000,
+    "scale": 1
+  },
+  "validation": {
+    "gates": [
+      {
+        "cells": 24,
+        "name": "packbits_roundtrip",
+        "status": "pass"
+      },
+      {
+        "name": "player_contract",
+        "status": "pass"
+      },
+      {
+        "anchors_outside_base": [],
+        "base_bottoms": [
+          27,
+          27,
+          28,
+          28,
+          28,
+          28,
+          27,
+          27,
+          28,
+          28,
+          28
+        ],
+        "base_widths": [
+          22,
+          23,
+          20,
+          23,
+          22,
+          20,
+          23,
+          20,
+          23,
+          28,
+          22
+        ],
+        "bottom_spread_px": 1,
+        "name": "registration",
+        "status": "pass",
+        "width_deviation_pct": 27
+      },
+      {
+        "name": "clipping",
+        "status": "pass"
+      },
+      {
+        "max_colors": 12,
+        "merged_after_565": [
+          [
+            8,
+            9
+          ]
+        ],
+        "name": "palette",
+        "status": "pass",
+        "visible_colors": 11
+      },
+      {
+        "authored_expressions": [
+          "concern",
+          "determined",
+          "embarrassed",
+          "excited",
+          "joy",
+          "neutral",
+          "skeptical",
+          "sleepy",
+          "surprise",
+          "thoughtful",
+          "warm"
+        ],
+        "blink_stages": 3,
+        "borrowed_mouth_slots": [
+          {
+            "from": "sil",
+            "slot": "ff"
+          },
+          {
+            "from": "tongue",
+            "slot": "th"
+          },
+          {
+            "from": "ih",
+            "slot": "dd"
+          },
+          {
+            "from": "ih",
+            "slot": "kk"
+          },
+          {
+            "from": "oh",
+            "slot": "ch"
+          },
+          {
+            "from": "grin",
+            "slot": "ss"
+          },
+          {
+            "from": "pp",
+            "slot": "nn"
+          },
+          {
+            "from": "oh",
+            "slot": "rr"
+          },
+          {
+            "from": "aa",
+            "slot": "e"
+          },
+          {
+            "from": "aa",
+            "slot": "smile"
+          },
+          {
+            "from": "ih",
+            "slot": "frown"
+          },
+          {
+            "from": "ou",
+            "slot": "pucker"
+          },
+          {
+            "from": "ih",
+            "slot": "smirk"
+          }
+        ],
+        "canonical_targets": {
+          "concern": {
+            "bank": "concern",
+            "distance": 0
+          },
+          "determined": {
+            "bank": "determined",
+            "distance": 0
+          },
+          "embarrassed": {
+            "bank": "embarrassed",
+            "distance": 0
+          },
+          "excited": {
+            "bank": "excited",
+            "distance": 0
+          },
+          "joy": {
+            "bank": "joy",
+            "distance": 0
+          },
+          "neutral": {
+            "bank": "neutral",
+            "distance": 0
+          },
+          "skeptical": {
+            "bank": "skeptical",
+            "distance": 0
+          },
+          "sleepy": {
+            "bank": "sleepy",
+            "distance": 0
+          },
+          "surprise": {
+            "bank": "surprise",
+            "distance": 0
+          },
+          "thoughtful": {
+            "bank": "thoughtful",
+            "distance": 0
+          },
+          "warm": {
+            "bank": "warm",
+            "distance": 0
+          }
+        },
+        "missing_expressions": [],
+        "name": "coverage",
+        "status": "pass",
+        "viseme_sets": {
+          "0": {
+            "expected": 15,
+            "mapped": 15
+          },
+          "1": {
+            "expected": 5,
+            "mapped": 5
+          },
+          "2": {
+            "expected": 9,
+            "mapped": 9
+          },
+          "3": {
+            "expected": 22,
+            "mapped": 22
+          }
+        },
+        "worst_canonical_distance": 0
+      },
+      {
+        "flash_bytes": 3745,
+        "max_flash_bytes": 24000,
+        "name": "budget",
+        "status": "pass"
+      },
+      {
+        "lid_px": [
+          6,
+          6
+        ],
+        "name": "legibility",
+        "status": "pass",
+        "tallest_mouth_px": 8
+      }
+    ],
+    "status": "pass"
+  },
+  "viseme_map": [
+    {
+      "role": "wide",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 10,
+      "viseme": 0
+    },
+    {
+      "role": "wide",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 11,
+      "viseme": 1
+    },
+    {
+      "role": "half",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 12,
+      "viseme": 2
+    },
+    {
+      "role": "round",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 13,
+      "viseme": 3
+    },
+    {
+      "role": "pucker",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 14,
+      "viseme": 4
+    },
+    {
+      "role": "press",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 1,
+      "viseme": 5
+    },
+    {
+      "role": "teeth",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 7,
+      "viseme": 6
+    },
+    {
+      "role": "tongue",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 3,
+      "viseme": 7
+    },
+    {
+      "role": "half",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 4,
+      "viseme": 8
+    },
+    {
+      "role": "lip_bite",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 2,
+      "viseme": 9
+    },
+    {
+      "role": "half",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 5,
+      "viseme": 10
+    },
+    {
+      "role": "press",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 8,
+      "viseme": 11
+    },
+    {
+      "role": "round",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 9,
+      "viseme": 12
+    },
+    {
+      "role": "round",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 6,
+      "viseme": 13
+    },
+    {
+      "role": "rest",
+      "set": "ovr15",
+      "set_id": 0,
+      "slot": 0,
+      "viseme": 14
+    },
+    {
+      "role": "wide",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 10,
+      "viseme": 0
+    },
+    {
+      "role": "half",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 12,
+      "viseme": 1
+    },
+    {
+      "role": "pucker",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 14,
+      "viseme": 2
+    },
+    {
+      "role": "wide",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 11,
+      "viseme": 3
+    },
+    {
+      "role": "round",
+      "set": "vrm5",
+      "set_id": 1,
+      "slot": 13,
+      "viseme": 4
+    },
+    {
+      "role": "rest",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 0,
+      "viseme": 0
+    },
+    {
+      "role": "press",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 1,
+      "viseme": 1
+    },
+    {
+      "role": "teeth",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 7,
+      "viseme": 2
+    },
+    {
+      "role": "half",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 12,
+      "viseme": 3
+    },
+    {
+      "role": "wide",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 10,
+      "viseme": 4
+    },
+    {
+      "role": "round",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 13,
+      "viseme": 5
+    },
+    {
+      "role": "pucker",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 14,
+      "viseme": 6
+    },
+    {
+      "role": "lip_bite",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 2,
+      "viseme": 7
+    },
+    {
+      "role": "tongue",
+      "set": "preston9",
+      "set_id": 2,
+      "slot": 18,
+      "viseme": 8
+    },
+    {
+      "role": "rest",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 0,
+      "viseme": 0
+    },
+    {
+      "role": "press",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 1,
+      "viseme": 1
+    },
+    {
+      "role": "lip_bite",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 2,
+      "viseme": 2
+    },
+    {
+      "role": "tongue",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 3,
+      "viseme": 3
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 4,
+      "viseme": 4
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 5,
+      "viseme": 5
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 6,
+      "viseme": 6
+    },
+    {
+      "role": "teeth",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 7,
+      "viseme": 7
+    },
+    {
+      "role": "press",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 8,
+      "viseme": 8
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 9,
+      "viseme": 9
+    },
+    {
+      "role": "wide",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 10,
+      "viseme": 10
+    },
+    {
+      "role": "wide",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 11,
+      "viseme": 11
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 12,
+      "viseme": 12
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 13,
+      "viseme": 13
+    },
+    {
+      "role": "pucker",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 14,
+      "viseme": 14
+    },
+    {
+      "role": "wide",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 15,
+      "viseme": 15
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 16,
+      "viseme": 16
+    },
+    {
+      "role": "teeth",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 17,
+      "viseme": 17
+    },
+    {
+      "role": "tongue",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 18,
+      "viseme": 18
+    },
+    {
+      "role": "pucker",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 19,
+      "viseme": 19
+    },
+    {
+      "role": "round",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 20,
+      "viseme": 20
+    },
+    {
+      "role": "half",
+      "set": "microsoft22",
+      "set_id": 3,
+      "slot": 21,
+      "viseme": 21
+    },
+    {
+      "role": "half",
+      "set": "custom",
+      "set_id": 255,
+      "slot": 22,
+      "viseme": 42
+    }
+  ]
+}

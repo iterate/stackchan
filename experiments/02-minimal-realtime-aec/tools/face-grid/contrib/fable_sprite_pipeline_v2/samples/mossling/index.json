@@ -1,0 +1,29 @@
+{
+  "artifact_sha256": {
+    "cores3-face/fspp_mossling_cores3_face_atlas.c": "ffb12eeef9afcf593b596536fb739b15bdbeafb60cd85ef0a1fc3dcfb926f346",
+    "cores3-face/fspp_mossling_cores3_face_atlas.h": "af567b129580285c0773a8f91d94d8bdcf18cc4bef352cf348529b16653efbc5",
+    "cores3-face/manifest.json": "901d0fcca9dd8997af7d68dc04c6887bfcf46ff034a475bc0ca7c95e00aa1404",
+    "cores3-face/previews/blink_x4.png": "cbbf678913309ca1fd6ffe81b1a19a9e362fb830aaff5ab1a4c796955243d512",
+    "cores3-face/previews/expressions_x4.png": "342adec72631bbaae43e374f5da9b6b244a82c61d4833dd51ca5c8d9cb3db2e3",
+    "cores3-face/previews/mouths_x4.png": "7e525ebc5cbde0f490af41a015e703ed4a2e1f491800114af3e6a5e2bf5bdd9e",
+    "pocket-stage/fspp_mossling_pocket_stage_atlas.c": "1d9a3edd0528a4dca975d12e2849ac6249b3382e41a55997c710cb28c8ec389c",
+    "pocket-stage/fspp_mossling_pocket_stage_atlas.h": "aa443c9ef68b04dfedd6387e067561878ce66bc406726796edecead1d383cb0d",
+    "pocket-stage/manifest.json": "11374f4cd23ba2074b2bb0f2c315aca6fcdcc2783fd570ccf79680462b02b0fb",
+    "pocket-stage/previews/blink_x8.png": "23e9492ab1a505b60e3c89925cd584423ecd4c64bbf328c3e21519bb95c6d496",
+    "pocket-stage/previews/expressions_x8.png": "0484f9425f59c60b5908ab4402fd09422ad48d842ff4801b3ff348c830699ae1",
+    "pocket-stage/previews/mouths_x8.png": "f952116a7caa74df88fea939e0113faacdde26632745382cad98b562eecb055a"
+  },
+  "display_name": "Pocket Mossling (FSPP)",
+  "id": "mossling",
+  "status": "pass",
+  "targets": {
+    "cores3-face": {
+      "manifest": "cores3-face/manifest.json",
+      "status": "pass"
+    },
+    "pocket-stage": {
+      "manifest": "pocket-stage/manifest.json",
+      "status": "pass"
+    }
+  }
+}

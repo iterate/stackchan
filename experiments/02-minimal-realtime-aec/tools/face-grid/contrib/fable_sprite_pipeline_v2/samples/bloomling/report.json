@@ -1,0 +1,948 @@
+{
+  "gates": [
+    {
+      "background_rgb": [
+        245,
+        246,
+        230
+      ],
+      "foreground_pixels": 71817,
+      "name": "background_key",
+      "status": "pass",
+      "total_pixels": 453840
+    },
+    {
+      "cells": {
+        "aa": [
+          43,
+          416,
+          38,
+          32
+        ],
+        "concern": [
+          494,
+          40,
+          94,
+          109
+        ],
+        "determined": [
+          194,
+          188,
+          95,
+          109
+        ],
+        "embarrassed": [
+          646,
+          188,
+          92,
+          108
+        ],
+        "excited": [
+          482,
+          188,
+          112,
+          107
+        ],
+        "gasp": [
+          523,
+          416,
+          39,
+          33
+        ],
+        "grin": [
+          285,
+          347,
+          33,
+          16
+        ],
+        "ih": [
+          411,
+          426,
+          22,
+          9
+        ],
+        "joy": [
+          345,
+          40,
+          93,
+          107
+        ],
+        "lateral": [
+          519,
+          354,
+          46,
+          3
+        ],
+        "neutral": [
+          44,
+          40,
+          93,
+          108
+        ],
+        "oh": [
+          168,
+          417,
+          26,
+          27
+        ],
+        "ou": [
+          293,
+          425,
+          17,
+          13
+        ],
+        "pp": [
+          169,
+          351,
+          25,
+          6
+        ],
+        "sil": [
+          48,
+          354,
+          27,
+          2
+        ],
+        "skeptical": [
+          46,
+          188,
+          92,
+          109
+        ],
+        "sleepy": [
+          346,
+          188,
+          93,
+          109
+        ],
+        "surprise": [
+          646,
+          40,
+          91,
+          108
+        ],
+        "thoughtful": [
+          796,
+          40,
+          92,
+          108
+        ],
+        "tongue": [
+          404,
+          342,
+          33,
+          26
+        ],
+        "warm": [
+          196,
+          40,
+          92,
+          107
+        ]
+      },
+      "name": "segmentation",
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "cells": {
+          "aa": {
+            "x": [
+              1,
+              0,
+              60
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "concern": {
+            "x": [
+              1,
+              0,
+              56
+            ],
+            "y": [
+              4,
+              0,
+              61
+            ]
+          },
+          "determined": {
+            "x": [
+              4,
+              0,
+              62
+            ],
+            "y": [
+              1,
+              0,
+              58
+            ]
+          },
+          "embarrassed": {
+            "x": [
+              1,
+              0,
+              57
+            ],
+            "y": [
+              1,
+              0,
+              50
+            ]
+          },
+          "excited": {
+            "x": [
+              1,
+              0,
+              40
+            ],
+            "y": [
+              3,
+              2,
+              64
+            ]
+          },
+          "gasp": {
+            "x": [
+              1,
+              0,
+              25
+            ],
+            "y": [
+              1,
+              0,
+              75
+            ]
+          },
+          "grin": {
+            "x": [
+              1,
+              0,
+              100
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "ih": {
+            "x": [
+              1,
+              0,
+              100
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "joy": {
+            "x": [
+              4,
+              2,
+              66
+            ],
+            "y": [
+              1,
+              0,
+              44
+            ]
+          },
+          "lateral": {
+            "x": [
+              1,
+              0,
+              50
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "neutral": {
+            "x": [
+              1,
+              0,
+              46
+            ],
+            "y": [
+              1,
+              0,
+              53
+            ]
+          },
+          "oh": {
+            "x": [
+              1,
+              0,
+              100
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "ou": {
+            "x": [
+              1,
+              0,
+              100
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "pp": {
+            "x": [
+              1,
+              0,
+              100
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "sil": {
+            "x": [
+              1,
+              0,
+              50
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "skeptical": {
+            "x": [
+              4,
+              3,
+              62
+            ],
+            "y": [
+              6,
+              4,
+              63
+            ]
+          },
+          "sleepy": {
+            "x": [
+              1,
+              0,
+              50
+            ],
+            "y": [
+              4,
+              2,
+              63
+            ]
+          },
+          "surprise": {
+            "x": [
+              4,
+              0,
+              70
+            ],
+            "y": [
+              4,
+              3,
+              76
+            ]
+          },
+          "thoughtful": {
+            "x": [
+              4,
+              1,
+              78
+            ],
+            "y": [
+              4,
+              2,
+              72
+            ]
+          },
+          "tongue": {
+            "x": [
+              1,
+              0,
+              100
+            ],
+            "y": [
+              1,
+              0,
+              100
+            ]
+          },
+          "warm": {
+            "x": [
+              1,
+              0,
+              53
+            ],
+            "y": [
+              1,
+              0,
+              40
+            ]
+          }
+        },
+        "mode": "auto",
+        "pitch": 4,
+        "votes": 11
+      },
+      "name": "grid_snap",
+      "pitch": 4,
+      "status": "pass"
+    },
+    {
+      "evidence": {
+        "body_heights": [
+          24,
+          26,
+          24,
+          25,
+          24,
+          26,
+          26,
+          25,
+          20,
+          25,
+          26
+        ],
+        "body_widths": [
+          24,
+          22,
+          23,
+          22,
+          22,
+          23,
+          24,
+          23,
+          23,
+          22,
+          24
+        ],
+        "median_body": [
+          23,
+          25
+        ],
+        "scale": [
+          37,
+          25
+        ]
+      },
+      "name": "shared_scale",
+      "scale": [
+        37,
+        25
+      ],
+      "status": "pass"
+    },
+    {
+      "mode": "isolated",
+      "name": "mouth_source",
+      "status": "pass"
+    },
+    {
+      "artifacts": 12,
+      "name": "determinism",
+      "status": "pass"
+    }
+  ],
+  "id": "bloomling",
+  "notes": [],
+  "pipeline": {
+    "name": "fable_sprite_pipeline_v2",
+    "version": "0.1.0"
+  },
+  "provenance": {
+    "background_rgb": [
+      245,
+      246,
+      230
+    ],
+    "erased_baked_mouths": [
+      "concern",
+      "determined",
+      "embarrassed",
+      "excited",
+      "joy",
+      "neutral",
+      "skeptical",
+      "sleepy",
+      "surprise",
+      "thoughtful",
+      "warm"
+    ],
+    "generator": {
+      "name": "fable_sprite_pipeline_v2",
+      "version": "0.1.0"
+    },
+    "mouth_source_mode": "isolated",
+    "pixel_grid_pitch": 4,
+    "sheet": "/Users/jonastemplestein/src/github.com/iterate/stackchan/.claude/worktrees/fable-sprite-pipeline-v2/experiments/02-minimal-realtime-aec/tools/face-grid/contrib/fable_sprite_pipeline_v2/fixtures/bloomling_sheet.png",
+    "sheet_pixels_sha256": "4dfa632da932cf1b456075541ae7e3bffd6a6feb59a17e6b2ad2b73a62caa87b",
+    "sheet_sha256": "4ac0236460035c4a6524b333451dd38d5722eb970477a785a9315da617d41d3f",
+    "spec_sha256": "c1a3745683951fd0867a99b2eff412be12cbfa15bcbd250ab046ca1dd0bc5bb8"
+  },
+  "status": "pass",
+  "targets": {
+    "cores3-face": {
+      "banks": 11,
+      "cells": 26,
+      "flash_bytes": 6033,
+      "gates": [
+        {
+          "cells": 26,
+          "name": "packbits_roundtrip",
+          "status": "pass"
+        },
+        {
+          "name": "player_contract",
+          "status": "pass"
+        },
+        {
+          "anchors_outside_base": [],
+          "base_bottoms": [
+            38,
+            38,
+            39,
+            40,
+            40,
+            40,
+            38,
+            38,
+            40,
+            40,
+            40
+          ],
+          "base_widths": [
+            34,
+            35,
+            32,
+            35,
+            34,
+            32,
+            35,
+            32,
+            35,
+            42,
+            34
+          ],
+          "bottom_spread_px": 2,
+          "name": "registration",
+          "status": "pass",
+          "width_deviation_pct": 23
+        },
+        {
+          "name": "clipping",
+          "status": "pass"
+        },
+        {
+          "max_colors": 12,
+          "merged_after_565": [
+            [
+              8,
+              9
+            ]
+          ],
+          "name": "palette",
+          "status": "pass",
+          "visible_colors": 11
+        },
+        {
+          "authored_expressions": [
+            "concern",
+            "determined",
+            "embarrassed",
+            "excited",
+            "joy",
+            "neutral",
+            "skeptical",
+            "sleepy",
+            "surprise",
+            "thoughtful",
+            "warm"
+          ],
+          "blink_stages": 3,
+          "borrowed_mouth_slots": [
+            {
+              "from": "sil",
+              "slot": "ff"
+            },
+            {
+              "from": "tongue",
+              "slot": "th"
+            },
+            {
+              "from": "ih",
+              "slot": "dd"
+            },
+            {
+              "from": "ih",
+              "slot": "kk"
+            },
+            {
+              "from": "oh",
+              "slot": "ch"
+            },
+            {
+              "from": "grin",
+              "slot": "ss"
+            },
+            {
+              "from": "pp",
+              "slot": "nn"
+            },
+            {
+              "from": "oh",
+              "slot": "rr"
+            },
+            {
+              "from": "aa",
+              "slot": "e"
+            },
+            {
+              "from": "aa",
+              "slot": "smile"
+            },
+            {
+              "from": "ih",
+              "slot": "frown"
+            },
+            {
+              "from": "ou",
+              "slot": "pucker"
+            },
+            {
+              "from": "ih",
+              "slot": "smirk"
+            }
+          ],
+          "canonical_targets": {
+            "concern": {
+              "bank": "concern",
+              "distance": 0
+            },
+            "determined": {
+              "bank": "determined",
+              "distance": 0
+            },
+            "embarrassed": {
+              "bank": "embarrassed",
+              "distance": 0
+            },
+            "excited": {
+              "bank": "excited",
+              "distance": 0
+            },
+            "joy": {
+              "bank": "joy",
+              "distance": 0
+            },
+            "neutral": {
+              "bank": "neutral",
+              "distance": 0
+            },
+            "skeptical": {
+              "bank": "skeptical",
+              "distance": 0
+            },
+            "sleepy": {
+              "bank": "sleepy",
+              "distance": 0
+            },
+            "surprise": {
+              "bank": "surprise",
+              "distance": 0
+            },
+            "thoughtful": {
+              "bank": "thoughtful",
+              "distance": 0
+            },
+            "warm": {
+              "bank": "warm",
+              "distance": 0
+            }
+          },
+          "missing_expressions": [],
+          "name": "coverage",
+          "status": "pass",
+          "viseme_sets": {
+            "0": {
+              "expected": 15,
+              "mapped": 15
+            },
+            "1": {
+              "expected": 5,
+              "mapped": 5
+            },
+            "2": {
+              "expected": 9,
+              "mapped": 9
+            },
+            "3": {
+              "expected": 22,
+              "mapped": 22
+            }
+          },
+          "worst_canonical_distance": 0
+        },
+        {
+          "flash_bytes": 6033,
+          "max_flash_bytes": 40000,
+          "name": "budget",
+          "status": "pass"
+        },
+        {
+          "lid_px": [
+            10,
+            8
+          ],
+          "name": "legibility",
+          "status": "pass",
+          "tallest_mouth_px": 12
+        }
+      ],
+      "notes": [
+        "target cores3-face: rig scaled by 48/48 with offset (0, 0)"
+      ],
+      "status": "pass"
+    },
+    "pocket-stage": {
+      "banks": 11,
+      "cells": 24,
+      "flash_bytes": 3745,
+      "gates": [
+        {
+          "cells": 24,
+          "name": "packbits_roundtrip",
+          "status": "pass"
+        },
+        {
+          "name": "player_contract",
+          "status": "pass"
+        },
+        {
+          "anchors_outside_base": [],
+          "base_bottoms": [
+            27,
+            27,
+            28,
+            28,
+            28,
+            28,
+            27,
+            27,
+            28,
+            28,
+            28
+          ],
+          "base_widths": [
+            22,
+            23,
+            20,
+            23,
+            22,
+            20,
+            23,
+            20,
+            23,
+            28,
+            22
+          ],
+          "bottom_spread_px": 1,
+          "name": "registration",
+          "status": "pass",
+          "width_deviation_pct": 27
+        },
+        {
+          "name": "clipping",
+          "status": "pass"
+        },
+        {
+          "max_colors": 12,
+          "merged_after_565": [
+            [
+              8,
+              9
+            ]
+          ],
+          "name": "palette",
+          "status": "pass",
+          "visible_colors": 11
+        },
+        {
+          "authored_expressions": [
+            "concern",
+            "determined",
+            "embarrassed",
+            "excited",
+            "joy",
+            "neutral",
+            "skeptical",
+            "sleepy",
+            "surprise",
+            "thoughtful",
+            "warm"
+          ],
+          "blink_stages": 3,
+          "borrowed_mouth_slots": [
+            {
+              "from": "sil",
+              "slot": "ff"
+            },
+            {
+              "from": "tongue",
+              "slot": "th"
+            },
+            {
+              "from": "ih",
+              "slot": "dd"
+            },
+            {
+              "from": "ih",
+              "slot": "kk"
+            },
+            {
+              "from": "oh",
+              "slot": "ch"
+            },
+            {
+              "from": "grin",
+              "slot": "ss"
+            },
+            {
+              "from": "pp",
+              "slot": "nn"
+            },
+            {
+              "from": "oh",
+              "slot": "rr"
+            },
+            {
+              "from": "aa",
+              "slot": "e"
+            },
+            {
+              "from": "aa",
+              "slot": "smile"
+            },
+            {
+              "from": "ih",
+              "slot": "frown"
+            },
+            {
+              "from": "ou",
+              "slot": "pucker"
+            },
+            {
+              "from": "ih",
+              "slot": "smirk"
+            }
+          ],
+          "canonical_targets": {
+            "concern": {
+              "bank": "concern",
+              "distance": 0
+            },
+            "determined": {
+              "bank": "determined",
+              "distance": 0
+            },
+            "embarrassed": {
+              "bank": "embarrassed",
+              "distance": 0
+            },
+            "excited": {
+              "bank": "excited",
+              "distance": 0
+            },
+            "joy": {
+              "bank": "joy",
+              "distance": 0
+            },
+            "neutral": {
+              "bank": "neutral",
+              "distance": 0
+            },
+            "skeptical": {
+              "bank": "skeptical",
+              "distance": 0
+            },
+            "sleepy": {
+              "bank": "sleepy",
+              "distance": 0
+            },
+            "surprise": {
+              "bank": "surprise",
+              "distance": 0
+            },
+            "thoughtful": {
+              "bank": "thoughtful",
+              "distance": 0
+            },
+            "warm": {
+              "bank": "warm",
+              "distance": 0
+            }
+          },
+          "missing_expressions": [],
+          "name": "coverage",
+          "status": "pass",
+          "viseme_sets": {
+            "0": {
+              "expected": 15,
+              "mapped": 15
+            },
+            "1": {
+              "expected": 5,
+              "mapped": 5
+            },
+            "2": {
+              "expected": 9,
+              "mapped": 9
+            },
+            "3": {
+              "expected": 22,
+              "mapped": 22
+            }
+          },
+          "worst_canonical_distance": 0
+        },
+        {
+          "flash_bytes": 3745,
+          "max_flash_bytes": 24000,
+          "name": "budget",
+          "status": "pass"
+        },
+        {
+          "lid_px": [
+            6,
+            6
+          ],
+          "name": "legibility",
+          "status": "pass",
+          "tallest_mouth_px": 8
+        }
+      ],
+      "notes": [
+        "target pocket-stage: rig scaled by 26/40 with offset (4, 2)"
+      ],
+      "status": "pass"
+    }
+  }
+}

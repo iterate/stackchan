@@ -1,0 +1,29 @@
+{
+  "artifact_sha256": {
+    "cores3-face/fspp_bloomling_cores3_face_atlas.c": "610dcd8e818b32f92a3a57cf44961f781dbf02d44feecfcb131e721288c6268a",
+    "cores3-face/fspp_bloomling_cores3_face_atlas.h": "1cb8355d23842d9e9bd8d60f556fdccc1bfead6e7f58d867b848127916d24510",
+    "cores3-face/manifest.json": "fc1097f1a619c99ec883c65337c70ccffa3de206b353b935107d60f1437107ce",
+    "cores3-face/previews/blink_x6.png": "7d366214890ce6fe5d0b4fe6ebb7f3a2a01637646b755eb75bda80cedc46759d",
+    "cores3-face/previews/expressions_x6.png": "b4d0b88b7663082509fc5c464a2d2efd2c68babf2c30e257dfafaf15f727808b",
+    "cores3-face/previews/mouths_x6.png": "3e7d0a922b314bceb47c89533364350e289560d3515288b6b07fff45c5431016",
+    "pocket-stage/fspp_bloomling_pocket_stage_atlas.c": "235f70908996766490acd160b066aedadcc1e5b727e4e7332e40e7e83ad877be",
+    "pocket-stage/fspp_bloomling_pocket_stage_atlas.h": "7fa913d89d94aa15cd712bc12971a27fa5a445f2000d2a4d6fbf5761bf94f4b3",
+    "pocket-stage/manifest.json": "26df0420b50e8c0d60c29c145fbd5730a36ac71016ea2d63896fb92267577645",
+    "pocket-stage/previews/blink_x8.png": "c90ab369709f71d8a4aa7107eade4c89b69d08b77cbb45af63851891f4e4c715",
+    "pocket-stage/previews/expressions_x8.png": "a25c3b436772adaa85e77ccd7c72553e027ab03d1b73a7fedb07ad7f74ea8ea5",
+    "pocket-stage/previews/mouths_x8.png": "7227e6a45bde063202d473e34e8f2ab78ed03911bcaae51f57cf94859b774624"
+  },
+  "display_name": "Bloomling",
+  "id": "bloomling",
+  "status": "pass",
+  "targets": {
+    "cores3-face": {
+      "manifest": "cores3-face/manifest.json",
+      "status": "pass"
+    },
+    "pocket-stage": {
+      "manifest": "pocket-stage/manifest.json",
+      "status": "pass"
+    }
+  }
+}
