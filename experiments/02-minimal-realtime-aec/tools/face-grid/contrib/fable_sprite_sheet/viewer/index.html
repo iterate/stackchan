@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FSPR sprite-face viewer</title>
+<style>
+  body {
+    font: 14px/1.5 ui-monospace, monospace;
+    background: #14161c;
+    color: #d8dce6;
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+  }
+  canvas {
+    width: 480px;
+    height: 360px;
+    image-rendering: pixelated;
+    border: 1px solid #333a48;
+    background: #000;
+  }
+  #controls { display: flex; flex-direction: column; gap: 6px; }
+  label { display: flex; justify-content: space-between; gap: 12px; }
+  input[type="range"] { width: 180px; }
+  select, button { font: inherit; }
+  .hint { color: #7c8496; max-width: 420px; }
+</style>
+</head>
+<body>
+<div>
+  <canvas id="screen" width="160" height="120"></canvas>
+  <p class="hint">
+    All pixels come from the same C renderer the firmware would run,
+    compiled to WASM; the node harness proves byte-identical output.
+    Serve from the module root, e.g.
+    <code>python3 -m http.server -d .. 8080</code> then open
+    <code>/viewer/</code>.
+  </p>
+</div>
+<div id="controls">
+  <label>atlas <select id="atlas"></select></label>
+  <label>talk test <input type="checkbox" id="talk"></label>
+  <label>speaking <input type="checkbox" id="speaking"></label>
+  <label>blink flag <input type="checkbox" id="blinking"></label>
+  <label>mouth_open
+    <input type="range" id="mouth_open" min="0" max="255" value="0">
+  </label>
+  <label>mouth_width
+    <input type="range" id="mouth_width" min="0" max="255" value="128">
+  </label>
+  <label>mouth_round
+    <input type="range" id="mouth_round" min="0" max="255" value="0">
+  </label>
+  <label>mouth_press
+    <input type="range" id="mouth_press" min="0" max="255" value="0">
+  </label>
+  <label>mouth_teeth
+    <input type="range" id="mouth_teeth" min="0" max="255" value="0">
+  </label>
+  <label>eye_left_open
+    <input type="range" id="eye_left_open" min="0" max="255"
+           value="255">
+  </label>
+  <label>eye_right_open
+    <input type="range" id="eye_right_open" min="0" max="255"
+           value="255">
+  </label>
+  <label>look_x
+    <input type="range" id="look_x" min="-127" max="127" value="0">
+  </label>
+  <label>look_y
+    <input type="range" id="look_y" min="-127" max="127" value="0">
+  </label>
+  <label>brow
+    <input type="range" id="brow" min="-127" max="127" value="0">
+  </label>
+  <label>expression
+    <input type="range" id="expression" min="0" max="3" value="0">
+  </label>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

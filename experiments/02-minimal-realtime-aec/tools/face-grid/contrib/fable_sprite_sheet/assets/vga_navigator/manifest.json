@@ -1,0 +1,294 @@
+{
+  "scale": 2,
+  "native_size": [
+    80,
+    60
+  ],
+  "background": "#10102C",
+  "features": [
+    "saccades",
+    "auto_blink"
+  ],
+  "cycles": [
+    {
+      "colors": [
+        "#00f880",
+        "#00c868",
+        "#009850",
+        "#006838",
+        "#00a058",
+        "#00d070"
+      ],
+      "period_ms": 90
+    }
+  ],
+  "banks": [
+    {
+      "base": "base",
+      "mouth": {
+        "anchor": [
+          30,
+          42
+        ],
+        "shapes": {
+          "X": "mouth_X",
+          "A": "mouth_A",
+          "B": "mouth_B",
+          "C": "mouth_C",
+          "D": "mouth_D",
+          "E": "mouth_E",
+          "F": "mouth_F"
+        }
+      },
+      "eye_left": {
+        "anchor": [
+          29,
+          24
+        ],
+        "lids": [
+          "eye_open",
+          "eye_half",
+          "eye_closed"
+        ]
+      },
+      "eye_right": {
+        "anchor": [
+          42,
+          24
+        ],
+        "lids": [
+          "eye_open",
+          "eye_half",
+          "eye_closed"
+        ],
+        "flip_x": true
+      },
+      "pupil_left": {
+        "anchor": [
+          33,
+          26
+        ],
+        "cell": "pupil",
+        "range": [
+          2,
+          1
+        ],
+        "clamp": [
+          30,
+          25,
+          36,
+          28
+        ]
+      },
+      "pupil_right": {
+        "anchor": [
+          46,
+          26
+        ],
+        "cell": "pupil",
+        "range": [
+          2,
+          1
+        ],
+        "clamp": [
+          43,
+          25,
+          49,
+          28
+        ]
+      },
+      "brow_left": {
+        "anchor": [
+          28,
+          19
+        ],
+        "levels": [
+          "brow_low",
+          "brow_mid",
+          "brow_high"
+        ],
+        "max_lift": 1
+      },
+      "brow_right": {
+        "anchor": [
+          42,
+          19
+        ],
+        "levels": [
+          "brow_low",
+          "brow_mid",
+          "brow_high"
+        ],
+        "max_lift": 1,
+        "flip_x": true
+      }
+    }
+  ],
+  "sequences": [
+    {
+      "while_speaking": true,
+      "frames": [
+        {
+          "cell": "beacon_1",
+          "ms": 80,
+          "at": [
+            38,
+            0
+          ]
+        },
+        {
+          "cell": "beacon_2",
+          "ms": 120,
+          "at": [
+            38,
+            0
+          ]
+        },
+        {
+          "cell": "beacon_1",
+          "ms": 80,
+          "at": [
+            38,
+            0
+          ]
+        },
+        {
+          "cell": "beacon_0",
+          "ms": 400,
+          "at": [
+            38,
+            0
+          ]
+        },
+        {
+          "cell": "beacon_1",
+          "ms": 80,
+          "at": [
+            38,
+            0
+          ]
+        },
+        {
+          "cell": "beacon_0",
+          "ms": 200,
+          "at": [
+            38,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "name": "vga_navigator",
+  "image": "sheet.png",
+  "cells": {
+    "base": [
+      0,
+      0,
+      80,
+      60
+    ],
+    "eye_open": [
+      81,
+      0,
+      10,
+      6
+    ],
+    "eye_half": [
+      92,
+      0,
+      10,
+      6
+    ],
+    "eye_closed": [
+      103,
+      0,
+      10,
+      6
+    ],
+    "pupil": [
+      114,
+      0,
+      2,
+      2
+    ],
+    "brow_low": [
+      117,
+      0,
+      11,
+      3
+    ],
+    "brow_mid": [
+      129,
+      0,
+      11,
+      3
+    ],
+    "brow_high": [
+      141,
+      0,
+      11,
+      3
+    ],
+    "mouth_X": [
+      153,
+      0,
+      20,
+      12
+    ],
+    "mouth_A": [
+      174,
+      0,
+      20,
+      12
+    ],
+    "mouth_B": [
+      195,
+      0,
+      20,
+      12
+    ],
+    "mouth_C": [
+      216,
+      0,
+      20,
+      12
+    ],
+    "mouth_D": [
+      0,
+      61,
+      20,
+      12
+    ],
+    "mouth_E": [
+      21,
+      61,
+      20,
+      12
+    ],
+    "mouth_F": [
+      42,
+      61,
+      20,
+      12
+    ],
+    "beacon_0": [
+      63,
+      61,
+      5,
+      5
+    ],
+    "beacon_1": [
+      69,
+      61,
+      5,
+      5
+    ],
+    "beacon_2": [
+      75,
+      61,
+      5,
+      5
+    ]
+  }
+}

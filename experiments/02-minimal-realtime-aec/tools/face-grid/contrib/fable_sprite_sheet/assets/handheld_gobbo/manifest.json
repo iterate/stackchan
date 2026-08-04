@@ -1,0 +1,181 @@
+{
+  "scale": 2,
+  "native_size": [
+    80,
+    60
+  ],
+  "background": "#0F380F",
+  "features": [
+    "breathe",
+    "auto_blink"
+  ],
+  "banks": [
+    {
+      "base": "base",
+      "mouth": {
+        "anchor": [
+          31,
+          40
+        ],
+        "shapes": {
+          "X": "mouth_X",
+          "C": "mouth_C",
+          "D": "mouth_D",
+          "F": "mouth_F"
+        }
+      },
+      "eye_left": {
+        "anchor": [
+          26,
+          24
+        ],
+        "lids": [
+          "eye_open",
+          "eye_closed"
+        ]
+      },
+      "eye_right": {
+        "anchor": [
+          43,
+          24
+        ],
+        "lids": [
+          "eye_open",
+          "eye_closed"
+        ],
+        "flip_x": true
+      },
+      "brow_left": {
+        "anchor": [
+          25,
+          18
+        ],
+        "levels": [
+          "brow_low",
+          "brow_high"
+        ],
+        "max_lift": 2
+      },
+      "brow_right": {
+        "anchor": [
+          45,
+          18
+        ],
+        "levels": [
+          "brow_low",
+          "brow_high"
+        ],
+        "max_lift": 2,
+        "flip_x": true
+      }
+    }
+  ],
+  "sequences": [
+    {
+      "frames": [
+        {
+          "cell": "ear_1",
+          "ms": 90,
+          "at": [
+            9,
+            16
+          ]
+        },
+        {
+          "cell": "ear_0",
+          "ms": 90,
+          "at": [
+            9,
+            16
+          ]
+        },
+        {
+          "cell": "ear_1",
+          "ms": 90,
+          "at": [
+            9,
+            16
+          ]
+        },
+        {
+          "cell": "ear_0",
+          "ms": 90,
+          "at": [
+            9,
+            16
+          ]
+        }
+      ]
+    }
+  ],
+  "name": "handheld_gobbo",
+  "image": "sheet.png",
+  "cells": {
+    "base": [
+      0,
+      0,
+      80,
+      60
+    ],
+    "eye_open": [
+      81,
+      0,
+      11,
+      10
+    ],
+    "eye_closed": [
+      93,
+      0,
+      11,
+      10
+    ],
+    "brow_low": [
+      105,
+      0,
+      10,
+      4
+    ],
+    "brow_high": [
+      116,
+      0,
+      10,
+      4
+    ],
+    "mouth_X": [
+      127,
+      0,
+      18,
+      11
+    ],
+    "mouth_C": [
+      146,
+      0,
+      18,
+      11
+    ],
+    "mouth_D": [
+      165,
+      0,
+      18,
+      11
+    ],
+    "mouth_F": [
+      184,
+      0,
+      18,
+      11
+    ],
+    "ear_0": [
+      203,
+      0,
+      14,
+      20
+    ],
+    "ear_1": [
+      218,
+      0,
+      14,
+      20
+    ]
+  }
+}

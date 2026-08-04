@@ -1,0 +1,183 @@
+{
+  "scale": 2,
+  "native_size": [
+    80,
+    60
+  ],
+  "background": "#100800",
+  "features": [
+    "auto_blink"
+  ],
+  "cycles": [
+    {
+      "colors": [
+        "#ffc000",
+        "#b05800",
+        "#603000"
+      ],
+      "period_ms": 260
+    }
+  ],
+  "banks": [
+    {
+      "base": "base",
+      "mouth": {
+        "anchor": [
+          32,
+          38
+        ],
+        "shapes": {
+          "X": "mouth_X",
+          "C": "mouth_C",
+          "D": "mouth_D"
+        }
+      },
+      "eye_left": {
+        "anchor": [
+          28,
+          24
+        ],
+        "lids": [
+          "eyes_open",
+          "eyes_closed"
+        ]
+      },
+      "brow_left": {
+        "anchor": [
+          28,
+          20
+        ],
+        "levels": [
+          "brow_low",
+          "brow_high"
+        ],
+        "max_lift": 1
+      }
+    },
+    {
+      "base": "base",
+      "mouth": {
+        "anchor": [
+          32,
+          38
+        ],
+        "shapes": {
+          "X": "mouth_X",
+          "C": "mouth_C"
+        }
+      },
+      "eye_left": {
+        "anchor": [
+          28,
+          25
+        ],
+        "lids": [
+          "eyes_closed"
+        ]
+      }
+    }
+  ],
+  "sequences": [
+    {
+      "while_speaking": true,
+      "frames": [
+        {
+          "cell": "caret_on",
+          "ms": 320,
+          "at": [
+            4,
+            54
+          ]
+        },
+        {
+          "cell": "caret_off",
+          "ms": 320,
+          "at": [
+            4,
+            54
+          ]
+        },
+        {
+          "cell": "caret_on",
+          "ms": 320,
+          "at": [
+            4,
+            54
+          ]
+        },
+        {
+          "cell": "caret_off",
+          "ms": 320,
+          "at": [
+            4,
+            54
+          ]
+        }
+      ]
+    }
+  ],
+  "name": "terminal_operator",
+  "image": "sheet.png",
+  "cells": {
+    "base": [
+      0,
+      0,
+      80,
+      60
+    ],
+    "eyes_open": [
+      81,
+      0,
+      24,
+      6
+    ],
+    "eyes_closed": [
+      106,
+      0,
+      24,
+      6
+    ],
+    "brow_low": [
+      131,
+      0,
+      24,
+      3
+    ],
+    "brow_high": [
+      156,
+      0,
+      24,
+      3
+    ],
+    "mouth_X": [
+      181,
+      0,
+      16,
+      8
+    ],
+    "mouth_C": [
+      198,
+      0,
+      16,
+      8
+    ],
+    "mouth_D": [
+      215,
+      0,
+      16,
+      8
+    ],
+    "caret_on": [
+      232,
+      0,
+      5,
+      3
+    ],
+    "caret_off": [
+      238,
+      0,
+      5,
+      3
+    ]
+  }
+}

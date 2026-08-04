@@ -1,0 +1,314 @@
+{
+  "scale": 2,
+  "native_size": [
+    80,
+    60
+  ],
+  "background": "#0000AA",
+  "features": [
+    "breathe",
+    "saccades",
+    "auto_blink"
+  ],
+  "cycles": [
+    {
+      "colors": [
+        "#fff854",
+        "#ff8040",
+        "#f85030",
+        "#ffd080"
+      ],
+      "period_ms": 130
+    }
+  ],
+  "banks": [
+    {
+      "base": "base",
+      "mouth": {
+        "anchor": [
+          30,
+          40
+        ],
+        "shapes": {
+          "X": "mouth_X",
+          "A": "mouth_A",
+          "B": "mouth_B",
+          "C": "mouth_C",
+          "D": "mouth_D",
+          "E": "mouth_E",
+          "F": "mouth_F",
+          "G": "mouth_G",
+          "H": "mouth_H"
+        }
+      },
+      "eye_left": {
+        "anchor": [
+          27,
+          22
+        ],
+        "lids": [
+          "eye_l_open",
+          "eye_l_half",
+          "eye_l_closed"
+        ]
+      },
+      "eye_right": {
+        "anchor": [
+          41,
+          22
+        ],
+        "lids": [
+          "eye_r_open",
+          "eye_r_half",
+          "eye_r_closed"
+        ]
+      },
+      "pupil_left": {
+        "anchor": [
+          31,
+          25
+        ],
+        "cell": "pupil",
+        "range": [
+          2,
+          1
+        ],
+        "clamp": [
+          29,
+          23,
+          34,
+          27
+        ]
+      },
+      "pupil_right": {
+        "anchor": [
+          45,
+          25
+        ],
+        "cell": "pupil",
+        "range": [
+          2,
+          1
+        ],
+        "clamp": [
+          43,
+          23,
+          48,
+          27
+        ]
+      },
+      "brow_left": {
+        "anchor": [
+          26,
+          16
+        ],
+        "levels": [
+          "brow_low",
+          "brow_mid",
+          "brow_high"
+        ],
+        "max_lift": 2
+      },
+      "brow_right": {
+        "anchor": [
+          41,
+          16
+        ],
+        "levels": [
+          "brow_low",
+          "brow_mid",
+          "brow_high"
+        ],
+        "max_lift": 2
+      }
+    }
+  ],
+  "sequences": [
+    {
+      "frames": [
+        {
+          "cell": "sparkle_0",
+          "ms": 130,
+          "at": [
+            12,
+            44
+          ]
+        },
+        {
+          "cell": "sparkle_1",
+          "ms": 130,
+          "at": [
+            14,
+            42
+          ]
+        },
+        {
+          "cell": "sparkle_2",
+          "ms": 160,
+          "at": [
+            16,
+            40
+          ]
+        },
+        {
+          "cell": "sparkle_1",
+          "ms": 130,
+          "at": [
+            18,
+            42
+          ]
+        },
+        {
+          "cell": "sparkle_0",
+          "ms": 130,
+          "at": [
+            20,
+            44
+          ]
+        }
+      ]
+    }
+  ],
+  "name": "ega_sorcerer",
+  "image": "sheet.png",
+  "cells": {
+    "base": [
+      0,
+      0,
+      80,
+      60
+    ],
+    "eye_l_open": [
+      81,
+      0,
+      12,
+      9
+    ],
+    "eye_l_half": [
+      94,
+      0,
+      12,
+      9
+    ],
+    "eye_l_closed": [
+      107,
+      0,
+      12,
+      9
+    ],
+    "eye_r_open": [
+      120,
+      0,
+      12,
+      9
+    ],
+    "eye_r_half": [
+      133,
+      0,
+      12,
+      9
+    ],
+    "eye_r_closed": [
+      146,
+      0,
+      12,
+      9
+    ],
+    "pupil": [
+      159,
+      0,
+      3,
+      3
+    ],
+    "brow_low": [
+      163,
+      0,
+      13,
+      5
+    ],
+    "brow_mid": [
+      177,
+      0,
+      13,
+      5
+    ],
+    "brow_high": [
+      191,
+      0,
+      13,
+      5
+    ],
+    "mouth_X": [
+      205,
+      0,
+      20,
+      12
+    ],
+    "mouth_A": [
+      226,
+      0,
+      20,
+      12
+    ],
+    "mouth_B": [
+      0,
+      61,
+      20,
+      12
+    ],
+    "mouth_C": [
+      21,
+      61,
+      20,
+      12
+    ],
+    "mouth_D": [
+      42,
+      61,
+      20,
+      12
+    ],
+    "mouth_E": [
+      63,
+      61,
+      20,
+      12
+    ],
+    "mouth_F": [
+      84,
+      61,
+      20,
+      12
+    ],
+    "mouth_G": [
+      105,
+      61,
+      20,
+      12
+    ],
+    "mouth_H": [
+      126,
+      61,
+      20,
+      12
+    ],
+    "sparkle_0": [
+      147,
+      61,
+      7,
+      7
+    ],
+    "sparkle_1": [
+      155,
+      61,
+      7,
+      7
+    ],
+    "sparkle_2": [
+      163,
+      61,
+      7,
+      7
+    ]
+  }
+}
