@@ -1,0 +1,172 @@
+{
+  "schema": "stackchan-renderer-contribution/1",
+  "name": "fable_cyber_shaders",
+  "description": "Fixed-point cyberpunk software-shader faces: low-res 2D SDF fields with distance-baked glow, RGB565 palette LUTs, Bayer dithering, scanlines, chromatic offsets, smooth-min liquid blends, wireframes, orbs, optics, LED matrices, and glitch effects.",
+  "language": "C11, integer/fixed-point only (no float anywhere, verified on Xtensa)",
+  "output": {
+    "width": 160,
+    "height": 120,
+    "format": "RGB565",
+    "frame_bytes": 38400
+  },
+  "input": {
+    "keyframe": "12-byte face_keyframe_t mirror (cyber_keyframe_t, byte-compatible)",
+    "clock": "uint32 sample counter at 16 kHz; sole time source for all idle motion"
+  },
+  "memory": {
+    "context_bytes": 30608,
+    "context_owner": "caller (cyber_face_ctx_t, init once with cyber_face_init)",
+    "per_frame_allocation": "none",
+    "stack": "small fixed frames; largest transient is a 120-byte row-offset array"
+  },
+  "entry_points": {
+    "init": "cyber_face_init(cyber_face_ctx_t *)",
+    "render": "cyber_face_render(ctx, profile, keyframe, sample_clock, rgb565, pixel_capacity)",
+    "metadata": [
+      "cyber_face_profile_count",
+      "cyber_face_profile_slug",
+      "cyber_face_profile_name",
+      "cyber_face_profile_info (16-byte struct layout-compatible with face_render_info_t)"
+    ]
+  },
+  "integration": {
+    "firmware_family": "FACE_RENDER_FAMILY_CYBER (4)",
+    "profile_mapping": "CYBER_PROFILE_* values are FACE_RENDER_* minus FACE_RENDER_NEON_SDF_CYAN, in enum order",
+    "shim": "cast/memcpy face_keyframe_t to cyber_keyframe_t and forward face_render_frame calls; both structs are static-asserted to 12 bytes"
+  },
+  "architecture": "Stage A evaluates SDF/glow fields at 80x60 (40x30 for hub75-neon) into a caller-owned byte plane; stage B upscales 2x (4x) to 160x120 applying palette LUTs, 8x8 Bayer index dithering, scanlines, chromatic RGB565 channel offsets, rolling bars, and per-row jitter. holo-wireframe instead stamps additive 5x5 glow kernels along segments into a full-resolution accumulation plane and colorizes 1:1.",
+  "idle_motion": "Deterministic from the sample clock: jittered ~3.4 s blinks (fast close, hold, slower open, occasional double blink, pre-blink anticipation widen), ~1.4 s saccades with smoothstep transitions and micro-drift, ~4.2 s breathing bob modulating glow, speech squint, centred/quickened speaking gaze, expression-driven brows and mouth curve.",
+  "profiles": [
+    {
+      "id": 0,
+      "slug": "neon-sdf-cyan",
+      "firmware_enum": "FACE_RENDER_NEON_SDF_CYAN",
+      "look": "Filled rounded-box eyes, parabolic-bent capsule mouth, capsule brows; additive neon glow on black; cyan ramp",
+      "work_resolution": "80x60",
+      "effects": ["distance glow", "bayer dither"],
+      "host_us_per_frame": 114.3,
+      "estimated_s3_cycles_per_output_px": 143
+    },
+    {
+      "id": 1,
+      "slug": "neon-sdf-magenta",
+      "firmware_enum": "FACE_RENDER_NEON_SDF_MAGENTA",
+      "look": "Lidded-disc eyes (lid plane sweeps the disc), same mouth/brow rig; magenta ramp with 1-cell chromatic fringe",
+      "work_resolution": "80x60",
+      "effects": ["distance glow", "chromatic offset", "bayer dither"],
+      "host_us_per_frame": 134.4,
+      "estimated_s3_cycles_per_output_px": 168
+    },
+    {
+      "id": 2,
+      "slug": "liquid-smin",
+      "firmware_enum": "FACE_RENDER_LIQUID_SMIN",
+      "look": "Eye/mouth blobs plus a drifting droplet, all fused with the quadratic polynomial smooth minimum; wobble phases differ per blob; rim highlight on the zero contour; teal-to-white ramp",
+      "work_resolution": "80x60",
+      "effects": ["smooth-min blend", "distance glow", "bayer dither"],
+      "host_us_per_frame": 146.9,
+      "estimated_s3_cycles_per_output_px": 184
+    },
+    {
+      "id": 3,
+      "slug": "crt-chromatic",
+      "firmware_enum": "FACE_RENDER_CRT_CHROMATIC",
+      "look": "Neon face on a phosphor green-cyan ramp behind CRT artifacts: 75% scanlines, 1-cell chromatic offset, rolling brightness bar, periodic horizontal hum jitter, separable vignette",
+      "work_resolution": "80x60",
+      "effects": ["scanlines", "chromatic offset", "rolling bar", "row jitter", "vignette", "bayer dither"],
+      "host_us_per_frame": 143.6,
+      "estimated_s3_cycles_per_output_px": 180
+    },
+    {
+      "id": 4,
+      "slug": "holo-wireframe",
+      "firmware_enum": "FACE_RENDER_HOLO_WIREFRAME",
+      "look": "Octagonal head outline with bright vertex nodes, diamond eyes, trapezoid mouth with optional teeth ticks, brows; interlaced rows, drifting scan band, chromatic fringe, rare hologram flicker",
+      "work_resolution": "160x120 (stamped)",
+      "effects": ["additive line stamping", "interlace", "scan band", "chromatic offset", "flicker"],
+      "host_us_per_frame": 20.9,
+      "estimated_s3_cycles_per_output_px": 26
+    },
+    {
+      "id": 5,
+      "slug": "voice-orb",
+      "firmware_enum": "FACE_RENDER_VOICE_ORB",
+      "look": "Breathing ring orb with soft interior haze, two blinkable eye dots inside, three orbiting satellites; ring radius and satellite wobble follow speech; indigo-violet ramp",
+      "work_resolution": "80x60",
+      "effects": ["distance glow", "orbiting satellites", "bayer dither"],
+      "host_us_per_frame": 96.9,
+      "estimated_s3_cycles_per_output_px": 121
+    },
+    {
+      "id": 6,
+      "slug": "red-optic",
+      "firmware_enum": "FACE_RENDER_RED_OPTIC",
+      "look": "Single HAL-style lens: hot core dimmed by a lid shutter (blinks close the aperture), two iris rings, specular highlight tracking gaze, ambient chassis glow, vignette; red-amber ramp; core pulses with speech",
+      "work_resolution": "80x60",
+      "effects": ["distance glow", "lid shutter", "vignette", "bayer dither"],
+      "host_us_per_frame": 66.0,
+      "estimated_s3_cycles_per_output_px": 83
+    },
+    {
+      "id": 7,
+      "slug": "hub75-neon",
+      "firmware_enum": "FACE_RENDER_HUB75_NEON",
+      "look": "40x30 LED matrix simulation: chunky SDF face quantized to 8 brightness levels with temporal 2x2 dithering, rendered as round LED dots with dim edges and dark grid gaps via pre-scaled palettes; hot-pink ramp",
+      "work_resolution": "40x30",
+      "effects": ["LED cell mask", "3-bit quantize", "temporal dither"],
+      "host_us_per_frame": 22.9,
+      "estimated_s3_cycles_per_output_px": 29
+    },
+    {
+      "id": 8,
+      "slug": "edge-glow",
+      "firmware_enum": "FACE_RENDER_EDGE_GLOW",
+      "look": "Siri-style screen-border glow sweeping through eight hue bands (band-packed palette: 8 hues x 32 levels), brightening with speech; minimal tinted-white eyes and mouth in the centre",
+      "work_resolution": "80x60",
+      "effects": ["border distance glow", "hue banding", "palette sweep"],
+      "host_us_per_frame": 79.5,
+      "estimated_s3_cycles_per_output_px": 99
+    },
+    {
+      "id": 9,
+      "slug": "glitch-mask",
+      "firmware_enum": "FACE_RENDER_GLITCH_MASK",
+      "look": "Ice-white neon face corrupted on a deterministic schedule (~every 2.4 s, 160-380 ms, triangular envelope): per-band row tearing, chromatic split spikes, block dropouts, one-row white flash at peak",
+      "work_resolution": "80x60",
+      "effects": ["row tearing", "chromatic spikes", "block dropouts", "bayer dither"],
+      "host_us_per_frame": 135.1,
+      "estimated_s3_cycles_per_output_px": 169
+    },
+    {
+      "id": 10,
+      "slug": "palette-plasma",
+      "firmware_enum": "FACE_RENDER_PALETTE_PLASMA",
+      "look": "Classic four-term sine plasma cycling through a seamless indigo/magenta/cyan cosine-palette wheel (lower 128 entries); the face silhouette remaps into a bright ramp (upper 128) so eyes and mouth read as luminous cutouts",
+      "work_resolution": "80x60",
+      "effects": ["plasma", "palette cycling", "silhouette mask"],
+      "host_us_per_frame": 123.8,
+      "estimated_s3_cycles_per_output_px": 155
+    }
+  ],
+  "verification": {
+    "tests": "tests/test_cyber_face.c: metadata, argument validation, cross-context determinism, guard-band overflow checks, idle-motion/blink/speech visibility per profile, 400-case keyframe fuzz, 55 golden FNV-1a64 frame hashes",
+    "wasm_byte_identity": "make wasm-verify diffs the full golden hash table between the host build and the emscripten/node build (verified identical) and runs the entire suite under WASM",
+    "xtensa": "make xtensa-check cross-compiles with xtensa-esp32s3-elf-gcc -O2 -Werror and asserts no soft-float helper symbols; total .text about 13.9 KiB",
+    "budget": "worst profile 146.9 us/frame on host; with a pessimistic 100x host-to-S3 factor that is ~14.7 ms/frame against the 33.3 ms budget at 30 fps"
+  },
+  "files": {
+    "src/cyber_face.h": "public API",
+    "src/cyber_internal.h": "fixed-point toolkit, SDF primitives, motion state",
+    "src/cyber_tables.c": "init-time sine/glow/vignette/palette/Bayer tables",
+    "src/cyber_motion.c": "deterministic blink/saccade/breath/mouth/brow engine",
+    "src/cyber_profiles.c": "the eleven field renderers and effect passes",
+    "src/cyber_face.c": "dispatch and metadata",
+    "tests/": "test suite + golden hashes",
+    "bench/": "host benchmark",
+    "tools/dump_previews.c": "BMP contact-sheet generator (dev aid)",
+    "preview/": "generated BMP previews and index.html",
+    "RESEARCH.md": "source and licensing research report",
+    "Makefile": "test / bench / preview / regen-golden / wasm-verify / xtensa-check"
+  },
+  "license_status": "All code in this directory is original, written for this contribution from published mathematics and primary documentation; no code copied from any external project. See RESEARCH.md for the full audit."
+}
