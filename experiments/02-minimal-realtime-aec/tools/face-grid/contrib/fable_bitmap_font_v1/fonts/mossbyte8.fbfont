@@ -1,0 +1,1308 @@
+# mossbyte8 — original proportional pixel font in the 16-bit-RPG dialog
+# tradition (7 px caps, 5 px x-height, 2 px descenders, single-px strokes,
+# rounded corners). Every pixel in this file was authored by hand for this
+# project; no existing font was traced, copied, or auto-converted.
+#
+# Palette planes: '#' ink, '+' shade, '@' accent, '.' transparent.
+
+font mossbyte8
+line_height 11
+ascent 8
+descent 2
+tracking 0
+fallback U+FFFD
+
+glyph U+0020   # space
+adv 3
+empty
+
+glyph U+0021   # !
+adv 2
+bearing 0 7
+rows
+#
+#
+#
+#
+#
+.
+#
+end
+
+glyph U+0022   # "
+adv 4
+bearing 0 7
+rows
+#.#
+#.#
+end
+
+glyph U+0023   # #
+adv 6
+bearing 0 7
+rows
+.#.#.
+.#.#.
+#####
+.#.#.
+#####
+.#.#.
+.#.#.
+end
+
+glyph U+0024   # $
+adv 6
+bearing 0 7
+rows
+..#..
+.####
+#.#..
+.###.
+..#.#
+####.
+..#..
+end
+
+glyph U+0025   # %
+adv 6
+bearing 0 7
+rows
+##...
+##..#
+...#.
+..#..
+.#...
+#..##
+...##
+end
+
+glyph U+0026   # &
+adv 6
+bearing 0 7
+rows
+.##..
+#..#.
+#..#.
+.##..
+#.#.#
+#..#.
+.##.#
+end
+
+glyph U+0027   # '
+adv 2
+bearing 0 7
+rows
+#
+#
+end
+
+glyph U+0028   # (
+adv 3
+bearing 0 7
+rows
+.#
+#.
+#.
+#.
+#.
+#.
+.#
+end
+
+glyph U+0029   # )
+adv 3
+bearing 0 7
+rows
+#.
+.#
+.#
+.#
+.#
+.#
+#.
+end
+
+glyph U+002A   # *
+adv 6
+bearing 0 7
+rows
+..#..
+#.#.#
+.###.
+#.#.#
+..#..
+end
+
+glyph U+002B   # +
+adv 6
+bearing 0 5
+rows
+..#..
+..#..
+#####
+..#..
+..#..
+end
+
+glyph U+002C   # ,
+adv 3
+bearing 0 1
+rows
+.#
+.#
+#.
+end
+
+glyph U+002D   # -
+adv 5
+bearing 0 4
+rows
+####
+end
+
+glyph U+002E   # .
+adv 2
+bearing 0 1
+rows
+#
+end
+
+glyph U+002F   # /
+adv 4
+bearing 0 7
+rows
+..#
+..#
+.#.
+.#.
+.#.
+#..
+#..
+end
+
+glyph U+0030   # 0
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#..##
+#.#.#
+##..#
+#...#
+.###.
+end
+
+glyph U+0031   # 1
+adv 4
+bearing 0 7
+rows
+.#.
+##.
+.#.
+.#.
+.#.
+.#.
+###
+end
+
+glyph U+0032   # 2
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+....#
+...#.
+..#..
+.#...
+#####
+end
+
+glyph U+0033   # 3
+adv 6
+bearing 0 7
+rows
+####.
+....#
+....#
+.###.
+....#
+....#
+####.
+end
+
+glyph U+0034   # 4
+adv 6
+bearing 0 7
+rows
+...#.
+..##.
+.#.#.
+#..#.
+#####
+...#.
+...#.
+end
+
+glyph U+0035   # 5
+adv 6
+bearing 0 7
+rows
+#####
+#....
+####.
+....#
+....#
+#...#
+.###.
+end
+
+glyph U+0036   # 6
+adv 6
+bearing 0 7
+rows
+.###.
+#....
+#....
+####.
+#...#
+#...#
+.###.
+end
+
+glyph U+0037   # 7
+adv 6
+bearing 0 7
+rows
+#####
+....#
+...#.
+...#.
+..#..
+..#..
+..#..
+end
+
+glyph U+0038   # 8
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#...#
+.###.
+#...#
+#...#
+.###.
+end
+
+glyph U+0039   # 9
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#...#
+.####
+....#
+....#
+.###.
+end
+
+glyph U+003A   # :
+adv 2
+bearing 0 5
+rows
+#
+.
+.
+.
+#
+end
+
+glyph U+003B   # ;
+adv 3
+bearing 0 5
+rows
+.#
+..
+..
+..
+.#
+#.
+end
+
+glyph U+003C   # <
+adv 4
+bearing 0 6
+rows
+..#
+.#.
+#..
+.#.
+..#
+end
+
+glyph U+003D   # =
+adv 5
+bearing 0 4
+rows
+####
+....
+####
+end
+
+glyph U+003E   # >
+adv 4
+bearing 0 6
+rows
+#..
+.#.
+..#
+.#.
+#..
+end
+
+glyph U+003F   # ?
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+....#
+...#.
+..#..
+.....
+..#..
+end
+
+glyph U+0040   # @
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#.###
+#.#.#
+#.###
+#....
+.###.
+end
+
+glyph U+0041   # A
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#...#
+#####
+#...#
+#...#
+#...#
+end
+
+glyph U+0042   # B
+adv 6
+bearing 0 7
+rows
+####.
+#...#
+#...#
+####.
+#...#
+#...#
+####.
+end
+
+glyph U+0043   # C
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#....
+#....
+#....
+#...#
+.###.
+end
+
+glyph U+0044   # D
+adv 6
+bearing 0 7
+rows
+####.
+#...#
+#...#
+#...#
+#...#
+#...#
+####.
+end
+
+glyph U+0045   # E
+adv 6
+bearing 0 7
+rows
+#####
+#....
+#....
+####.
+#....
+#....
+#####
+end
+
+glyph U+0046   # F
+adv 6
+bearing 0 7
+rows
+#####
+#....
+#....
+####.
+#....
+#....
+#....
+end
+
+glyph U+0047   # G
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#....
+#.###
+#...#
+#...#
+.###.
+end
+
+glyph U+0048   # H
+adv 6
+bearing 0 7
+rows
+#...#
+#...#
+#...#
+#####
+#...#
+#...#
+#...#
+end
+
+glyph U+0049   # I
+adv 4
+bearing 0 7
+rows
+###
+.#.
+.#.
+.#.
+.#.
+.#.
+###
+end
+
+glyph U+004A   # J
+adv 6
+bearing 0 7
+rows
+..###
+...#.
+...#.
+...#.
+...#.
+#..#.
+.##..
+end
+
+glyph U+004B   # K
+adv 6
+bearing 0 7
+rows
+#...#
+#..#.
+#.#..
+##...
+#.#..
+#..#.
+#...#
+end
+
+glyph U+004C   # L
+adv 6
+bearing 0 7
+rows
+#....
+#....
+#....
+#....
+#....
+#....
+#####
+end
+
+glyph U+004D   # M
+adv 6
+bearing 0 7
+rows
+#...#
+##.##
+#.#.#
+#.#.#
+#...#
+#...#
+#...#
+end
+
+glyph U+004E   # N
+adv 6
+bearing 0 7
+rows
+#...#
+##..#
+#.#.#
+#..##
+#...#
+#...#
+#...#
+end
+
+glyph U+004F   # O
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#...#
+#...#
+#...#
+#...#
+.###.
+end
+
+glyph U+0050   # P
+adv 6
+bearing 0 7
+rows
+####.
+#...#
+#...#
+####.
+#....
+#....
+#....
+end
+
+glyph U+0051   # Q
+adv 6
+bearing 0 7
+rows
+.###.
+#...#
+#...#
+#...#
+#.#.#
+#..#.
+.##.#
+end
+
+glyph U+0052   # R
+adv 6
+bearing 0 7
+rows
+####.
+#...#
+#...#
+####.
+#.#..
+#..#.
+#...#
+end
+
+glyph U+0053   # S
+adv 6
+bearing 0 7
+rows
+.####
+#....
+#....
+.###.
+....#
+....#
+####.
+end
+
+glyph U+0054   # T
+adv 6
+bearing 0 7
+rows
+#####
+..#..
+..#..
+..#..
+..#..
+..#..
+..#..
+end
+
+glyph U+0055   # U
+adv 6
+bearing 0 7
+rows
+#...#
+#...#
+#...#
+#...#
+#...#
+#...#
+.###.
+end
+
+glyph U+0056   # V
+adv 6
+bearing 0 7
+rows
+#...#
+#...#
+#...#
+#...#
+.#.#.
+.#.#.
+..#..
+end
+
+glyph U+0057   # W
+adv 6
+bearing 0 7
+rows
+#...#
+#...#
+#...#
+#.#.#
+#.#.#
+##.##
+#...#
+end
+
+glyph U+0058   # X
+adv 6
+bearing 0 7
+rows
+#...#
+#...#
+.#.#.
+..#..
+.#.#.
+#...#
+#...#
+end
+
+glyph U+0059   # Y
+adv 6
+bearing 0 7
+rows
+#...#
+#...#
+.#.#.
+..#..
+..#..
+..#..
+..#..
+end
+
+glyph U+005A   # Z
+adv 6
+bearing 0 7
+rows
+#####
+....#
+...#.
+..#..
+.#...
+#....
+#####
+end
+
+glyph U+005B   # [
+adv 3
+bearing 0 7
+rows
+##
+#.
+#.
+#.
+#.
+#.
+##
+end
+
+glyph U+005C   # backslash
+adv 4
+bearing 0 7
+rows
+#..
+#..
+.#.
+.#.
+.#.
+..#
+..#
+end
+
+glyph U+005D   # ]
+adv 3
+bearing 0 7
+rows
+##
+.#
+.#
+.#
+.#
+.#
+##
+end
+
+glyph U+005E   # ^
+adv 6
+bearing 0 7
+rows
+..#..
+.#.#.
+#...#
+end
+
+glyph U+005F   # _
+adv 6
+bearing 0 -1
+rows
+#####
+end
+
+glyph U+0060   # `
+adv 3
+bearing 0 8
+rows
+#.
+.#
+end
+
+glyph U+0061   # a
+adv 6
+bearing 0 5
+rows
+.###.
+....#
+.####
+#...#
+.####
+end
+
+glyph U+0062   # b
+adv 6
+bearing 0 7
+rows
+#....
+#....
+####.
+#...#
+#...#
+#...#
+####.
+end
+
+glyph U+0063   # c
+adv 5
+bearing 0 5
+rows
+.###
+#...
+#...
+#...
+.###
+end
+
+glyph U+0064   # d
+adv 6
+bearing 0 7
+rows
+....#
+....#
+.####
+#...#
+#...#
+#...#
+.####
+end
+
+glyph U+0065   # e
+adv 6
+bearing 0 5
+rows
+.###.
+#...#
+#####
+#....
+.###.
+end
+
+glyph U+0066   # f
+adv 5
+bearing 0 7
+rows
+..##
+.#..
+###.
+.#..
+.#..
+.#..
+.#..
+end
+
+glyph U+0067   # g
+adv 6
+bearing 0 5
+rows
+.####
+#...#
+#...#
+#...#
+.####
+....#
+.###.
+end
+
+glyph U+0068   # h
+adv 6
+bearing 0 7
+rows
+#....
+#....
+####.
+#...#
+#...#
+#...#
+#...#
+end
+
+glyph U+0069   # i
+adv 2
+bearing 0 7
+rows
+#
+.
+#
+#
+#
+#
+#
+end
+
+glyph U+006A   # j
+adv 4
+bearing 0 7
+rows
+..#
+...
+..#
+..#
+..#
+..#
+..#
+..#
+##.
+end
+
+glyph U+006B   # k
+adv 5
+bearing 0 7
+rows
+#...
+#...
+#..#
+#.#.
+##..
+#.#.
+#..#
+end
+
+glyph U+006C   # l
+adv 3
+bearing 0 7
+rows
+#.
+#.
+#.
+#.
+#.
+#.
+.#
+end
+
+glyph U+006D   # m
+adv 6
+bearing 0 5
+rows
+##.#.
+#.#.#
+#.#.#
+#.#.#
+#.#.#
+end
+
+glyph U+006E   # n
+adv 6
+bearing 0 5
+rows
+####.
+#...#
+#...#
+#...#
+#...#
+end
+
+glyph U+006F   # o
+adv 6
+bearing 0 5
+rows
+.###.
+#...#
+#...#
+#...#
+.###.
+end
+
+glyph U+0070   # p
+adv 6
+bearing 0 5
+rows
+####.
+#...#
+#...#
+#...#
+####.
+#....
+#....
+end
+
+glyph U+0071   # q
+adv 6
+bearing 0 5
+rows
+.####
+#...#
+#...#
+#...#
+.####
+....#
+....#
+end
+
+glyph U+0072   # r
+adv 5
+bearing 0 5
+rows
+#.##
+##..
+#...
+#...
+#...
+end
+
+glyph U+0073   # s
+adv 6
+bearing 0 5
+rows
+.####
+#....
+.###.
+....#
+####.
+end
+
+glyph U+0074   # t
+adv 5
+bearing 0 7
+rows
+.#..
+.#..
+####
+.#..
+.#..
+.#..
+..##
+end
+
+glyph U+0075   # u
+adv 6
+bearing 0 5
+rows
+#...#
+#...#
+#...#
+#...#
+.####
+end
+
+glyph U+0076   # v
+adv 6
+bearing 0 5
+rows
+#...#
+#...#
+.#.#.
+.#.#.
+..#..
+end
+
+glyph U+0077   # w
+adv 6
+bearing 0 5
+rows
+#.#.#
+#.#.#
+#.#.#
+#.#.#
+.#.#.
+end
+
+glyph U+0078   # x
+adv 6
+bearing 0 5
+rows
+#...#
+.#.#.
+..#..
+.#.#.
+#...#
+end
+
+glyph U+0079   # y
+adv 6
+bearing 0 5
+rows
+#...#
+#...#
+.#.#.
+..#..
+..#..
+.#...
+#....
+end
+
+glyph U+007A   # z
+adv 6
+bearing 0 5
+rows
+#####
+...#.
+..#..
+.#...
+#####
+end
+
+glyph U+007B   # {
+adv 4
+bearing 0 7
+rows
+..#
+.#.
+.#.
+#..
+.#.
+.#.
+..#
+end
+
+glyph U+007C   # |
+adv 2
+bearing 0 7
+rows
+#
+#
+#
+#
+#
+#
+#
+#
+#
+end
+
+glyph U+007D   # }
+adv 4
+bearing 0 7
+rows
+#..
+.#.
+.#.
+..#
+.#.
+.#.
+#..
+end
+
+glyph U+007E   # ~
+adv 6
+bearing 0 4
+rows
+.#..#
+#..#.
+end
+
+glyph U+00E9   # é
+adv 6
+bearing 0 8
+rows
+...#.
+..#..
+.....
+.###.
+#...#
+#####
+#....
+.###.
+end
+
+glyph U+2013   # en dash
+adv 6
+bearing 0 4
+rows
+#####
+end
+
+glyph U+2014   # em dash
+adv 8
+bearing 0 4
+rows
+#######
+end
+
+glyph U+2018   # left single quote
+adv 3
+bearing 0 7
+rows
+.#
+#.
+end
+
+glyph U+2019   # right single quote
+adv 3
+bearing 0 7
+rows
+#.
+.#
+end
+
+glyph U+201C   # left double quote
+adv 5
+bearing 0 7
+rows
+.#.#
+#.#.
+end
+
+glyph U+201D   # right double quote
+adv 5
+bearing 0 7
+rows
+#.#.
+.#.#
+end
+
+glyph U+2026   # horizontal ellipsis
+adv 6
+bearing 0 1
+rows
+#.#.#
+end
+
+glyph U+FFFD   # replacement character: boxed accent question mark
+adv 7
+bearing 0 7
+rows
+.####.
+######
+##@@@#
+####@#
+##@###
+######
+##@###
+end
+
+glyph U+E000   # private use: assistant orb chip (ink rim, shade fill,
+adv 8         # accent highlight)
+bearing 0 7
+rows
+..###..
+.#+++#.
+#+@++.#
+#+++++#
+#+++++#
+.#+++#.
+..###..
+end
+
+glyph U+E001   # private use: user chip (head and shoulders)
+adv 8
+bearing 0 7
+rows
+..###..
+.#+++#.
+.#+++#.
+..###..
+.#####.
+#+++++#
+#+++++#
+end
+
+# Kerning: single-pixel tucks for the classic diagonal/overhang pairs.
+
+kern U+0041 U+0054 -1   # AT
+kern U+0041 U+0056 -1   # AV
+kern U+0041 U+0057 -1   # AW
+kern U+0041 U+0059 -1   # AY
+kern U+0046 U+002C -1   # F,
+kern U+0046 U+002E -1   # F.
+kern U+004C U+0054 -1   # LT
+kern U+004C U+0056 -1   # LV
+kern U+004C U+0057 -1   # LW
+kern U+004C U+0059 -1   # LY
+kern U+0050 U+002C -1   # P,
+kern U+0050 U+002E -1   # P.
+kern U+0050 U+0041 -1   # PA
+kern U+0054 U+0041 -1   # TA
+kern U+0054 U+002C -1   # T,
+kern U+0054 U+002E -1   # T.
+kern U+0054 U+0061 -1   # Ta
+kern U+0054 U+0063 -1   # Tc
+kern U+0054 U+0065 -1   # Te
+kern U+0054 U+006F -1   # To
+kern U+0054 U+0072 -1   # Tr
+kern U+0054 U+0073 -1   # Ts
+kern U+0054 U+0075 -1   # Tu
+kern U+0054 U+0077 -1   # Tw
+kern U+0054 U+0079 -1   # Ty
+kern U+0056 U+0041 -1   # VA
+kern U+0056 U+002C -1   # V,
+kern U+0056 U+002E -1   # V.
+kern U+0056 U+0061 -1   # Va
+kern U+0056 U+0065 -1   # Ve
+kern U+0056 U+006F -1   # Vo
+kern U+0057 U+0041 -1   # WA
+kern U+0057 U+0061 -1   # Wa
+kern U+0057 U+0065 -1   # We
+kern U+0057 U+006F -1   # Wo
+kern U+0059 U+0041 -1   # YA
+kern U+0059 U+002C -1   # Y,
+kern U+0059 U+002E -1   # Y.
+kern U+0059 U+0061 -1   # Ya
+kern U+0059 U+0065 -1   # Ye
+kern U+0059 U+006F -1   # Yo
+kern U+0072 U+002C -1   # r,
+kern U+0072 U+002E -1   # r.

@@ -1,0 +1,581 @@
+# pico6 — original micro pixel font for narrow panels (M5StickC/StickS3
+# class). 5 px caps, mostly 3 px wide, 1 px descent row, 7 px line height.
+# Lowercase input renders through uppercase aliases, the classic tiny-LCD
+# trick, so transcripts stay legible at 1x on a 135 px wide screen.
+# All pixels are original work authored for this project.
+
+font pico6
+line_height 7
+ascent 5
+descent 1
+tracking 0
+fallback U+FFFD
+
+glyph U+0020   # space
+adv 2
+empty
+
+glyph U+0021   # !
+adv 2
+bearing 0 5
+rows
+#
+#
+#
+.
+#
+end
+
+glyph U+0022   # "
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+end
+
+glyph U+0027   # '
+adv 2
+bearing 0 5
+rows
+#
+#
+end
+
+glyph U+0028   # (
+adv 3
+bearing 0 5
+rows
+.#
+#.
+#.
+#.
+.#
+end
+
+glyph U+0029   # )
+adv 3
+bearing 0 5
+rows
+#.
+.#
+.#
+.#
+#.
+end
+
+glyph U+002C   # ,
+adv 2
+bearing 0 1
+rows
+#
+#
+end
+
+glyph U+002D   # -
+adv 4
+bearing 0 3
+rows
+###
+end
+
+glyph U+002E   # .
+adv 2
+bearing 0 1
+rows
+#
+end
+
+glyph U+002F   # /
+adv 4
+bearing 0 5
+rows
+..#
+..#
+.#.
+#..
+#..
+end
+
+glyph U+0030   # 0
+adv 4
+bearing 0 5
+rows
+.#.
+#.#
+#.#
+#.#
+.#.
+end
+
+glyph U+0031   # 1
+adv 4
+bearing 0 5
+rows
+.#.
+##.
+.#.
+.#.
+###
+end
+
+glyph U+0032   # 2
+adv 4
+bearing 0 5
+rows
+##.
+..#
+.#.
+#..
+###
+end
+
+glyph U+0033   # 3
+adv 4
+bearing 0 5
+rows
+##.
+..#
+.#.
+..#
+##.
+end
+
+glyph U+0034   # 4
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+###
+..#
+..#
+end
+
+glyph U+0035   # 5
+adv 4
+bearing 0 5
+rows
+###
+#..
+##.
+..#
+##.
+end
+
+glyph U+0036   # 6
+adv 4
+bearing 0 5
+rows
+.##
+#..
+##.
+#.#
+.#.
+end
+
+glyph U+0037   # 7
+adv 4
+bearing 0 5
+rows
+###
+..#
+.#.
+.#.
+.#.
+end
+
+glyph U+0038   # 8
+adv 4
+bearing 0 5
+rows
+.#.
+#.#
+.#.
+#.#
+.#.
+end
+
+glyph U+0039   # 9
+adv 4
+bearing 0 5
+rows
+.#.
+#.#
+.##
+..#
+##.
+end
+
+glyph U+003A   # :
+adv 2
+bearing 0 4
+rows
+#
+.
+.
+#
+end
+
+glyph U+003B   # ;
+adv 2
+bearing 0 4
+rows
+#
+.
+.
+#
+#
+end
+
+glyph U+003F   # ?
+adv 4
+bearing 0 5
+rows
+##.
+..#
+.#.
+...
+.#.
+end
+
+glyph U+0041   # A
+adv 4
+bearing 0 5
+rows
+.#.
+#.#
+###
+#.#
+#.#
+end
+
+glyph U+0042   # B
+adv 4
+bearing 0 5
+rows
+##.
+#.#
+##.
+#.#
+##.
+end
+
+glyph U+0043   # C
+adv 4
+bearing 0 5
+rows
+.##
+#..
+#..
+#..
+.##
+end
+
+glyph U+0044   # D
+adv 4
+bearing 0 5
+rows
+##.
+#.#
+#.#
+#.#
+##.
+end
+
+glyph U+0045   # E
+adv 4
+bearing 0 5
+rows
+###
+#..
+##.
+#..
+###
+end
+
+glyph U+0046   # F
+adv 4
+bearing 0 5
+rows
+###
+#..
+##.
+#..
+#..
+end
+
+glyph U+0047   # G
+adv 4
+bearing 0 5
+rows
+.##
+#..
+#.#
+#.#
+.##
+end
+
+glyph U+0048   # H
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+###
+#.#
+#.#
+end
+
+glyph U+0049   # I
+adv 4
+bearing 0 5
+rows
+###
+.#.
+.#.
+.#.
+###
+end
+
+glyph U+004A   # J
+adv 4
+bearing 0 5
+rows
+..#
+..#
+..#
+#.#
+.#.
+end
+
+glyph U+004B   # K
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+##.
+#.#
+#.#
+end
+
+glyph U+004C   # L
+adv 4
+bearing 0 5
+rows
+#..
+#..
+#..
+#..
+###
+end
+
+glyph U+004D   # M
+adv 6
+bearing 0 5
+rows
+#...#
+##.##
+#.#.#
+#...#
+#...#
+end
+
+glyph U+004E   # N
+adv 5
+bearing 0 5
+rows
+#..#
+##.#
+#.##
+#..#
+#..#
+end
+
+glyph U+004F   # O
+adv 4
+bearing 0 5
+rows
+.#.
+#.#
+#.#
+#.#
+.#.
+end
+
+glyph U+0050   # P
+adv 4
+bearing 0 5
+rows
+##.
+#.#
+##.
+#..
+#..
+end
+
+glyph U+0051   # Q
+adv 4
+bearing 0 5
+rows
+.#.
+#.#
+#.#
+#.#
+.##
+end
+
+glyph U+0052   # R
+adv 4
+bearing 0 5
+rows
+##.
+#.#
+##.
+#.#
+#.#
+end
+
+glyph U+0053   # S
+adv 4
+bearing 0 5
+rows
+.##
+#..
+.#.
+..#
+##.
+end
+
+glyph U+0054   # T
+adv 4
+bearing 0 5
+rows
+###
+.#.
+.#.
+.#.
+.#.
+end
+
+glyph U+0055   # U
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+#.#
+#.#
+###
+end
+
+glyph U+0056   # V
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+#.#
+#.#
+.#.
+end
+
+glyph U+0057   # W
+adv 6
+bearing 0 5
+rows
+#...#
+#...#
+#.#.#
+#.#.#
+.#.#.
+end
+
+glyph U+0058   # X
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+.#.
+#.#
+#.#
+end
+
+glyph U+0059   # Y
+adv 4
+bearing 0 5
+rows
+#.#
+#.#
+.#.
+.#.
+.#.
+end
+
+glyph U+005A   # Z
+adv 4
+bearing 0 5
+rows
+###
+..#
+.#.
+#..
+###
+end
+
+glyph U+2026   # ellipsis
+adv 6
+bearing 0 1
+rows
+#.#.#
+end
+
+glyph U+FFFD   # replacement tofu box
+adv 5
+bearing 0 5
+rows
+####
+#..#
+#..#
+#..#
+####
+end
+
+# Lowercase renders as small caps.
+alias U+0061 U+0041
+alias U+0062 U+0042
+alias U+0063 U+0043
+alias U+0064 U+0044
+alias U+0065 U+0045
+alias U+0066 U+0046
+alias U+0067 U+0047
+alias U+0068 U+0048
+alias U+0069 U+0049
+alias U+006A U+004A
+alias U+006B U+004B
+alias U+006C U+004C
+alias U+006D U+004D
+alias U+006E U+004E
+alias U+006F U+004F
+alias U+0070 U+0050
+alias U+0071 U+0051
+alias U+0072 U+0052
+alias U+0073 U+0053
+alias U+0074 U+0054
+alias U+0075 U+0055
+alias U+0076 U+0056
+alias U+0077 U+0057
+alias U+0078 U+0058
+alias U+0079 U+0059
+alias U+007A U+005A
+
+# Common typographic input folds onto the ASCII art.
+alias U+00E9 U+0045
+alias U+2013 U+002D
+alias U+2014 U+002D
+alias U+2018 U+0027
+alias U+2019 U+0027
+alias U+201C U+0022
+alias U+201D U+0022
