@@ -1,0 +1,82 @@
+{
+  "contribution": "fable_toon_acting",
+  "kind": "renderer-pack",
+  "abi": {
+    "render_key_bytes": 40,
+    "render_key_layout": "face_render_key_t schema v2 (consumed natively, incl. stage_expression/expression_weight, speech_phase, viseme_secondary/viseme_blend, head/body pose, per-eye channels)",
+    "stage_cue_bytes": 32,
+    "stage_cue_use": "applied upstream by face_stage_cue_apply; pack reads the resolved key",
+    "frame": { "width": 160, "height": 120, "format": "rgb565" },
+    "sample_clock_hz": 16000,
+    "entry_points": {
+      "render": "fta_render_frame",
+      "behavior_only": "fta_solve",
+      "info": "fta_profile_info",
+      "count": "fta_profile_count",
+      "slug": "fta_profile_slug",
+      "name": "fta_profile_name"
+    },
+    "info_struct_bytes": 16,
+    "stateless": true,
+    "allocation_free": true,
+    "float_free": true,
+    "context_bytes": 0
+  },
+  "sources": [
+    "src/fta.h",
+    "src/fta_internal.h",
+    "src/fta_math.c",
+    "src/fta_act.c",
+    "src/fta_draw.c",
+    "src/fta_styles.c"
+  ],
+  "profiles": [
+    {
+      "slug": "toon-bean",
+      "name": "Toon Bean acting rig",
+      "family": "toon (proposed FACE_RENDER_FAMILY_TOON = 5)",
+      "suggested_firmware_profile": "FACE_RENDER_TOON_BEAN",
+      "mouth": "polygon (dual quadratic lips, jaw hinge, teeth/tongue)",
+      "behavior_notes": "Flagship: baby-schema proportions, teal iris, blush, sparkle stars, full accent set.",
+      "est_ops_per_pixel": 11,
+      "host_us_per_frame": 14.0
+    },
+    {
+      "slug": "toon-ink",
+      "name": "Toon Ink acting rig",
+      "family": "toon",
+      "suggested_firmware_profile": "FACE_RENDER_TOON_INK",
+      "mouth": "polygon",
+      "behavior_notes": "Line art on paper; same solver, outline rendering, single accent colour.",
+      "est_ops_per_pixel": 9,
+      "host_us_per_frame": 15.1
+    },
+    {
+      "slug": "toon-ember",
+      "name": "Toon Ember acting rig",
+      "family": "toon",
+      "suggested_firmware_profile": "FACE_RENDER_TOON_EMBER",
+      "mouth": "polygon",
+      "behavior_notes": "Emissive amber irises on dark glass; enforced bilateral eye visibility.",
+      "est_ops_per_pixel": 10,
+      "host_us_per_frame": 15.3
+    }
+  ],
+  "acting": {
+    "expressions": "11-way accent table over the stage channels; every expression distinct (11/11 hashes, 10/10 clear, 0/55 weak pairs on all three styles)",
+    "anticipation_settle": "stateless acting response curve (dip / +8% overshoot / settle) driven by expression_weight",
+    "speech": "JALI-style jaw/lip split, OVR15 viseme accents, coarticulation via viseme_blend, STARTING/ENDING poses",
+    "life": "blinks 94/50/244 ms with pre-dip + squash, ballistic saccades + drift, asymmetric breathing, embarrassed Keltner display",
+    "pose": "yaw/pitch/lean with 2.5D parallax, per-row roll shear, area-conserving squash & stretch",
+    "safety": "hard pupil clamp, bilateral aperture floor, plate-bounded features, shear-aware safe-area clamp"
+  },
+  "verification": {
+    "test_suite": "tests/test_fta.c (make test): 1482 checks, 0 failures",
+    "sanitizers": "make asan: ASan+UBSan -fno-sanitize-recover=all, clean",
+    "cross_opt_determinism": "make strict: O0 vs O2 frame hashes byte-identical",
+    "wasm_byte_identity": "make wasm-verify: 96-case hash table identical native vs emscripten -O2; suite passes under node",
+    "xtensa": "make xtensa-check: esp32s3 gcc 14.2.0 -Werror clean, no float helper symbols; text 15547 B, data 0, bss 0",
+    "quality_gate_mirror": "firmware face_render_quality thresholds asserted at PASS level for all profiles (expr distinct>=9, clear>=8, mean pair>=0.010; motion 0 jumps, max<0.14, frozen<30)",
+    "golden_hashes": "frozen in tests/golden_hashes.inc (make regen-golden)"
+  }
+}
