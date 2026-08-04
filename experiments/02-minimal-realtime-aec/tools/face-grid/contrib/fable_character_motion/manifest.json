@@ -1,0 +1,60 @@
+{
+  "worker": "fable_character_motion",
+  "kind": "motion-engine+studies",
+  "abi": {
+    "keyframe_bytes": 12,
+    "frame": "160x120 RGB565",
+    "clock": "16 kHz PCM samples (uint32)",
+    "entry": "fable_study_render(study, keyframe, sample_clock, rgb565, pixel_capacity)",
+    "determinism": "pure function of inputs; little-endian + arithmetic right shift assumed and asserted"
+  },
+  "library": {
+    "sources": [
+      "src/fable_ease.c",
+      "src/fable_motion.c",
+      "src/fable_studies.c"
+    ],
+    "headers": [
+      "src/fable_ease.h",
+      "src/fable_motion.h",
+      "src/fable_studies.h",
+      "src/fable_keyframe.h"
+    ],
+    "float_free": true,
+    "allocation_free": true,
+    "stateless": true
+  },
+  "motion_functions": [
+    { "name": "fable_ease_smooth", "principle": "slow in/slow out", "domain": "[0,1024]", "range": "[0,1024]" },
+    { "name": "fable_ease_smoother", "principle": "slow in/slow out", "domain": "[0,1024]", "range": "[0,1024]" },
+    { "name": "fable_ease_out_back", "principle": "overshoot", "domain": "[0,1024]", "range": "[-8,1124]" },
+    { "name": "fable_ease_in_back", "principle": "anticipation", "domain": "[0,1024]", "range": "[-100,1024]" },
+    { "name": "fable_settle", "principle": "follow-through settle", "domain": "[0,1024]", "range": "[-256,1280]" },
+    { "name": "fable_arc", "principle": "arcs", "domain": "[0,1024]", "range": "[0,1024]" },
+    { "name": "fable_vnoise", "principle": "secondary action texture", "range": "[-1024,1024)" },
+    { "name": "fable_schedule", "principle": "deterministic aperiodic events", "complexity": "O(1)" },
+    { "name": "fable_motion_eval", "principle": "all twelve, composed", "output": "fable_motion_pose_t (30 bytes)" }
+  ],
+  "personas": [
+    { "slug": "calm", "name": "Calm Ember", "blink_slot_ms": 4000, "gaze_slot_ms": 2800, "head_lag_ms": 100, "breath_period_ms": 4300 },
+    { "slug": "perky", "name": "Perky Pip", "blink_slot_ms": 3200, "gaze_slot_ms": 1600, "head_lag_ms": 70, "breath_period_ms": 3300 },
+    { "slug": "sleepy", "name": "Sleepy Moss", "blink_slot_ms": 5200, "gaze_slot_ms": 4200, "head_lag_ms": 150, "breath_period_ms": 5300 },
+    { "slug": "curious", "name": "Curious Scout", "blink_slot_ms": 3800, "gaze_slot_ms": 1900, "head_lag_ms": 90, "breath_period_ms": 3900 },
+    { "slug": "sage", "name": "Attentive Sage", "blink_slot_ms": 4400, "gaze_slot_ms": 3400, "head_lag_ms": 120, "breath_period_ms": 4700 }
+  ],
+  "studies": [
+    { "index": 0, "slug": "curious-scout", "name": "Curious Scout", "persona": "curious", "principles": ["eye lead/head follow/body drag", "anticipation", "arcs", "follow-through antenna"], "host_us_per_frame": 1.6 },
+    { "index": 1, "slug": "ember-breath", "name": "Ember Breath", "persona": "calm", "principles": ["squash and stretch", "blink phrasing", "drag shadow"], "host_us_per_frame": 2.9 },
+    { "index": 2, "slug": "pip-spark", "name": "Pip Spark", "persona": "perky", "principles": ["overshoot and settle", "exaggeration", "secondary action"], "host_us_per_frame": 1.4 },
+    { "index": 3, "slug": "moss-drowse", "name": "Moss Drowse", "persona": "sleepy", "principles": ["slow in/slow out", "timing as character", "yawn acts"], "host_us_per_frame": 2.1 },
+    { "index": 4, "slug": "sage-stager", "name": "Sage Stager", "persona": "sage", "principles": ["staging", "listening vs speaking poses", "dialogue accents"], "host_us_per_frame": 2.3 }
+  ],
+  "verification": {
+    "suites": ["test_ease", "test_motion", "test_studies"],
+    "total_checks": 1329173,
+    "sanitizers": ["undefined", "address"],
+    "float_guard": ["pragma-poison build", "comment-stripped token audit"],
+    "golden_frames": 25,
+    "run": "./run_tests.sh"
+  }
+}
